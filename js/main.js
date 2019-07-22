@@ -1,17 +1,14 @@
+const navContent = document.querySelector(".nav-content");
 const navButton = document.querySelector(".nav-collapse");
+const years = document.querySelectorAll(".year");
+const date = new Date();
 
 function toggleNavbar() {
-	const navContent = document.querySelector(".nav-content");
-
-	// Toggle content menu
 	navButton.classList.toggle("nav-active");
 	navContent.classList.toggle("nav-active");
 }
 
-function setDates() {
-	const years = document.querySelectorAll(".year");
-	const date = new Date();
-
+function formatDates() {
 	for (let i = 0; i < years.length; i++) {
 		let year = years[i];
 		let value = parseInt(year.textContent, 10);
@@ -29,9 +26,10 @@ function setDates() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	// Toggle context menu
 	navButton.addEventListener("click", () => {
 		toggleNavbar();
 	});
 
-	setDates();
+	formatDates();
 });
