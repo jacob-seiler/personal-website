@@ -1,6 +1,6 @@
 # My Personal Website
 
-URL: jacobseiler.com
+URL: https://jacobseiler.com
 
 This is all the code and assets for my website.
 
