@@ -6,10 +6,10 @@ $border-radius: 5px;
 $gradient-angle: 135deg;
 
 $colors: (
-	primary: #3223b8,
-	primary-accent: #402fa2,
-	secondary: #ec497e,
-	secondary-accent: #f1685e,
+	primary: #f7568c,
+	primary-accent: #f05c52,
+	secondary: #454fa8,
+	secondary-accent: #4a1c94,
 	base: #ffffff,
 	base-accent: #1d1d1d
 );
@@ -18,12 +18,68 @@ $colors: (
 	@return map-get($colors, $color);
 }
 
-@mixin gradient-secondary() {
-	background-image: linear-gradient(
-		$gradient-angle,
-		get-color(secondary),
-		get-color(secondary-accent)
-	);
+@mixin gradient-primary($angle) {
+	background-image: linear-gradient($angle, get-color(primary), get-color(primary-accent));
+}
+
+@mixin gradient-secondary($angle) {
+	background-image: linear-gradient($angle, get-color(secondary), get-color(secondary-accent));
+}
+
+@mixin view-tablet() {
+	// TODO: screen ratio instead?
+	@media (min-width: 750px) {
+		@content;
+	}
+}
+
+.social-icons {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+
+	i {
+		padding: 5 * 1vw * 2/3;
+		font-size: 5 * 1vw;
+		border-radius: 50%;
+
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	i:hover {
+		transform: rotate(360deg);
+		transition: all 0.5s ease;
+	}
+
+	.fa-linkedin-in {
+		background-image: linear-gradient($gradient-angle, #0583bd, #125f83);
+		color: white;
+	}
+
+	.fa-github {
+		background-image: linear-gradient($gradient-angle, #1b1b1b, #000000);
+		color: white;
+	}
+
+	.fa-envelope {
+		background-image: linear-gradient($gradient-angle, #f0685c, #cc4135);
+		color: white;
+	}
+
+	.fa-window-maximize {
+		background-image: linear-gradient($gradient-angle, #5c90f0, #2054b4);
+		color: white;
+	}
+
+	.fa-google-play {
+		background-image: linear-gradient($gradient-angle, #00d0ff, #00f076);
+		color: white;
+	}
+}
+
+.pagestop {
+	transform: translateY(-$navbar-size);
 }
 
 html {
@@ -72,7 +128,7 @@ html {
 	}
 
 	.nav-collapse div {
-		@include gradient-secondary;
+		@include gradient-primary($gradient-angle);
 		transition: all ease 0.3s;
 		width: 35px;
 		height: $navbar-size/10;
@@ -84,7 +140,7 @@ html {
 	z-index: 998;
 	position: fixed;
 	display: block;
-	@include gradient-secondary;
+	@include gradient-primary($gradient-angle);
 
 	transform: translateY(-500px);
 	transition: transform 0.75s ease;
@@ -147,51 +203,8 @@ main {
 	top: 0;
 }
 
-.social-icons {
-	font-size: 20vw;
-	list-style: none;
-	display: flex;
-	justify-content: center;
-
-	i {
-		padding: 5 * 1vw * 2/3;
-		font-size: 5 * 1vw;
-		width: 5 * 1vw;
-		text-align: center;
-		text-decoration: none;
-		border-radius: 50%;
-
-		margin-left: 2vw;
-		margin-right: 2vw;
-	}
-
-	i:hover {
-		transform: rotate(360deg);
-		transition: all 0.5s ease;
-	}
-
-	.fa-linkedin-in {
-		background-image: linear-gradient($gradient-angle, #0583bd, #125f83);
-		color: white;
-	}
-
-	.fa-github {
-		background-image: linear-gradient($gradient-angle, #1b1b1b, #000000);
-		color: white;
-	}
-
-	.fa-envelope {
-		background-image: linear-gradient($gradient-angle, #f0685c, #cc4135);
-		color: white;
-	}
-}
-
 .landing {
-	background-image: linear-gradient(
-		$gradient-angle,
-		get-color(primary),
-		get-color(primary-accent)
-	);
+	@include gradient-secondary($gradient-angle);
 	color: get-color(base);
 
 	height: 100vh;
@@ -211,7 +224,8 @@ main {
 
 		h1 {
 			margin-top: 10vh;
-			font-size: 10vw;
+			font-size: 12vw;
+			font-weight: bold;
 		}
 
 		p {
@@ -233,7 +247,7 @@ main {
 			border-radius: $border-radius;
 
 			color: get-color(base);
-			@include gradient-secondary;
+			@include gradient-primary($gradient-angle);
 			text-decoration: none;
 		}
 	}
@@ -253,7 +267,7 @@ main {
 		img {
 			align-self: end;
 			width: auto;
-			box-shadow: 0px -15px 80px -15px rgba(0, 0, 0, 0.75);
+			box-shadow: 0px -35px 115px -50px rgba(0, 0, 0, 0.5);
 		}
 
 		.screenshot-1 {
@@ -262,7 +276,8 @@ main {
 
 			justify-self: end;
 
-			height: 33vh;
+			width: 80vw;
+			max-width: 37vh;
 			margin-right: 4vw;
 		}
 
@@ -270,7 +285,8 @@ main {
 			z-index: 1;
 			grid-area: left;
 
-			height: 47vh;
+			width: 82vw;
+			max-width: 38vh;
 			margin-left: 3vw;
 		}
 
@@ -278,17 +294,82 @@ main {
 			z-index: 3;
 			grid-area: left;
 
-			height: 27vh;
+			width: 52vw;
+			max-width: 24vh;
 			margin-left: 12vw;
 		}
 	}
 }
 
-// TODO about
+.about {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto;
+	grid-template-areas: "image image" "text text";
+
+	@include view-tablet() {
+		grid-template-areas: "image text" "image text";
+	}
+
+	text-align: center;
+	background-color: get-color(base);
+	color: get-color(base-accent);
+
+	img {
+		grid-area: image;
+		border-radius: 50%;
+		justify-self: center;
+		margin: 5vw 0;
+		width: 50vw;
+
+		@include view-tablet() {
+			width: 20vw;
+			margin: 0 5vw;
+
+			align-self: center;
+		}
+	}
+
+	h1 {
+		grid-area: text;
+		font-size: 8vw;
+		font-weight: normal;
+		text-decoration: underline;
+
+		@include view-tablet() {
+			margin-top: 1.5vh;
+			font-size: 4.5vw;
+			text-align: left;
+		}
+	}
+
+	p {
+		grid-area: text;
+		font-size: 3.5vw;
+		margin-top: 12vw;
+		margin-bottom: 10vw;
+		margin-left: 2.5vw;
+		margin-right: 2.5vw;
+
+		@include view-tablet() {
+			margin-left: 0;
+			margin-right: 2vw;
+			margin-top: 9vw;
+			margin-bottom: 3vw;
+
+			font-size: 2.25vw;
+			text-align: left;
+		}
+	}
+}
 
 .skills {
+	@include gradient-primary($gradient-angle);
+	color: get-color(base);
+
 	h1 {
 		text-align: center;
+		margin-bottom: 5px;
 	}
 
 	.skills-grid {
@@ -301,29 +382,6 @@ main {
 		//grid-template-areas: "software web tools" "software web tools" "software web tools";
 	}
 
-	.skills-content {
-		color: get-color(base);
-		margin: 10px;
-		margin-top: 0;
-		padding: 10px;
-		@include gradient-secondary;
-		border-radius: $border-radius;
-
-		ul li {
-			p {
-				display: inline;
-				color: darken(get-color(base), 30%);
-				font-size: 14px;
-			}
-
-			.year {
-				margin-left: 10px;
-			}
-		}
-
-		//TODO dividing line under h2
-	}
-
 	.skills-software {
 		grid-area: software;
 	}
@@ -334,5 +392,97 @@ main {
 
 	.skills-tools {
 		grid-area: tools;
+	}
+}
+
+.projects {
+	// TODO not loving the card look. Maybe play around with other options.
+
+	.social-icons {
+		justify-content: left;
+
+		i {
+			padding: 5 * 1vw * 2/3;
+			font-size: 5 * 1vw;
+			border-radius: 50%;
+			margin: 0;
+			margin-right: 1vw;
+
+			@include view-tablet() {
+				padding: 2 * 1vw * 2/3;
+				font-size: 2 * 1vw;
+			}
+		}
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 5vw;
+	}
+
+	.project-content {
+		display: block;
+
+		@include view-tablet() {
+			display: flex;
+		}
+
+		margin: 0 10px;
+	}
+
+	.project {
+		display: grid;
+		grid-template-rows: auto auto;
+		grid-template-areas: "text" "image";
+
+		@include gradient-primary($gradient-angle);
+		color: get-color(base);
+		border-radius: $border-radius;
+		margin: 10px;
+		margin-bottom: 5px;
+		padding: 15px;
+	}
+
+	.project-text {
+		grid-area: text;
+	}
+
+	img {
+		grid-area: image;
+
+		width: 95%;
+		margin-top: 15px;
+		margin-bottom: 0;
+		height: auto;
+
+		border-radius: $border-radius;
+		align-self: end;
+		justify-self: center;
+
+		// TODO clippath on hover to show link?
+	}
+
+	h2,
+	h3 {
+		font-weight: normal;
+	}
+
+	p {
+		margin-top: 20px;
+	}
+
+	a {
+		text-decoration: underline;
+		color: get-color(base);
+	}
+
+	a:hover {
+		color: get-color(secondary-accent);
+	}
+
+	// TODO not active, but used? idk the name of it in css
+	a:active {
+		color: get-color(secondary);
+		text-decoration: none;
 	}
 }
