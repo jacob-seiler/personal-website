@@ -27,7 +27,6 @@ $colors: (
 }
 
 @mixin view-tablet() {
-	// TODO: screen ratio instead?
 	@media (min-width: 750px) {
 		@content;
 	}
@@ -90,27 +89,6 @@ html {
 	padding: 0;
 	margin: 0;
 	font-family: "Montserrat", sans-serif;
-}
-
-*[tooltip]::before {
-	content: attr(tooltip);
-	visibility: hidden;
-	position: absolute;
-
-	width: 120px;
-	padding: 5px 0;
-	border-radius: $border-radius;
-	text-align: center;
-	transform: translate(-35%, -100%);
-
-	background-color: rgba(0, 0, 0, 0.75);
-	color: #fff;
-
-	// TODO arrow underneath? (like speech bubble)
-}
-
-*[tooltip]:hover::before {
-	visibility: visible;
 }
 
 .nav-head {
@@ -364,34 +342,141 @@ main {
 }
 
 .skills {
-	@include gradient-primary($gradient-angle);
 	color: get-color(base);
 
 	h1 {
 		text-align: center;
-		margin-bottom: 5px;
+		font-size: 7vw;
+		text-decoration: underline;
+		font-weight: normal;
+		padding: 2vw 0;
 	}
 
-	.skills-grid {
+	$skills-height: 110vw;
+	$skills-bottom: 40vw;
+
+	.skills-back {
+		background-color: darken(get-color(base), 5%);
+		color: get-color(base-accent);
+
+		height: calc(#{$skills-height} + #{$skills-bottom});
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
-		grid-template-areas: "software software software" "web web web" "tools tools tools";
+		grid-template-rows: $skills-height $skills-bottom;
+		grid-template-areas: "info" "select";
 
-		// TODO on desktop change grid layout
-		//grid-template-areas: "software web tools" "software web tools" "software web tools";
+		.skills-back-info {
+			grid-area: info;
+
+			.company {
+				padding-bottom: 0;
+			}
+
+			.date {
+				font-size: 4vw;
+				text-align: center;
+			}
+
+			.title {
+				margin: 0 4vw;
+				margin-top: 12vw;
+
+				font-size: 5vw;
+				text-align: left;
+				font-style: italic;
+			}
+
+			.desc {
+				margin: 0 4vw;
+				margin-top: 3vw;
+
+				font-size: 3.3vw;
+				text-align: left;
+			}
+		}
+
+		.skills-back-selector {
+			grid-area: select;
+
+			h1 {
+				margin-bottom: 2vw;
+			}
+
+			ul {
+				list-style: none;
+
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+
+				li {
+					justify-self: center;
+				}
+			}
+
+			img {
+				height: 20vw;
+				filter: grayscale(100%);
+			}
+
+			.skill-logo-active {
+				filter: grayscale(0%);
+				filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.55));
+			}
+
+			.skills-logos li {
+				cursor: pointer;
+			}
+		}
 	}
 
-	.skills-software {
-		grid-area: software;
+	.skills-cover {
+		clip-path: circle(150% at 50% 0%);
+		transition: clip-path 0.5s ease-in-out;
+
+		@include gradient-primary($gradient-angle);
+		box-shadow: 0px 25px 30px -40px rgba(0, 0, 0, 0.75);
+
+		position: absolute;
+		height: $skills-height;
+		width: 100%;
+		transform: translateY(-$skills-height - $skills-bottom);
+
+		h2 {
+			font-size: 5vw;
+			margin-left: 2.5vw;
+		}
+
+		ul {
+			list-style: none;
+			margin-bottom: 2.25vw;
+			margin-left: 2.5vw;
+		}
+
+		li {
+			font-size: 3vw;
+		}
+
+		.skills-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto auto auto;
+			grid-template-areas: "lang lang lang" "tech tech tech" "tool tool tool";
+		}
+
+		.skills-lang {
+			grid-area: lang;
+		}
+
+		.skills-tech {
+			grid-area: tech;
+		}
+
+		.skills-tool {
+			grid-area: tool;
+		}
 	}
 
-	.skills-web {
-		grid-area: web;
-	}
-
-	.skills-tools {
-		grid-area: tools;
+	.skills-cover-active {
+		clip-path: circle(0% at 50% 0%);
 	}
 }
 
@@ -433,7 +518,7 @@ main {
 	.project {
 		display: grid;
 		grid-template-rows: auto auto;
-		grid-template-areas: "text" "image";
+		grid-template-areas: "txt" "img";
 
 		@include gradient-primary($gradient-angle);
 		color: get-color(base);
@@ -444,11 +529,11 @@ main {
 	}
 
 	.project-text {
-		grid-area: text;
+		grid-area: txt;
 	}
 
 	img {
-		grid-area: image;
+		grid-area: img;
 
 		width: 95%;
 		margin-top: 15px;

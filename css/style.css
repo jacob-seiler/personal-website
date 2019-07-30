@@ -64,24 +64,6 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
-*[tooltip]::before {
-  content: attr(tooltip);
-  visibility: hidden;
-  position: absolute;
-  width: 120px;
-  padding: 5px 0;
-  border-radius: 5px;
-  text-align: center;
-  -webkit-transform: translate(-35%, -100%);
-          transform: translate(-35%, -100%);
-  background-color: rgba(0, 0, 0, 0.75);
-  color: #fff;
-}
-
-*[tooltip]:hover::before {
-  visibility: visible;
-}
-
 .nav-head {
   z-index: 999;
   background-color: #ffffff;
@@ -191,9 +173,8 @@ main {
 }
 
 .landing .landing-info {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: info;
   text-align: center;
 }
@@ -306,10 +287,12 @@ main {
 }
 
 .about img {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: image;
   border-radius: 50%;
+  -ms-grid-column-align: center;
       justify-self: center;
   margin: 5vw 0;
   width: 50vw;
@@ -326,8 +309,9 @@ main {
 }
 
 .about h1 {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: text;
   font-size: 8vw;
   font-weight: normal;
@@ -343,8 +327,9 @@ main {
 }
 
 .about p {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: text;
   font-size: 3.5vw;
   margin-top: 12vw;
@@ -365,44 +350,164 @@ main {
 }
 
 .skills {
-  background-image: linear-gradient(135deg, #f7568c, #f05c52);
   color: #ffffff;
 }
 
 .skills h1 {
   text-align: center;
-  margin-bottom: 5px;
+  font-size: 7vw;
+  text-decoration: underline;
+  font-weight: normal;
+  padding: 2vw 0;
 }
 
-.skills .skills-grid {
+.skills .skills-back {
+  background-color: #f2f2f2;
+  color: #1d1d1d;
+  height: calc(110vw + 40vw);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 110vw 40vw;
+      grid-template-rows: 110vw 40vw;
+      grid-template-areas: "info" "select";
+}
+
+.skills .skills-back .skills-back-info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: info;
+}
+
+.skills .skills-back .skills-back-info .company {
+  padding-bottom: 0;
+}
+
+.skills .skills-back .skills-back-info .date {
+  font-size: 4vw;
+  text-align: center;
+}
+
+.skills .skills-back .skills-back-info .title {
+  margin: 0 4vw;
+  margin-top: 12vw;
+  font-size: 5vw;
+  text-align: left;
+  font-style: italic;
+}
+
+.skills .skills-back .skills-back-info .desc {
+  margin: 0 4vw;
+  margin-top: 3vw;
+  font-size: 3.3vw;
+  text-align: left;
+}
+
+.skills .skills-back .skills-back-selector {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: select;
+}
+
+.skills .skills-back .skills-back-selector h1 {
+  margin-bottom: 2vw;
+}
+
+.skills .skills-back .skills-back-selector ul {
+  list-style: none;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas: "software software software" "web web web" "tools tools tools";
 }
 
-.skills .skills-software {
+.skills .skills-back .skills-back-selector ul li {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.skills .skills-back .skills-back-selector img {
+  height: 20vw;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.skills .skills-back .skills-back-selector .skill-logo-active {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  -webkit-filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.55));
+          filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.55));
+}
+
+.skills .skills-back .skills-back-selector .skills-logos li {
+  cursor: pointer;
+}
+
+.skills .skills-cover {
+  -webkit-clip-path: circle(150% at 50% 0%);
+          clip-path: circle(150% at 50% 0%);
+  -webkit-transition: -webkit-clip-path 0.5s ease-in-out;
+  transition: -webkit-clip-path 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out, -webkit-clip-path 0.5s ease-in-out;
+  background-image: linear-gradient(135deg, #f7568c, #f05c52);
+  -webkit-box-shadow: 0px 25px 30px -40px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 25px 30px -40px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  height: 110vw;
+  width: 100%;
+  -webkit-transform: translateY(-150vw);
+          transform: translateY(-150vw);
+}
+
+.skills .skills-cover h2 {
+  font-size: 5vw;
+  margin-left: 2.5vw;
+}
+
+.skills .skills-cover ul {
+  list-style: none;
+  margin-bottom: 2.25vw;
+  margin-left: 2.5vw;
+}
+
+.skills .skills-cover li {
+  font-size: 3vw;
+}
+
+.skills .skills-cover .skills-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: "lang lang lang" "tech tech tech" "tool tool tool";
+}
+
+.skills .skills-cover .skills-lang {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: software;
+  grid-area: lang;
 }
 
-.skills .skills-web {
+.skills .skills-cover .skills-tech {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: web;
+  grid-area: tech;
 }
 
-.skills .skills-tools {
+.skills .skills-cover .skills-tool {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: tools;
+  grid-area: tool;
+}
+
+.skills .skills-cover-active {
+  -webkit-clip-path: circle(0% at 50% 0%);
+          clip-path: circle(0% at 50% 0%);
 }
 
 .projects .social-icons {
@@ -449,7 +554,7 @@ main {
   display: grid;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "text" "image";
+      grid-template-areas: "txt" "img";
   background-image: linear-gradient(135deg, #f7568c, #f05c52);
   color: #ffffff;
   border-radius: 5px;
@@ -461,13 +566,13 @@ main {
 .projects .project-text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: text;
+  grid-area: txt;
 }
 
 .projects img {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  grid-area: image;
+  grid-area: img;
   width: 95%;
   margin-top: 15px;
   margin-bottom: 0;

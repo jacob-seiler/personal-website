@@ -61,7 +61,7 @@
 			</div>
 			<div class="pagestop" id="about"></div>
 			<div class="about">
-				<img src="assets/profile.jpg" />
+				<img src="assets/profile.png" />
 				<h1>A little bit about me...</h1>
 				<p>
 					I am a second year university student studying computer science. Ever since I
@@ -73,71 +73,74 @@
 			</div>
 			<div class="pagestop" id="skills"></div>
 			<div class="skills">
-				<h1>Skills</h1>
-				<div class="skills-grid">
-					<div class="skills-content skills-software">
-						<h2>Software Design</h2>
-						<ul>
+				<div class="skills-back">
+					<div class="skills-back-info">
+						<h1 class="company">{Company}</h1>
+						<p class="date">{Date</p>
+						<p class="title">{Title}</p>
+						<p class="desc">{Desc}</p>
+					</div>
+					<div class="skills-back-selector">
+						<h1>Some of my experience...</h1>
+						<ul class="skills-logos">
 							<li>
-								<a
-									href="https://github.com/jacob-seiler?utf8=%E2%9C%93&tab=repositories&q=&type=&language=java"
-									>Java</a
-								>
-								<p class="year">2013</p>
+								<img
+									onclick="toggleSkillsInfo(this, 'uhn')"
+									src="assets/logo-uhn.png"
+								/>
 							</li>
 							<li>
-								<a
-									href="https://github.com/jacob-seiler?utf8=%E2%9C%93&tab=repositories&q=&type=&language=python"
-									>Python</a
-								>
-								<p class="year">2017</p>
+								<img
+									onclick="toggleSkillsInfo(this, 'rbc')"
+									src="assets/logo-rbc.png"
+								/>
 							</li>
 							<li>
-								<a>C++</a>
-								<p class="year">2017</p>
-							</li>
-							<li>
-								<a>VBA</a>
-								<p class="year">2018</p>
+								<img
+									onclick="toggleSkillsInfo(this, 'qmind')"
+									src="assets/logo-qmind.png"
+								/>
 							</li>
 						</ul>
 					</div>
-					<div class="skills-content skills-web">
-						<h2>Web Development</h2>
-						<ul>
-							<li>
-								<a
-									href="https://github.com/jacob-seiler?utf8=%E2%9C%93&tab=repositories&q=&type=&language=css"
-									>HTML 5/CSS 3</a
-								>
-								<p class="year">2015</p>
-							</li>
-							<li>
-								<a>SASS</a>
-								<p class="year">2019</p>
-							</li>
-							<li>
-								<a>JavaScript</a>
-								<p class="year">2012</p>
-							</li>
-						</ul>
-					</div>
-					<div class="skills-content skills-tools">
-						<h2>Tools + Technologies</h2>
-						<ul>
-							<li>
-								<a>Artificial Intelligence</a>
-								<p>Keras, PyTorch</p>
-							</li>
-							<li>
-								<a>Bootstrap</a>
-								<p>Version 4</p>
-							</li>
-							<li>
-								<a>Microsoft Office</a>
-								<p>Excel, Word, Powerpoint</p>
-							</li>
-						</ul>
+				</div>
+				<div class="skills-cover">
+					<h1>Skills</h1>
+					<div class="skills-content">
+						<div class="skills-lang">
+							<h2>Languages</h2>
+							<ul>
+								<li>Python</li>
+								<li>Java</li>
+								<li>JavaScript</li>
+								<li>Processing</li>
+								<li>HTML 5/CSS 3</li>
+								<li>SASS</li>
+								<li>C#</li>
+								<li>C++</li>
+								<li>VBA</li>
+							</ul>
+						</div>
+						<div class="skills-tech">
+							<h2>Technologies</h2>
+							<ul>
+								<li>Machine Learning</li>
+								<li>Bootstrap</li>
+								<li>Git</li>
+							</ul>
+						</div>
+						<div class="skills-tool">
+							<h2>Tools</h2>
+							<ul>
+								<li>Microsoft Office</li>
+								<li>G Suite</li>
+								<li>Unity</li>
+								<li>Adobe Photoshop</li>
+								<li>Adobe Illustrator</li>
+								<li>Adobe XD</li>
+								<li>FL Studio</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

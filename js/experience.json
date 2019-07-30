@@ -1,0 +1,20 @@
+{
+	"uhn": {
+		"company": "University Health Network",
+		"date": "Summer 2017",
+		"title": "Research Assistant",
+		"desc": "Research assistant for a medical paper on Scleroderma. Surveyed and collected data from patients. Used systems to analyze medical data. Edited newsletter and used software to present findings."
+	},
+	"rbc": {
+		"company": "Royal Bank of Canada",
+		"date": "Summer 2019, 2018",
+		"title": "Financial Analyst - Software Automation Developer",
+		"desc": "Developed tools using Python, VBA, and RPA to improve the efficiency of information flow. Consulted with and designed software solutions for financial teams based on needs. Organized corporate events such as Pride Rally."
+	},
+	"qmind": {
+		"company": "Queen's Machine Intelligence and Neuroevolution Design",
+		"date": "School Year 2018/2019",
+		"title": "Design Member, Education Coordinator",
+		"desc": "Developed an Artificial Intelligence that predicts if a patient has lung cancer using a convolution neural network. Analyzed medical imaging data (CT Scans) to develop model. Collaborated on development of Artificial Intelligence (AI) course to be offered by the Queen's University. Created educational and promotional material about machine learning and its applications."
+	}
+}
