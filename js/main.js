@@ -1,9 +1,11 @@
 const navContent = document.querySelector(".nav-content");
 const navButton = document.querySelector(".nav-collapse");
+const navToggle = document.querySelector(".nav-toggle");
 
 const skillsCover = document.querySelector(".skills-cover");
 const skillsLogos = document.querySelector(".skills-logos");
 
+const skillsPagestop = document.getElementById("skills");
 const skillsInfoCompany = document.querySelector(".company");
 const skillsInfoDate = document.querySelector(".date");
 const skillsInfoTitle = document.querySelector(".title");
@@ -39,6 +41,9 @@ function toggleSkillsInfo(e, ref) {
 
 		skillsCover.classList.add("skills-cover-active");
 		e.classList.add("skill-logo-active");
+
+		// Scroll skills into view
+		skillsPagestop.scrollIntoView();
 	}
 }
 
@@ -47,4 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	navButton.addEventListener("click", () => {
 		toggleNavbar();
 	});
+
+	for (let i = 0; i < navToggle.children.length; i++) {
+		navToggle.children[i].children[0].addEventListener("click", () => {
+			toggleNavbar();
+		});
+	}
 });
