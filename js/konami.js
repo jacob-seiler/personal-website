@@ -18,6 +18,7 @@ function activateCheats() {
 	// TODO do something wonky
 	// Maybe pong on the screen?
 	// Maybe a color picker?
+	// Maybe interactable beach ball?
 
 	alert("Congrats, you know the konami code. Ya nerd. :P");
 }

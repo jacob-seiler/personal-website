@@ -4,64 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Jacob Seiler</title>
+		<title>Document</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="https://kit.fontawesome.com/c8eec4537f.js"></script>
 	</head>
 	<body>
-		<header>
-			<div class="nav-head">
-				<div class="nav-collapse">
-					<div class="line-1"></div>
-					<div class="line-2"></div>
-					<div class="line-3"></div>
-				</div>
-			</div>
-			<div class="nav-content">
-				<ul class="nav-toggle">
-					<li><a href="#top">Jacob Seiler</a></li>
-					<li><a href="#about">About Me</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#projects">Projects</a></li>
-				</ul>
-				<ul class="nav-toggle social-icons">
-					<li>
-						<a href="https://www.linkedin.com/in/jacobseiler/"
-							><i class="fab fa-linkedin-in" aria-hidden="true"></i
-						></a>
-					</li>
-					<li>
-						<a href="https://github.com/jacob-seiler"
-							><i class="fab fa-github" aria-hidden="true"></i
-						></a>
-					</li>
-					<li>
-						<a href="mailto:seiler.jacob1@gmail.com"
-							><i class="far fa-envelope" aria-hidden="true"></i
-						></a>
-					</li>
-				</ul>
-			</div>
-		</header>
-
-		<main>
-			<div class="landing" id="top">
-				<div class="landing-info">
-					<h1>Jacob Seiler</h1>
-					<p>Software designer, web developer, university student, and human boy</p>
-					<a class="button" href="#about">See more</a>
-				</div>
-
-				<div class="landing-images">
-					<img class="screenshot-1" src="assets/screenshot-html.png" />
-					<img class="screenshot-2" src="assets/screenshot-sass.png" />
-					<img class="screenshot-3" src="assets/screenshot-js.png" />
-				</div>
-			</div>
-			<div class="pagestop" id="about"></div>
-			<div class="about">
-				<img src="assets/profile.png" />
-				<h1>A little bit about me...</h1>
+		<div class="landing">
+			<h1>Software Designer, Web Developer, University Student, & Human Boy.</h1>
+			<a class="button" href="#about">Explore</a>
+		</div>
+		<div class="about" id="about">
+			<img class="poppable" onclick="randomizeProfile(this)" src="assets/profile-1.png" />
+			<div class="about-info">
+				<h2>A little bit about me...</h2>
 				<p>
 					I am a second year university student studying computer science. Ever since I
 					began coding in middle school, I have had a strong interest in technology and
@@ -70,89 +24,37 @@
 					projects as I continue to learn and develop new ideas.
 				</p>
 			</div>
-			<div class="pagestop" id="skills"></div>
-			<div class="skills">
-				<div class="skills-back">
-					<div class="skills-back-info">
-						<h1 class="company">{Company}</h1>
-						<p class="date">{Date</p>
-						<p class="title">{Title}</p>
-						<p class="desc">{Desc}</p>
-					</div>
-					<div class="skills-back-selector">
-						<h1>Some of my experience...</h1>
-						<ul class="skills-logos">
-							<li>
-								<img
-									onclick="toggleSkillsInfo(this, 'uhn')"
-									src="assets/logo-uhn.png"
-								/>
-							</li>
-							<li>
-								<img
-									onclick="toggleSkillsInfo(this, 'rbc')"
-									src="assets/logo-rbc.png"
-								/>
-							</li>
-							<li>
-								<img
-									onclick="toggleSkillsInfo(this, 'qmind')"
-									src="assets/logo-qmind.png"
-								/>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="skills-cover">
-					<h1>Skills</h1>
-					<div class="skills-content">
-						<div class="skills-lang">
-							<h2>Languages</h2>
-							<ul>
-								<li>Python</li>
-								<li>Java</li>
-								<li>JavaScript</li>
-								<li>Processing</li>
-								<li>HTML 5/CSS 3</li>
-								<li>SASS</li>
-								<li>C#</li>
-								<li>C++</li>
-								<li>VBA</li>
-							</ul>
-						</div>
-						<div class="skills-tech">
-							<h2>Technologies</h2>
-							<ul>
-								<li>Machine Learning</li>
-								<li>Bootstrap</li>
-								<li>Git</li>
-							</ul>
-						</div>
-						<div class="skills-tool">
-							<h2>Tools</h2>
-							<ul>
-								<li>Microsoft Office</li>
-								<li>G Suite</li>
-								<li>Unity</li>
-								<li>Adobe Photoshop</li>
-								<li>Adobe Illustrator</li>
-								<li>Adobe XD</li>
-								<li>FL Studio</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
+		<div class="skills">
+			<h1>Skills & Experience</h1>
+		</div>
+		<div class="projects">
+			<h1>Projects</h1>
+		</div>
+		<div class="contact">
+			<h1>Contact</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis, ipsum
+				accusamus pariatur provident molestias vitae dolorum unde, iusto enim optio nisi
+				inventore impedit repudiandae doloribus facilis quo voluptate eos.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis, ipsum
+				accusamus pariatur provident molestias vitae dolorum unde, iusto enim optio nisi
+				inventore impedit repudiandae doloribus facilis quo voluptate eos.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis, ipsum
+				accusamus pariatur provident molestias vitae dolorum unde, iusto enim optio nisi
+				inventore impedit repudiandae doloribus facilis quo voluptate eos.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis, ipsum
+				accusamus pariatur provident molestias vitae dolorum unde, iusto enim optio nisi
+				inventore impedit repudiandae doloribus facilis quo voluptate eos.
+			</p>
+		</div>
 
-			<div class="pagestop" id="projects"></div>
-
-			<div class="projects">
-				<h1>Projects</h1>
-				<p>Coming soon...</p>
-			</div>
-		</main>
-		<!-- TODO: Footer -->
 		<script src="js/main.js"></script>
-		<script src="js/konami.js"></script>
 	</body>
 </html>
