@@ -4,6 +4,11 @@
 // Custom variables & functions
 $border-radius: 3vw;
 $gradient-angle: 160deg;
+$navbar-size: 12vw;
+$navbar-size-large: 80px;
+$navbar-size-width: 1200px;
+$navbar-button-size: 9vw;
+
 $colors: (
 	primary: #f8e95f,
 	primary-accent: #ffca1d,
@@ -22,6 +27,18 @@ $colors: (
 
 @mixin gradient-primary() {
 	@include gradient(get-color(primary), get-color(primary-accent));
+}
+
+@mixin view-tablet() {
+	@media (min-width: 765px) {
+		@content;
+	}
+}
+
+@mixin view-desktop() {
+	@media (min-width: 1400px) {
+		@content;
+	}
 }
 
 // Custom elements
@@ -97,6 +114,15 @@ $colors: (
 	}
 }
 
+.scrollstop {
+	position: relative;
+	transform: translateY(-$navbar-size);
+
+	@include view-tablet() {
+		transform: translateY(-$navbar-size-large);
+	}
+}
+
 // Page elements
 html {
 	scroll-behavior: smooth;
@@ -111,6 +137,176 @@ html {
 
 h1 {
 	font-family: "Noto Sans", sans-serif;
+}
+
+nav {
+	position: fixed;
+	z-index: 999;
+
+	width: 100%;
+	height: $navbar-size;
+
+	@include view-tablet() {
+		height: $navbar-size-large;
+	}
+
+	background-color: white;
+
+	.nav-button {
+		display: block;
+
+		@include view-tablet() {
+			display: none;
+		}
+
+		cursor: pointer;
+		float: right;
+		margin-right: 5vw;
+		width: $navbar-button-size;
+		margin-top: $navbar-button-size/4;
+
+		div {
+			@include gradient-primary();
+			width: 100%;
+			height: $navbar-button-size/6;
+			margin-bottom: $navbar-button-size/6;
+
+			transform: translate3d(0, 0, 0);
+			transition: transform 0.4s ease;
+		}
+
+		&.nav-active {
+			.line-1 {
+				transform: translateY($navbar-button-size/3) rotate(-45deg);
+			}
+
+			.line-2 {
+				transform: translateX(calc(#{$navbar-button-size} + 5vw));
+			}
+
+			.line-3 {
+				transform: translateY(-$navbar-button-size/3) rotate(45deg);
+			}
+		}
+	}
+
+	.nav-main {
+		@include view-desktop() {
+			margin: 0 calc(calc(100vw - #{$navbar-size-width}) / 2);
+		}
+	}
+
+	.nav-title {
+		display: inline-block;
+		margin-left: 5vw;
+		margin-top: ($navbar-size - 6.8vw)/2;
+
+		@include view-tablet() {
+			margin-top: 15.5px;
+		}
+
+		@include view-desktop() {
+			margin-left: 0;
+			margin-top: 12px;
+		}
+
+		a {
+			text-decoration: none;
+			text-align: left;
+
+			font-weight: bold;
+			font-size: 5vw;
+			font-family: "Noto Sans";
+			color: get-color(base-accent);
+
+			@include view-tablet() {
+				font-size: 36px;
+			}
+		}
+
+		a:hover {
+			@include gradient-primary();
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+
+	.nav-content {
+		position: absolute;
+		@include gradient-primary();
+		border-radius: 0 0 $border-radius $border-radius;
+		width: 100vw;
+		text-align: center;
+		top: $navbar-size;
+		list-style: none;
+
+		transform-origin: top center;
+		transform: rotateX(90deg);
+		transition: transform 0.5s ease-out;
+
+		@include view-tablet() {
+			text-align: right;
+			transition: none;
+			transform: none;
+			background: none;
+			border-radius: 0;
+
+			width: 60vw;
+			padding-right: 5vw;
+			top: 0;
+			bottom: 0;
+			right: 0;
+
+			display: inline-flex;
+			align-content: flex-end;
+			justify-content: flex-end;
+		}
+
+		@include view-desktop() {
+			right: calc(calc(calc(100vw - #{$navbar-size-width}) / 2) - 25px);
+			padding-right: 0;
+			width: auto;
+		}
+
+		li {
+			margin: 2vw 0;
+
+			@include view-tablet() {
+				align-self: center;
+				margin-left: 3vw;
+			}
+
+			@include view-desktop() {
+				margin: 0;
+				margin-left: 25px;
+				margin-right: 25px;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: get-color(base-accent);
+			font-size: 6vw;
+
+			@include view-tablet() {
+				font-size: 18px;
+				color: get-color(base-accent);
+			}
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a.nav-active {
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		&.nav-active {
+			transform: rotateX(0deg);
+		}
+	}
 }
 
 .landing {
@@ -144,8 +340,7 @@ h1 {
 		height: auto;
 
 		margin: 0 auto;
-		padding-top: 5vw;
-		padding-bottom: 8vw;
+		padding: 8vw 0;
 
 		border-radius: 50%;
 		z-index: 2;
@@ -170,13 +365,11 @@ h1 {
 
 	&::before {
 		content: "";
-		background: get-color(base);
-		height: 20vw;
-		transform: skewY(-3deg);
+		background-color: inherit;
 		position: absolute;
-		left: 0;
-		right: 0;
-		z-index: 1;
-		bottom: -0.46875 * 20vw;
+		width: 100%;
+		height: 12vw;
+		transform: translateY(-9vw);
+		clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
 	}
 }
