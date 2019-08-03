@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   background: #f8e95f;
-  background: linear-gradient(160deg, #f8e95f 0%, #f37228 100%);
+  background: linear-gradient(160deg, #f8e95f 0%, #ffca1d 100%);
   border-radius: 3vw;
   -webkit-clip-path: circle(0% at 50% 50%);
           clip-path: circle(0% at 50% 50%);
@@ -45,7 +45,7 @@
 
 .button:active::before {
   background: #faee84;
-  background: linear-gradient(160deg, #faee84 0%, #f58a4c 100%);
+  background: linear-gradient(160deg, #faee84 0%, #ffd343 100%);
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
@@ -127,7 +127,7 @@ h1 {
 
 .landing .button {
   margin-left: 5vw;
-  margin-top: 12vw;
+  margin-top: 6vh;
 }
 
 .about {
@@ -140,7 +140,7 @@ h1 {
   width: 55vw;
   height: auto;
   margin: 0 auto;
-  padding-top: 6vw;
+  padding-top: 5vw;
   padding-bottom: 8vw;
   border-radius: 50%;
   z-index: 2;
@@ -164,13 +164,13 @@ h1 {
 .about::before {
   content: "";
   background: #f3f3f3;
-  height: 80px;
+  height: 20vw;
   -webkit-transform: skewY(-3deg);
           transform: skewY(-3deg);
   position: absolute;
   left: 0;
   right: 0;
   z-index: 1;
-  bottom: -37.5px;
+  bottom: -9.375vw;
 }
 /*# sourceMappingURL=style.css.map */
