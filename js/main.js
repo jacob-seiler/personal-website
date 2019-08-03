@@ -1,9 +1,15 @@
 const poppableElements = document.querySelectorAll(".poppable");
+const profilePicAmount = 2;
+let profilePicIndex = 0;
 
-function randomizeProfile(e) {
-	// TODO get random profile pic from assets folder
+function nextProfilePic(e) {
+	profilePicIndex += 1;
 
-	e.src = "assets/profile-1.png";
+	if (profilePicIndex >= profilePicAmount) {
+		profilePicIndex = 0;
+	}
+
+	e.src = "assets/profile-" + profilePicIndex + ".png";
 }
 
 function popElement(e) {
