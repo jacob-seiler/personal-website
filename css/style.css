@@ -132,6 +132,12 @@ nav {
   background-color: white;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  nav {
+    height: 7.2vw;
+  }
+}
+
 @media (min-width: 765px) {
   nav {
     height: 80px;
@@ -145,6 +151,13 @@ nav .nav-button {
   margin-right: 5vw;
   width: 9vw;
   margin-top: 2.25vw;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-button {
+    width: 5.4vw;
+    margin-top: 1.35vw;
+  }
 }
 
 @media (min-width: 765px) {
@@ -167,9 +180,23 @@ nav .nav-button div {
   transition: transform 0.4s ease, -webkit-transform 0.4s ease;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-button div {
+    height: 0.9vw;
+    margin-bottom: 0.9vw;
+  }
+}
+
 nav .nav-button.nav-active .line-1 {
   -webkit-transform: translateY(3vw) rotate(-45deg);
           transform: translateY(3vw) rotate(-45deg);
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-button.nav-active .line-1 {
+    -webkit-transform: translateY(1.8vw) rotate(-45deg);
+            transform: translateY(1.8vw) rotate(-45deg);
+  }
 }
 
 nav .nav-button.nav-active .line-2 {
@@ -177,9 +204,23 @@ nav .nav-button.nav-active .line-2 {
           transform: translateX(calc(9vw + 5vw));
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-button.nav-active .line-2 {
+    -webkit-transform: translateX(calc(9vw* 3 / 5 + 5vw));
+            transform: translateX(calc(9vw* 3 / 5 + 5vw));
+  }
+}
+
 nav .nav-button.nav-active .line-3 {
   -webkit-transform: translateY(-3vw) rotate(45deg);
           transform: translateY(-3vw) rotate(45deg);
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-button.nav-active .line-3 {
+    -webkit-transform: translateY(-1.8vw) rotate(45deg);
+            transform: translateY(-1.8vw) rotate(45deg);
+  }
 }
 
 @media (min-width: 1400px) {
@@ -192,6 +233,13 @@ nav .nav-title {
   display: inline-block;
   margin-left: 5vw;
   margin-top: 2.6vw;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-title {
+    margin-left: 8vw;
+    margin-top: 1.04vw;
+  }
 }
 
 @media (min-width: 765px) {
@@ -214,6 +262,12 @@ nav .nav-title a {
   font-size: 5vw;
   font-family: "Noto Sans";
   color: #232323;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-title a {
+    font-size: 4vw;
+  }
 }
 
 @media (min-width: 765px) {
@@ -246,6 +300,12 @@ nav .nav-content {
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-content {
+    top: 7.2vw;
+  }
 }
 
 @media (min-width: 765px) {
@@ -308,6 +368,12 @@ nav .nav-content a {
   font-size: 6vw;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  nav .nav-content a {
+    font-size: 4vw;
+  }
+}
+
 @media (min-width: 765px) {
   nav .nav-content a {
     font-size: 18px;
@@ -330,9 +396,14 @@ nav .nav-content.nav-active {
 }
 
 .landing {
-  background-color: #232323;
-  color: #f3f3f3;
   height: 100vh;
+  color: #f3f3f3;
+  background-color: #232323;
+  background-image: url("../assets/bg-landing.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .landing h1 {
@@ -343,9 +414,54 @@ nav .nav-content.nav-active {
   padding-top: 15vh;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  .landing h1 {
+    width: 41vw;
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+    padding-left: 8vw;
+    padding-top: 25vh;
+  }
+}
+
+@media (min-width: 765px) {
+  .landing h1 {
+    width: 47vh;
+    font-size: 5vh;
+    line-height: 5.3vh;
+    padding-left: 8vw;
+  }
+}
+
 .landing .button {
   margin-left: 5vw;
   margin-top: 6vh;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .landing .button {
+    margin-left: 8vw;
+    font-size: 1.9vw;
+    padding: 1.76vw 7.35vw;
+    border-width: 0.44vw;
+    border-radius: 1.76vw;
+  }
+}
+
+@media (min-width: 765px) {
+  .landing .button {
+    margin-left: 8vw;
+    font-size: 1.9vh;
+    padding: 1.76vh 7.35vh;
+    border-width: 0.44vh;
+    border-radius: 1.76vh;
+  }
+}
+
+@media (min-width: 765px) {
+  .landing .button::before {
+    border-radius: 1.76vh;
+  }
 }
 
 .about {
@@ -388,5 +504,15 @@ nav .nav-content.nav-active {
           transform: translateY(-9vw);
   -webkit-clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (min-width: 765px) {
+  .about::before {
+    height: 16vh;
+    -webkit-transform: translateY(-12vh);
+            transform: translateY(-12vh);
+    -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+  }
 }
 /*# sourceMappingURL=style.css.map */

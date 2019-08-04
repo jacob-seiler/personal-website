@@ -29,6 +29,13 @@ $colors: (
 	@include gradient(get-color(primary), get-color(primary-accent));
 }
 
+// Mobile device in landscape mode
+@mixin view-wide() {
+	@media (min-aspect-ratio: 1/1) {
+		@content;
+	}
+}
+
 @mixin view-tablet() {
 	@media (min-width: 765px) {
 		@content;
@@ -146,6 +153,10 @@ nav {
 	width: 100%;
 	height: $navbar-size;
 
+	@include view-wide() {
+		height: $navbar-size * 3/5;
+	}
+
 	@include view-tablet() {
 		height: $navbar-size-large;
 	}
@@ -155,15 +166,20 @@ nav {
 	.nav-button {
 		display: block;
 
-		@include view-tablet() {
-			display: none;
-		}
-
 		cursor: pointer;
 		float: right;
 		margin-right: 5vw;
 		width: $navbar-button-size;
 		margin-top: $navbar-button-size/4;
+
+		@include view-wide() {
+			width: $navbar-button-size * 3/5;
+			margin-top: $navbar-button-size/4 * 3/5;
+		}
+
+		@include view-tablet() {
+			display: none;
+		}
 
 		div {
 			@include gradient-primary();
@@ -173,19 +189,36 @@ nav {
 
 			transform: translate3d(0, 0, 0);
 			transition: transform 0.4s ease;
+
+			@include view-wide() {
+				height: $navbar-button-size/6 * 3/5;
+				margin-bottom: $navbar-button-size/6 * 3/5;
+			}
 		}
 
 		&.nav-active {
 			.line-1 {
 				transform: translateY($navbar-button-size/3) rotate(-45deg);
+
+				@include view-wide() {
+					transform: translateY($navbar-button-size/3 * 3/5) rotate(-45deg);
+				}
 			}
 
 			.line-2 {
 				transform: translateX(calc(#{$navbar-button-size} + 5vw));
+
+				@include view-wide() {
+					transform: translateX(calc(#{$navbar-button-size}* 3 / 5 + 5vw));
+				}
 			}
 
 			.line-3 {
 				transform: translateY(-$navbar-button-size/3) rotate(45deg);
+
+				@include view-wide() {
+					transform: translateY(-$navbar-button-size/3 * 3/5) rotate(45deg);
+				}
 			}
 		}
 	}
@@ -200,6 +233,11 @@ nav {
 		display: inline-block;
 		margin-left: 5vw;
 		margin-top: ($navbar-size - 6.8vw)/2;
+
+		@include view-wide() {
+			margin-left: 8vw;
+			margin-top: ($navbar-size - 6.8vw)/2 * 2/5;
+		}
 
 		@include view-tablet() {
 			margin-top: 15.5px;
@@ -218,6 +256,10 @@ nav {
 			font-size: 5vw;
 			font-family: "Noto Sans";
 			color: get-color(base-accent);
+
+			@include view-wide() {
+				font-size: 4vw;
+			}
 
 			@include view-tablet() {
 				font-size: 36px;
@@ -243,6 +285,10 @@ nav {
 		transform-origin: top center;
 		transform: rotateX(90deg);
 		transition: transform 0.5s ease-out;
+
+		@include view-wide() {
+			top: $navbar-size * 3/5;
+		}
 
 		@include view-tablet() {
 			text-align: right;
@@ -288,6 +334,10 @@ nav {
 			color: get-color(base-accent);
 			font-size: 6vw;
 
+			@include view-wide() {
+				font-size: 4vw;
+			}
+
 			@include view-tablet() {
 				font-size: 18px;
 				color: get-color(base-accent);
@@ -310,9 +360,15 @@ nav {
 }
 
 .landing {
-	background-color: get-color(base-accent); // TODO use image
-	color: get-color(base);
 	height: 100vh;
+	color: get-color(base);
+
+	background-color: get-color(base-accent);
+	background-image: url("../assets/bg-landing.png");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	h1 {
 		width: 80vw;
@@ -321,11 +377,52 @@ nav {
 		line-height: 9vw;
 		padding-left: 5vw;
 		padding-top: 15vh;
+
+		@include view-wide() {
+			width: 41vw;
+			font-size: 4.5vw;
+
+			line-height: 4.5vw;
+			padding-left: 8vw;
+			padding-top: 25vh;
+		}
+
+		@include view-tablet() {
+			width: 47vh;
+			font-size: 5vh;
+
+			line-height: 5.3vh;
+			padding-left: 8vw;
+		}
 	}
 
 	.button {
 		margin-left: 5vw;
 		margin-top: 6vh;
+
+		@include view-wide() {
+			margin-left: 8vw;
+
+			font-size: 1.9vw;
+			padding: 1.76vw 7.35vw;
+			border-width: 0.44vw;
+			border-radius: 1.76vw;
+		}
+
+		@include view-tablet() {
+			margin-left: 8vw;
+
+			font-size: 1.9vh;
+			padding: 1.76vh 7.35vh;
+			border-width: 0.44vh;
+			border-radius: 1.76vh;
+		}
+	}
+
+	.button::before {
+		@include view-tablet() {
+			border-radius: 1.76vh;
+		}
 	}
 }
 
@@ -371,5 +468,11 @@ nav {
 		height: 12vw;
 		transform: translateY(-9vw);
 		clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+
+		@include view-tablet() {
+			height: 16vh;
+			transform: translateY(-12vh);
+			clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+		}
 	}
 }
