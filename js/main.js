@@ -27,9 +27,17 @@ function popElement(e) {
 	});
 }
 
-function toggleNav() {
-	navButton.classList.toggle("nav-active");
-	navContent.classList.toggle("nav-active");
+function toggleNav(action) {
+	if (action === undefined) {
+		navButton.classList.toggle("nav-active");
+		navContent.classList.toggle("nav-active");
+	} else if (action) {
+		navButton.classList.add("nav-active");
+		navContent.classList.add("nav-active");
+	} else {
+		navButton.classList.remove("nav-active");
+		navContent.classList.remove("nav-active");
+	}
 }
 
 document.addEventListener("scroll", () => {
