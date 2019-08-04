@@ -48,6 +48,12 @@ $colors: (
 	}
 }
 
+@mixin supports-grid() {
+	@supports (display: grid) {
+		@content;
+	}
+}
+
 // Custom elements
 .button {
 	display: inline-block;
@@ -430,10 +436,12 @@ nav {
 	background-color: get-color(base);
 
 	@include view-wide() {
-		// TODO check supported
-		display: grid;
-		grid-template-columns: auto auto;
-		grid-template-areas: "img info";
+		// Check grid supported
+		@include supports-grid() {
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-template-areas: "img info";
+		}
 	}
 
 	img {
@@ -450,27 +458,31 @@ nav {
 		z-index: 2;
 
 		@include view-wide() {
-			// TODO check supported
-			grid-area: img;
+			// Check grid supported
+			@include supports-grid() {
+				grid-area: img;
 
-			width: 30vw;
-			padding: 0;
+				width: 30vw;
+				padding: 0;
 
-			margin: 3vh 2.5vw;
-			margin-bottom: 5vh;
+				margin: 3vh 2.5vw;
+				margin-bottom: 5vh;
+			}
 		}
 
 		@include view-desktop() {
-			// TODO check supported
-			grid-area: img;
+			// Check grid supported
+			@include supports-grid() {
+				grid-area: img;
 
-			width: 20vw;
-			padding: 0;
+				width: 20vw;
+				padding: 0;
 
-			margin-top: 3vh;
-			margin-left: 8vw;
-			margin-right: 0;
-			margin-bottom: 5vh;
+				margin-top: 3vh;
+				margin-left: 8vw;
+				margin-right: 0;
+				margin-bottom: 5vh;
+			}
 		}
 	}
 
@@ -483,15 +495,21 @@ nav {
 			margin-bottom: 3vw;
 
 			@include view-wide() {
-				font-size: 5vw;
-				margin: 0;
-				margin-bottom: 2vh;
+				// Check grid supported
+				@include supports-grid() {
+					font-size: 5vw;
+					margin: 0;
+					margin-bottom: 2vh;
+				}
 			}
 
 			@include view-desktop() {
-				font-size: 4vw;
-				margin: 1vh 0;
-				margin-bottom: 3vh;
+				// Check grid supported
+				@include supports-grid() {
+					font-size: 4vw;
+					margin: 1vh 0;
+					margin-bottom: 3vh;
+				}
 			}
 		}
 
@@ -502,27 +520,38 @@ nav {
 			font-size: 4vw;
 
 			@include view-wide() {
-				font-size: 2vw;
-				padding: 0;
+				// Check grid supported
+				@include supports-grid() {
+					font-size: 2vw;
+					padding: 0;
+				}
 			}
 
 			@include view-desktop() {
-				font-size: 1.5vw;
-				padding: 0;
+				// Check grid supported
+				@include supports-grid() {
+					font-size: 1.5vw;
+					padding: 0;
+				}
 			}
 		}
 
 		@include view-wide() {
-			// TODO check supported
-			grid-area: info;
-			margin: 0 1vw;
-			margin-bottom: auto;
-			margin-top: 4vh;
+			// Check grid supported
+			@include supports-grid() {
+				grid-area: info;
+				margin: 0 1vw;
+				margin-bottom: auto;
+				margin-top: 4vh;
+			}
 		}
 
 		@include view-desktop() {
-			margin-right: 8vw;
-			margin-left: 0;
+			// Check grid supported
+			@include supports-grid() {
+				margin-right: 8vw;
+				margin-left: 0;
+			}
 		}
 	}
 

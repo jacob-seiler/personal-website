@@ -469,12 +469,14 @@ nav .nav-content.nav-active {
 }
 
 @media (min-aspect-ratio: 1 / 1) {
-  .about {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-        grid-template-areas: "img info";
+  @supports (display: grid) {
+    .about {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: auto auto;
+          grid-template-columns: auto auto;
+          grid-template-areas: "img info";
+    }
   }
 }
 
@@ -490,24 +492,28 @@ nav .nav-content.nav-active {
 }
 
 @media (min-aspect-ratio: 1 / 1) {
-  .about img {
-    grid-area: img;
-    width: 30vw;
-    padding: 0;
-    margin: 3vh 2.5vw;
-    margin-bottom: 5vh;
+  @supports (display: grid) {
+    .about img {
+      grid-area: img;
+      width: 30vw;
+      padding: 0;
+      margin: 3vh 2.5vw;
+      margin-bottom: 5vh;
+    }
   }
 }
 
 @media (min-width: 1400px) {
-  .about img {
-    grid-area: img;
-    width: 20vw;
-    padding: 0;
-    margin-top: 3vh;
-    margin-left: 8vw;
-    margin-right: 0;
-    margin-bottom: 5vh;
+  @supports (display: grid) {
+    .about img {
+      grid-area: img;
+      width: 20vw;
+      padding: 0;
+      margin-top: 3vh;
+      margin-left: 8vw;
+      margin-right: 0;
+      margin-bottom: 5vh;
+    }
   }
 }
 
@@ -520,18 +526,22 @@ nav .nav-content.nav-active {
 }
 
 @media (min-aspect-ratio: 1 / 1) {
-  .about .about-info h2 {
-    font-size: 5vw;
-    margin: 0;
-    margin-bottom: 2vh;
+  @supports (display: grid) {
+    .about .about-info h2 {
+      font-size: 5vw;
+      margin: 0;
+      margin-bottom: 2vh;
+    }
   }
 }
 
 @media (min-width: 1400px) {
-  .about .about-info h2 {
-    font-size: 4vw;
-    margin: 1vh 0;
-    margin-bottom: 3vh;
+  @supports (display: grid) {
+    .about .about-info h2 {
+      font-size: 4vw;
+      margin: 1vh 0;
+      margin-bottom: 3vh;
+    }
   }
 }
 
@@ -543,32 +553,40 @@ nav .nav-content.nav-active {
 }
 
 @media (min-aspect-ratio: 1 / 1) {
-  .about .about-info p {
-    font-size: 2vw;
-    padding: 0;
+  @supports (display: grid) {
+    .about .about-info p {
+      font-size: 2vw;
+      padding: 0;
+    }
   }
 }
 
 @media (min-width: 1400px) {
-  .about .about-info p {
-    font-size: 1.5vw;
-    padding: 0;
+  @supports (display: grid) {
+    .about .about-info p {
+      font-size: 1.5vw;
+      padding: 0;
+    }
   }
 }
 
 @media (min-aspect-ratio: 1 / 1) {
-  .about .about-info {
-    grid-area: info;
-    margin: 0 1vw;
-    margin-bottom: auto;
-    margin-top: 4vh;
+  @supports (display: grid) {
+    .about .about-info {
+      grid-area: info;
+      margin: 0 1vw;
+      margin-bottom: auto;
+      margin-top: 4vh;
+    }
   }
 }
 
 @media (min-width: 1400px) {
-  .about .about-info {
-    margin-right: 8vw;
-    margin-left: 0;
+  @supports (display: grid) {
+    .about .about-info {
+      margin-right: 8vw;
+      margin-left: 0;
+    }
   }
 }
 
