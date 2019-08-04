@@ -429,6 +429,13 @@ nav {
 .about {
 	background-color: get-color(base);
 
+	@include view-wide() {
+		// TODO check supported
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-areas: "img info";
+	}
+
 	img {
 		display: block;
 		position: relative;
@@ -441,6 +448,30 @@ nav {
 
 		border-radius: 50%;
 		z-index: 2;
+
+		@include view-wide() {
+			// TODO check supported
+			grid-area: img;
+
+			width: 30vw;
+			padding: 0;
+
+			margin: 3vh 2.5vw;
+			margin-bottom: 5vh;
+		}
+
+		@include view-desktop() {
+			// TODO check supported
+			grid-area: img;
+
+			width: 20vw;
+			padding: 0;
+
+			margin-top: 3vh;
+			margin-left: 8vw;
+			margin-right: 0;
+			margin-bottom: 5vh;
+		}
 	}
 
 	.about-info {
@@ -450,6 +481,18 @@ nav {
 			text-align: center;
 			font-size: 8vw;
 			margin-bottom: 3vw;
+
+			@include view-wide() {
+				font-size: 5vw;
+				margin: 0;
+				margin-bottom: 2vh;
+			}
+
+			@include view-desktop() {
+				font-size: 4vw;
+				margin: 1vh 0;
+				margin-bottom: 3vh;
+			}
 		}
 
 		p {
@@ -457,6 +500,29 @@ nav {
 			margin: 0 3.5vw;
 			padding-bottom: 8vw;
 			font-size: 4vw;
+
+			@include view-wide() {
+				font-size: 2vw;
+				padding: 0;
+			}
+
+			@include view-desktop() {
+				font-size: 1.5vw;
+				padding: 0;
+			}
+		}
+
+		@include view-wide() {
+			// TODO check supported
+			grid-area: info;
+			margin: 0 1vw;
+			margin-bottom: auto;
+			margin-top: 4vh;
+		}
+
+		@include view-desktop() {
+			margin-right: 8vw;
+			margin-left: 0;
 		}
 	}
 
@@ -469,7 +535,7 @@ nav {
 		transform: translateY(-9vw);
 		clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
 
-		@include view-tablet() {
+		@include view-wide() {
 			height: 16vh;
 			transform: translateY(-12vh);
 			clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);

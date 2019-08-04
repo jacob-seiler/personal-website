@@ -468,6 +468,16 @@ nav .nav-content.nav-active {
   background-color: #f3f3f3;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  .about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+        grid-template-areas: "img info";
+  }
+}
+
 .about img {
   display: block;
   position: relative;
@@ -479,6 +489,28 @@ nav .nav-content.nav-active {
   z-index: 2;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  .about img {
+    grid-area: img;
+    width: 30vw;
+    padding: 0;
+    margin: 3vh 2.5vw;
+    margin-bottom: 5vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about img {
+    grid-area: img;
+    width: 20vw;
+    padding: 0;
+    margin-top: 3vh;
+    margin-left: 8vw;
+    margin-right: 0;
+    margin-bottom: 5vh;
+  }
+}
+
 .about .about-info h2 {
   font-weight: normal;
   text-decoration: underline;
@@ -487,11 +519,57 @@ nav .nav-content.nav-active {
   margin-bottom: 3vw;
 }
 
+@media (min-aspect-ratio: 1 / 1) {
+  .about .about-info h2 {
+    font-size: 5vw;
+    margin: 0;
+    margin-bottom: 2vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about .about-info h2 {
+    font-size: 4vw;
+    margin: 1vh 0;
+    margin-bottom: 3vh;
+  }
+}
+
 .about .about-info p {
   text-align: center;
   margin: 0 3.5vw;
   padding-bottom: 8vw;
   font-size: 4vw;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .about .about-info p {
+    font-size: 2vw;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about .about-info p {
+    font-size: 1.5vw;
+    padding: 0;
+  }
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .about .about-info {
+    grid-area: info;
+    margin: 0 1vw;
+    margin-bottom: auto;
+    margin-top: 4vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about .about-info {
+    margin-right: 8vw;
+    margin-left: 0;
+  }
 }
 
 .about::before {
@@ -506,7 +584,7 @@ nav .nav-content.nav-active {
           clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
 }
 
-@media (min-width: 765px) {
+@media (min-aspect-ratio: 1 / 1) {
   .about::before {
     height: 16vh;
     -webkit-transform: translateY(-12vh);
