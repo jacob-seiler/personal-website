@@ -1,9 +1,10 @@
+const scrollStops = document.querySelectorAll(".scrollstop");
+const poppableElements = document.querySelectorAll(".poppable");
+
 const navButton = document.querySelector(".nav-button");
 const navContent = document.querySelector(".nav-content");
 
-const scrollStops = document.querySelectorAll(".scrollstop");
-
-const poppableElements = document.querySelectorAll(".poppable");
+const landingTitle = document.querySelector(".landing-title");
 
 const profilePicAmount = 3;
 let profilePicIndex = 0;
@@ -40,6 +41,32 @@ function toggleNav(action) {
 	}
 }
 
+function animateText(element, message) {
+	let totalTime = 0;
+
+	for (let i = 0; i <= message.length; i++) {
+		let delay = Math.random() * (300 - 100) + 100;
+		let delayComma = Math.random() * (400 - 300) + 300;
+		let delayEnd = Math.random() * (1000 - 400) + 400;
+
+		if (i > 1 && message.substring(i - 2, i - 1) === ",") {
+			delay = delayComma;
+		}
+
+		totalTime += delay;
+
+		setTimeout(() => {
+			element.textContent = message.substr(0, i) + "|";
+
+			if (i === message.length) {
+				setTimeout(() => {
+					element.textContent = message;
+				}, delayEnd);
+			}
+		}, totalTime);
+	}
+}
+
 document.addEventListener("scroll", () => {
 	let largestIndex = 0;
 
@@ -69,4 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			popElement(e.target);
 		});
 	}
+
+	//animateText(landingTitle, "Software Designer, Web Developer, University Student, & Human Boy.");
+	animateText(document.querySelector(".nav-title-content"), "Jacob Seiler");
 });

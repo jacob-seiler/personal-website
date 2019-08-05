@@ -131,6 +131,10 @@ $colors: (
 	position: relative;
 	transform: translateY(-$navbar-size);
 
+	@include view-wide() {
+		transform: translateY(-$navbar-size * 3/5);
+	}
+
 	@include view-tablet() {
 		transform: translateY(-$navbar-size-large);
 	}
@@ -168,6 +172,7 @@ nav {
 	}
 
 	background-color: white;
+	box-shadow: 0px 25px 80px -20px rgba(0, 0, 0, 0.5);
 
 	.nav-button {
 		display: block;
@@ -394,7 +399,7 @@ nav {
 		}
 
 		@include view-tablet() {
-			width: 47vh;
+			width: 48vh;
 			font-size: 5vh;
 
 			line-height: 5.3vh;
@@ -462,26 +467,15 @@ nav {
 			@include supports-grid() {
 				grid-area: img;
 
-				width: 30vw;
-				padding: 0;
-
-				margin: 3vh 2.5vw;
-				margin-bottom: 5vh;
-			}
-		}
-
-		@include view-desktop() {
-			// Check grid supported
-			@include supports-grid() {
-				grid-area: img;
-
 				width: 20vw;
 				padding: 0;
 
-				margin-top: 3vh;
 				margin-left: 8vw;
 				margin-right: 0;
-				margin-bottom: 5vh;
+				margin-bottom: 6vh;
+				margin-top: 3vh;
+
+				align-self: center;
 			}
 		}
 	}
@@ -495,15 +489,6 @@ nav {
 			margin-bottom: 3vw;
 
 			@include view-wide() {
-				// Check grid supported
-				@include supports-grid() {
-					font-size: 5vw;
-					margin: 0;
-					margin-bottom: 2vh;
-				}
-			}
-
-			@include view-desktop() {
 				// Check grid supported
 				@include supports-grid() {
 					font-size: 4vw;
@@ -522,15 +507,7 @@ nav {
 			@include view-wide() {
 				// Check grid supported
 				@include supports-grid() {
-					font-size: 2vw;
-					padding: 0;
-				}
-			}
-
-			@include view-desktop() {
-				// Check grid supported
-				@include supports-grid() {
-					font-size: 1.5vw;
+					font-size: 1.75vw;
 					padding: 0;
 				}
 			}
@@ -540,17 +517,12 @@ nav {
 			// Check grid supported
 			@include supports-grid() {
 				grid-area: info;
-				margin: 0 1vw;
-				margin-bottom: auto;
-				margin-top: 4vh;
-			}
-		}
 
-		@include view-desktop() {
-			// Check grid supported
-			@include supports-grid() {
-				margin-right: 8vw;
-				margin-left: 0;
+				margin-top: 4vh;
+				margin-bottom: 4vh;
+				margin-right: 4vw;
+				align-self: top;
+				transform: translateY(-2vh);
 			}
 		}
 	}
