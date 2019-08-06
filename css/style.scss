@@ -574,9 +574,11 @@ nav {
 
 		@include view-tablet() {
 			@include supports-grid() {
-				font-size: 4.5vw;
+				text-align: left;
+				margin-left: 5.5vw;
+				font-size: 4vw;
 				padding-top: 3vw;
-				padding-bottom: 1.5vw;
+				padding-bottom: 2vw;
 			}
 		}
 	}

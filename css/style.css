@@ -636,9 +636,11 @@ nav .nav-content.nav-active {
 @media (min-width: 765px) {
   @supports (display: grid) {
     .skills h1 {
-      font-size: 4.5vw;
+      text-align: left;
+      margin-left: 5.5vw;
+      font-size: 4vw;
       padding-top: 3vw;
-      padding-bottom: 1.5vw;
+      padding-bottom: 2vw;
     }
   }
 }
