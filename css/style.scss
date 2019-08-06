@@ -104,6 +104,21 @@ $colors: (
 	transform: scale(0.95);
 }
 
+.spin-x:hover {
+	transform: rotateX(360deg);
+	transition: transform 0.75s ease-in-out;
+}
+
+.spin-y:hover {
+	transform: rotateY(360deg);
+	transition: transform 0.75s ease-in-out;
+}
+
+.spin-z:hover {
+	transform: rotateZ(360deg);
+	transition: transform 0.75s ease-in-out;
+}
+
 .pop {
 	animation: popAnimation 0.3s 1 0s ease-out;
 }
@@ -153,7 +168,7 @@ html {
 }
 
 h1 {
-	font-family: "Noto Sans", sans-serif;
+	font-family: "Noto Sans", "Montserrat", sans-serif;
 }
 
 nav {
@@ -279,6 +294,7 @@ nav {
 
 		a:hover {
 			@include gradient-primary();
+			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}
@@ -440,7 +456,7 @@ nav {
 .about {
 	background-color: get-color(base);
 
-	@include view-wide() {
+	@include view-tablet() {
 		// Check grid supported
 		@include supports-grid() {
 			display: grid;
@@ -462,7 +478,7 @@ nav {
 		border-radius: 50%;
 		z-index: 2;
 
-		@include view-wide() {
+		@include view-tablet() {
 			// Check grid supported
 			@include supports-grid() {
 				grid-area: img;
@@ -488,7 +504,7 @@ nav {
 			font-size: 8vw;
 			margin-bottom: 3vw;
 
-			@include view-wide() {
+			@include view-tablet() {
 				// Check grid supported
 				@include supports-grid() {
 					font-size: 4vw;
@@ -504,7 +520,7 @@ nav {
 			padding-bottom: 8vw;
 			font-size: 4vw;
 
-			@include view-wide() {
+			@include view-tablet() {
 				// Check grid supported
 				@include supports-grid() {
 					font-size: 1.75vw;
@@ -513,7 +529,7 @@ nav {
 			}
 		}
 
-		@include view-wide() {
+		@include view-tablet() {
 			// Check grid supported
 			@include supports-grid() {
 				grid-area: info;
@@ -541,5 +557,105 @@ nav {
 			transform: translateY(-12vh);
 			clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
 		}
+	}
+}
+
+.skills {
+	@include gradient-primary();
+	color: get-color(base-accent);
+
+	h1 {
+		text-align: center;
+		font-size: 8vw;
+		padding-top: 4vw;
+
+		@include view-tablet() {
+			@include supports-grid() {
+				font-size: 4.5vw;
+				padding-top: 3vw;
+				padding-bottom: 1.5vw;
+			}
+		}
+	}
+
+	.skills-content {
+		padding: 4vw;
+		padding-top: 2vw;
+
+		@include view-tablet() {
+			@include supports-grid() {
+				padding: 2vw 0;
+
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		}
+
+		.skill-section {
+			@include view-tablet() {
+				@include supports-grid() {
+					justify-self: center;
+				}
+			}
+		}
+	}
+
+	h2 {
+		font-size: 6vw;
+		text-decoration: underline;
+
+		@include view-tablet() {
+			@include supports-grid() {
+				font-size: 2.5vw;
+			}
+		}
+
+		i {
+			margin-left: 1vw;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding-bottom: 3vw;
+
+		li {
+			font-size: 4.25vw;
+
+			@include view-tablet() {
+				@include supports-grid() {
+					font-size: 1.5vw;
+				}
+			}
+
+			a {
+				color: get-color(base-accent);
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.skill-detail {
+		display: none;
+
+		p {
+			display: inline-block;
+			font-style: italic;
+			font-size: 4vw;
+
+			@include view-tablet() {
+				@include supports-grid() {
+					font-size: 1.25vw;
+				}
+			}
+		}
+	}
+
+	.skill-detail-active {
+		display: inline-block;
 	}
 }

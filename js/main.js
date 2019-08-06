@@ -1,5 +1,6 @@
 const scrollStops = document.querySelectorAll(".scrollstop");
 const poppableElements = document.querySelectorAll(".poppable");
+const dates = document.querySelectorAll(".date");
 
 const navButton = document.querySelector(".nav-button");
 const navContent = document.querySelector(".nav-content");
@@ -67,6 +68,25 @@ function animateText(element, message) {
 	}
 }
 
+function formateDate(element) {
+	const currentDate = new Date();
+
+	const dateMonth = parseInt(element.textContent.split("/")[0]);
+	const dateYear = parseInt(element.textContent.split("/")[1]);
+
+	let difference = (currentDate.getFullYear() - dateYear) * 12;
+	difference -= dateMonth - 1;
+	difference += currentDate.getMonth();
+	difference = difference <= 0 ? 0 : difference;
+
+	if (difference >= 12) {
+		element.textContent =
+			Math.floor(difference / 12) + " year" + (Math.floor(difference / 12) === 1 ? "" : "s");
+	} else {
+		element.textContent = difference + " month" + (difference === 1 ? "" : "s");
+	}
+}
+
 document.addEventListener("scroll", () => {
 	let largestIndex = 0;
 
@@ -97,6 +117,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	//animateText(landingTitle, "Software Designer, Web Developer, University Student, & Human Boy.");
+	for (let i = 0; i < dates.length; i++) {
+		formateDate(dates[i]);
+	}
+
+	const skillIcons = document.querySelectorAll(".skill-detail");
+	let skillItems = [];
+
+	for (let i = 0; i < skillIcons.length; i++) {
+		skillItems[i] = skillIcons[i].parentElement;
+	}
+
+	for (let i = 0; i < skillItems.length; i++) {
+		skillItems[i].addEventListener("mouseover", () => {
+			skillItems[i].children[1].classList.add("skill-detail-active");
+		});
+
+		skillItems[i].addEventListener("mouseout", () => {
+			skillItems[i].children[1].classList.remove("skill-detail-active");
+		});
+	}
+
 	animateText(document.querySelector(".nav-title-content"), "Jacob Seiler");
 });

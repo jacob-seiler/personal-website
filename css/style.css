@@ -50,6 +50,33 @@
           transform: scale(0.95);
 }
 
+.spin-x:hover {
+  -webkit-transform: rotateX(360deg);
+          transform: rotateX(360deg);
+  -webkit-transition: -webkit-transform 0.75s ease-in-out;
+  transition: -webkit-transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out, -webkit-transform 0.75s ease-in-out;
+}
+
+.spin-y:hover {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+  -webkit-transition: -webkit-transform 0.75s ease-in-out;
+  transition: -webkit-transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out, -webkit-transform 0.75s ease-in-out;
+}
+
+.spin-z:hover {
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+  -webkit-transition: -webkit-transform 0.75s ease-in-out;
+  transition: -webkit-transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out;
+  transition: transform 0.75s ease-in-out, -webkit-transform 0.75s ease-in-out;
+}
+
 .pop {
   -webkit-animation: popAnimation 0.3s 1 0s ease-out;
           animation: popAnimation 0.3s 1 0s ease-out;
@@ -128,7 +155,7 @@ html {
 }
 
 h1 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", "Montserrat", sans-serif;
 }
 
 nav {
@@ -288,6 +315,7 @@ nav .nav-title a {
 nav .nav-title a:hover {
   background: #f8e95f;
   background: linear-gradient(160deg, #f8e95f 0%, #ffca1d 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -477,7 +505,7 @@ nav .nav-content.nav-active {
   background-color: #f3f3f3;
 }
 
-@media (min-aspect-ratio: 1 / 1) {
+@media (min-width: 765px) {
   @supports (display: grid) {
     .about {
       display: -ms-grid;
@@ -500,7 +528,7 @@ nav .nav-content.nav-active {
   z-index: 2;
 }
 
-@media (min-aspect-ratio: 1 / 1) {
+@media (min-width: 765px) {
   @supports (display: grid) {
     .about img {
       grid-area: img;
@@ -525,7 +553,7 @@ nav .nav-content.nav-active {
   margin-bottom: 3vw;
 }
 
-@media (min-aspect-ratio: 1 / 1) {
+@media (min-width: 765px) {
   @supports (display: grid) {
     .about .about-info h2 {
       font-size: 4vw;
@@ -542,7 +570,7 @@ nav .nav-content.nav-active {
   font-size: 4vw;
 }
 
-@media (min-aspect-ratio: 1 / 1) {
+@media (min-width: 765px) {
   @supports (display: grid) {
     .about .about-info p {
       font-size: 1.75vw;
@@ -551,7 +579,7 @@ nav .nav-content.nav-active {
   }
 }
 
-@media (min-aspect-ratio: 1 / 1) {
+@media (min-width: 765px) {
   @supports (display: grid) {
     .about .about-info {
       grid-area: info;
@@ -587,5 +615,118 @@ nav .nav-content.nav-active {
     -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
   }
+}
+
+.skills {
+  background: #f8e95f;
+  background: linear-gradient(160deg, #f8e95f 0%, #ffca1d 100%);
+  color: #232323;
+}
+
+.skills h1 {
+  text-align: center;
+  font-size: 8vw;
+  padding-top: 4vw;
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills h1 {
+      font-size: 4.5vw;
+      padding-top: 3vw;
+      padding-bottom: 1.5vw;
+    }
+  }
+}
+
+.skills .skills-content {
+  padding: 4vw;
+  padding-top: 2vw;
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills .skills-content {
+      padding: 2vw 0;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills .skills-content .skill-section {
+      -ms-grid-column-align: center;
+          justify-self: center;
+    }
+  }
+}
+
+.skills h2 {
+  font-size: 6vw;
+  text-decoration: underline;
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills h2 {
+      font-size: 2.5vw;
+    }
+  }
+}
+
+.skills h2 i {
+  margin-left: 1vw;
+}
+
+.skills ul {
+  list-style: none;
+  padding-bottom: 3vw;
+}
+
+.skills ul li {
+  font-size: 4.25vw;
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills ul li {
+      font-size: 1.5vw;
+    }
+  }
+}
+
+.skills ul li a {
+  color: #232323;
+  text-decoration: none;
+}
+
+.skills ul li a:hover {
+  text-decoration: underline;
+}
+
+.skills .skill-detail {
+  display: none;
+}
+
+.skills .skill-detail p {
+  display: inline-block;
+  font-style: italic;
+  font-size: 4vw;
+}
+
+@media (min-width: 765px) {
+  @supports (display: grid) {
+    .skills .skill-detail p {
+      font-size: 1.25vw;
+    }
+  }
+}
+
+.skills .skill-detail-active {
+  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */
