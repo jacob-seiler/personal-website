@@ -627,10 +627,9 @@ nav .nav-content.nav-active {
 
 .skills h1 {
   text-align: center;
-  font-size: 8vw;
+  font-size: 7vw;
   padding-top: 4vw;
-  padding-bottom: 4vw;
-  text-decoration: underline;
+  padding-bottom: 3vw;
 }
 
 @media (min-width: 765px) {
@@ -654,6 +653,7 @@ nav .nav-content.nav-active {
   @supports (display: grid) {
     .skills .skills-content {
       padding: 2vw 0;
+      padding-top: 0;
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: 1fr 1fr 1fr;
@@ -750,5 +750,10 @@ nav .nav-content.nav-active {
 
 .skills .skill-detail-active {
   display: inline-block;
+}
+
+.contact {
+  background-color: #232323;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
