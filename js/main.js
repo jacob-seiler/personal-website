@@ -91,7 +91,7 @@ document.addEventListener("scroll", () => {
 	let largestIndex = 0;
 
 	for (let i = 0; i < scrollStops.length; i++) {
-		if (scrollStops[i].getBoundingClientRect().top - 1 <= 0) {
+		if (scrollStops[i].getBoundingClientRect().top - 50 <= 0) {
 			if (i > largestIndex) {
 				largestIndex = i;
 			}
