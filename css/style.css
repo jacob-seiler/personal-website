@@ -681,6 +681,7 @@ nav .nav-content.nav-active {
 
 .skills h2 {
   font-size: 6vw;
+  margin-bottom: 0.5vw;
 }
 
 @media (min-width: 765px) {
@@ -758,6 +759,24 @@ nav .nav-content.nav-active {
 
 .skills .skill-detail-active {
   display: inline-block;
+}
+
+.skills .experience {
+  display: block;
+  overflow: hidden;
+}
+
+.skills .experience .experience-item {
+  position: relative;
+  background-color: white;
+  border-radius: 50px;
+  top: 0;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.projects {
+  background-color: red;
 }
 
 .contact {

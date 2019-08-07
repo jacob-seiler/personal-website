@@ -617,6 +617,7 @@ nav {
 
 	h2 {
 		font-size: 6vw;
+		margin-bottom: 0.5vw;
 
 		@include view-tablet() {
 			@include supports-grid() {
@@ -685,6 +686,25 @@ nav {
 	.skill-detail-active {
 		display: inline-block;
 	}
+
+	.experience {
+		display: block;
+		overflow: hidden;
+
+		.experience-item {
+			position: relative;
+
+			background-color: white;
+			border-radius: 50px;
+			top: 0;
+
+			transform: translateX(30px);
+		}
+	}
+}
+
+.projects {
+	background-color: red;
 }
 
 .contact {
