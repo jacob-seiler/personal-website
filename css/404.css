@@ -170,11 +170,25 @@ body {
 }
 
 h3 {
-  margin-bottom: 20px;
+  margin-bottom: 6vh;
+  font-size: 3vw;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  h3 {
+    font-size: 3vh;
+  }
 }
 
 .poem {
-  margin-bottom: 200px;
-  margin-top: 100px;
+  margin-bottom: 25vh;
+  margin-top: 15vh;
+  font-size: 2.5vw;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .poem {
+    font-size: 2.5vh;
+  }
 }
 /*# sourceMappingURL=404.css.map */
