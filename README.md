@@ -20,7 +20,7 @@ _Note: Code in this repository may not be the current code running on the actual
 -   [x] About section image change on click
 -   [ ] About section update images
 -   [ ] About section update photos (get higher quality pics)
--   [ ] Skills & Experience design adjustments
+-   [x] Skills & Experience design adjustments
 -   [ ] Skills & Experience cards slider
 -   [ ] Skills & Experience card detail (on click)
 -   [ ] Projects section
@@ -35,4 +35,5 @@ _Note: Code in this repository may not be the current code running on the actual
 -   [ ] Ensure mobild browser compatability
 -   [ ] Ensure website runs smoothly
 -   [ ] Service Workers (offline cache)
--   [ ] Update 404 page design
+-   [x] Update 404 page design
+-   [ ] Add header to 404 page

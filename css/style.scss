@@ -400,18 +400,47 @@ nav {
 	box-shadow: inset 0px 0px 50px -10px rgba(0, 0, 0, 0.4);
 
 	h1 {
+		font-family: "Montserrat";
+		font-weight: normal;
 		text-align: center;
-		font-size: 7vw;
-		padding-top: 4vw;
-		padding-bottom: 3vw;
+		font-size: 7.5vw;
+		text-decoration: underline;
+		padding-top: 6vw;
 
 		@include view-tablet() {
 			@include supports-grid() {
 				text-align: left;
 				margin-left: 5.5vw;
 				font-size: 4vw;
-				padding-top: 3vw;
-				padding-bottom: 2vw;
+				padding-top: 4vw;
+			}
+		}
+	}
+
+	.skills-subtitle {
+		padding-top: 0;
+		text-decoration: none;
+
+		&::before {
+			color: lighten(get-color(base-accent), 10%);
+			display: block;
+
+			text-align: center;
+			padding-bottom: 4vw;
+
+			font-style: italic;
+			font-size: 5vw;
+
+			content: "Tap next to a skill for more details";
+
+			@include view-tablet {
+				content: "Hover over a skill for more details";
+
+				@include supports-grid() {
+					text-align: left;
+					font-size: 2.5vw;
+					padding-bottom: 4vw;
+				}
 			}
 		}
 	}

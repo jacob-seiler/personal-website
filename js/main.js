@@ -1,3 +1,5 @@
+// TODO scroll without ID (to prevent annoying browser history)
+
 const scrollStops = document.querySelectorAll(".scrollstop");
 const poppableElements = document.querySelectorAll(".poppable");
 const dates = document.querySelectorAll(".date");
@@ -79,7 +81,9 @@ function formateDate(element) {
 	difference += currentDate.getMonth();
 	difference = difference <= 0 ? 0 : difference;
 
-	if (difference >= 12) {
+	if (difference < 1) {
+		element.textContent = "<1 month";
+	} else if (difference >= 12) {
 		element.textContent =
 			Math.floor(difference / 12) + " year" + (Math.floor(difference / 12) === 1 ? "" : "s");
 	} else {
