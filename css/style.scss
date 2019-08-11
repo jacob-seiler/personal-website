@@ -86,22 +86,23 @@ nav {
 	}
 
 	.nav-title {
-		display: inline-block;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		height: $navbar-size;
 		margin-left: 5vw;
-		margin-top: ($navbar-size - 6.8vw)/2;
 
 		@include view-wide() {
 			margin-left: 8vw;
-			margin-top: ($navbar-size - 6.8vw)/2 * 2/5;
+			height: $navbar-size * 3/5;
 		}
 
 		@include view-tablet() {
-			margin-top: 15.5px;
+			height: $navbar-size-large;
 		}
 
 		@include view-desktop() {
 			margin-left: 0;
-			margin-top: 12px;
 		}
 
 		a {
@@ -109,7 +110,7 @@ nav {
 			text-align: left;
 
 			font-weight: bold;
-			font-size: 5vw;
+			font-size: 4.5vw;
 			font-family: "Noto Sans";
 			color: get-color(base-accent);
 
