@@ -287,7 +287,6 @@ nav {
 .about {
 	@include gradient-primary();
 
-	// TODO slant at top
 	padding-top: 12vw;
 	margin-top: -12vw;
 	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
