@@ -652,8 +652,8 @@ nav .nav-content.nav-active {
     .skills h1 {
       text-align: left;
       margin-left: 5.5vw;
-      font-size: 4vw;
-      padding-top: 4vw;
+      font-size: 3vw;
+      padding-top: 3vw;
     }
   }
 }
@@ -680,8 +680,8 @@ nav .nav-content.nav-active {
   @supports (display: grid) {
     .skills .skills-subtitle::before {
       text-align: left;
-      font-size: 2.5vw;
-      padding-bottom: 4vw;
+      font-size: 2.25vw;
+      padding-bottom: 2.25vw;
     }
   }
 }
@@ -716,6 +716,7 @@ nav .nav-content.nav-active {
 .skills h2 {
   font-size: 6vw;
   margin-bottom: 0.5vw;
+  font-weight: normal;
 }
 
 @media (min-width: 765px) {
