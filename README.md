@@ -8,25 +8,51 @@ This is all the code and assets for my website.
 
 _Note: Code in this repository may not be the current code running on the actual website._
 
-## Task List
+# Task List
 
--   [x] Navbar design
--   [x] Navbar mobile menu
--   [x] Navbar auto-highlight
--   [x] Landing design
--   [x] Landing content design
--   [ ] Landing project feature (showcase recent project)
--   [x] About section design
--   [x] About section image change on click
--   [ ] About section update images
--   [ ] About section update photos (get higher quality pics)
--   [x] Skills & Experience design adjustments
--   [ ] Skills & Experience cards slider
--   [ ] Skills & Experience card detail (on click)
--   [ ] Projects section
--   [ ] Contact section
+## Navbar
+
+-   [x] Design
+-   [x] Mobile layout
+-   [x] Scroll auto-highlight
+-   [ ] Adjust spacing
+-   [ ] Replace "Contact" with social media icons
+
+## Landing
+
+-   [x] Design
+-   [x] Content design
+-   [ ] Project feature (showcase recent project)
+-   [ ] Ensure proper scale for mobile devices
+
+## About
+
+-   [x] Design
+-   [x] Change image on click
+-   [ ] Update photos (get higher quality pictures)
+
+## Experience & Skills
+
+-   [ ] Put Experience before skills
+-   [ ] Reduce redundency in skills (be more concise)
+-   [ ] Redesign sections
+
+## Projects
+
+-   [ ] Do everything
+
+## Footer
+
+-   [ ] Short blurb
+-   [ ] Links to socials
+
+## Theme
+
 -   [ ] Finalize design colours
 -   [ ] Finalize overall design
+
+## Compatability
+
 -   [ ] Ensure proper mobile view
 -   [ ] Ensure proper mobile landscape view
 -   [ ] Ensure proper tablet view
