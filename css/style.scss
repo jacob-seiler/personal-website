@@ -1,575 +1,207 @@
-@import "main";
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans:400,700&display=swap");
 
-// Page elements
-nav {
-	position: fixed;
-	z-index: 999;
+$nav-height: 50px;
+$layout-margin: 10px;
+$border-radius: 15px;
+$gradient-angle: 160deg;
 
+$colors: (
+	primary: #068fff,
+	primary-accent: #5cdeff,
+	base: #f3f3f3
+);
+
+@function get-color($color) {
+	@return map-get($colors, $color);
+}
+
+@mixin gradient($color-1, $color-2) {
+	background: $color-1;
+	background: linear-gradient($gradient-angle, $color-1 0%, $color-2 100%);
+}
+
+@mixin gradient-primary() {
+	@include gradient(get-color(primary), get-color(primary-accent));
+}
+
+.button {
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	color: get-color(base);
+
+	border: 0.75vw solid get-color(primary);
+	border-radius: $border-radius;
+
+	font-size: 3.25vw;
+
+	padding: 3vw 12.5vw;
+	position: relative;
+	z-index: 1;
+
+	transition: border-color 0.375s ease-out, color 0.375s ease-out;
+}
+
+.button:hover {
+	border-color: rgba(0, 0, 0, 0);
+	color: get-color(base-accent);
+}
+
+.button::before {
+	content: "";
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
 	width: 100%;
-	height: $navbar-size;
+	height: 100%;
 
-	@include view-wide() {
-		height: $navbar-size * 3/5;
-	}
+	@include gradient-primary();
+	border-radius: $border-radius;
 
-	@include view-tablet() {
-		height: $navbar-size-large;
-	}
+	clip-path: circle(0% at 50% 50%);
+	transition: clip-path 0.4s ease-out;
+	z-index: -1;
+}
 
-	background-color: white;
-	box-shadow: 0px 25px 80px -20px rgba(0, 0, 0, 0.5);
+.button:hover::before {
+	clip-path: circle(100% at center center);
+}
 
-	.nav-button {
-		display: block;
+.button:active::before {
+	@include gradient(lighten(get-color(primary), 7.5%), lighten(get-color(primary-accent), 7.5%));
+	transform: scale(0.95);
+}
 
-		cursor: pointer;
-		float: right;
-		margin-right: 5vw;
-		width: $navbar-button-size;
-		margin-top: $navbar-button-size/4;
+* {
+	padding: 0;
+	margin: 0;
+}
 
-		@include view-wide() {
-			width: $navbar-button-size * 3/5;
-			margin-top: $navbar-button-size/4 * 3/5;
-		}
+h1 {
+	font-family: "Noto Sans", sans-serif;
+}
 
-		@include view-tablet() {
-			display: none;
-		}
+body {
+	background-color: yellow;
+	font-family: "Montserrat", sans-serif;
+}
 
-		div {
-			@include gradient-primary();
-			width: 100%;
-			height: $navbar-button-size/6;
-			margin-bottom: $navbar-button-size/6;
-
-			transform: translate3d(0, 0, 0);
-			transition: transform 0.4s ease;
-
-			@include view-wide() {
-				height: $navbar-button-size/6 * 3/5;
-				margin-bottom: $navbar-button-size/6 * 3/5;
-			}
-		}
-
-		&.nav-active {
-			.line-1 {
-				transform: translateY($navbar-button-size/3) rotate(-45deg);
-
-				@include view-wide() {
-					transform: translateY($navbar-button-size/3 * 3/5) rotate(-45deg);
-				}
-			}
-
-			.line-2 {
-				transform: translateX(calc(#{$navbar-button-size} + 5vw));
-
-				@include view-wide() {
-					transform: translateX(calc(#{$navbar-button-size}* 3 / 5 + 5vw));
-				}
-			}
-
-			.line-3 {
-				transform: translateY(-$navbar-button-size/3) rotate(45deg);
-
-				@include view-wide() {
-					transform: translateY(-$navbar-button-size/3 * 3/5) rotate(45deg);
-				}
-			}
-		}
-	}
-
-	.nav-main {
-		@include view-desktop() {
-			margin: 0 calc(calc(100vw - #{$navbar-size-width}) / 2);
-		}
-	}
+nav {
+	z-index: 10;
+	background-color: get-color(base);
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: $nav-height;
 
 	.nav-title {
 		display: flex;
+		height: 100%;
 		align-items: center;
-		justify-items: center;
-		height: $navbar-size;
-		margin-left: 5vw;
+		margin-left: $layout-margin;
+	}
 
-		@include view-wide() {
-			margin-left: 8vw;
-			height: $navbar-size * 3/5;
-		}
+	.nav-button {
+		cursor: pointer;
+		margin-right: $layout-margin;
+		align-self: center;
+		position: absolute;
+		right: $layout-margin;
 
-		@include view-tablet() {
-			height: $navbar-size-large;
-		}
-
-		@include view-desktop() {
-			margin-left: 0;
-		}
-
-		a {
-			text-decoration: none;
-			text-align: left;
-
-			font-weight: bold;
-			font-size: 4.5vw;
-			font-family: "Noto Sans";
-			color: get-color(base-accent);
-
-			@include view-wide() {
-				font-size: 4vw;
-			}
-
-			@include view-tablet() {
-				font-size: 36px;
-			}
-		}
-
-		a:hover {
+		.line {
 			@include gradient-primary();
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			width: 36px;
+			height: 6px;
+			margin-bottom: 6px;
+			transition: transform 0.3s ease;
+		}
+
+		.line-3 {
+			margin-bottom: 0;
+		}
+
+		&.nav-active {
+			.line {
+				transition: transform 0.3s ease;
+			}
+
+			.line-1 {
+				transform: translateY(12px) rotate(-45deg);
+			}
+
+			.line-2 {
+				transform: translateX(60px);
+			}
+
+			.line-3 {
+				transform: translateY(-12px) rotate(45deg);
+			}
 		}
 	}
 
 	.nav-content {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		text-align: center;
 		position: absolute;
 		@include gradient-primary();
+		color: get-color(base);
+		top: $nav-height - 0.5px;
+		width: 100%;
+		padding-top: 10px;
+		height: auto;
 		border-radius: 0 0 $border-radius $border-radius;
-		width: 100vw;
-		text-align: center;
-		top: $navbar-size;
-		list-style: none;
 
-		transform-origin: top center;
+		transform-origin: 50% 0%;
 		transform: rotateX(90deg);
-		transition: transform 0.5s ease-out;
 
-		@include view-wide() {
-			top: $navbar-size * 3/5;
-		}
+		transition: all 0.3s ease;
 
-		@include view-tablet() {
-			text-align: right;
-			transition: none;
-			transform: none;
-			background: none;
-			border-radius: 0;
-
-			width: 60vw;
-			padding-right: 5vw;
-			top: 0;
-			bottom: 0;
-			right: 0;
-
-			display: inline-flex;
-			align-content: flex-end;
-			justify-content: flex-end;
-		}
-
-		@include view-desktop() {
-			right: calc(calc(calc(100vw - #{$navbar-size-width}) / 2) - 25px);
-			padding-right: 0;
-			width: auto;
-		}
-
-		li {
-			margin: 2vw 0;
-
-			@include view-tablet() {
-				align-self: center;
-				margin-left: 3vw;
-			}
-
-			@include view-desktop() {
-				margin: 0;
-				margin-left: 25px;
-				margin-right: 25px;
-			}
+		&.nav-active {
+			transition: all 0.3s ease;
+			transform: rotateX(0deg);
 		}
 
 		a {
-			text-decoration: none;
-			color: get-color(base-accent);
-			font-size: 6vw;
-
-			@include view-wide() {
-				font-size: 4vw;
-			}
-
-			@include view-tablet() {
-				font-size: 18px;
-				color: get-color(base-accent);
-			}
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		a.nav-active {
-			font-weight: bold;
-			text-decoration: underline;
-		}
-
-		&.nav-active {
-			transform: rotateX(0deg);
+			font-size: 30px;
+			margin-bottom: 12px;
 		}
 	}
+}
+
+main {
+	z-index: 5;
+	background-color: red;
+	padding-top: $nav-height;
 }
 
 .landing {
-	height: 100vh;
 	color: get-color(base);
+	background-color: #343434;
+	height: 60vh;
 
-	background-color: get-color(base-accent);
-	background-image: url("../assets/bg-landing.png");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	h1 {
-		width: 80vw;
-		font-size: 8.5vw;
-
-		line-height: 9vw;
-		padding-left: 5vw;
-		padding-top: 15vh;
-
-		@include view-wide() {
-			width: 41vw;
-			font-size: 4.5vw;
-
-			line-height: 4.5vw;
-			padding-left: 8vw;
-			padding-top: 25vh;
-		}
-
-		@include view-tablet() {
-			width: 48vh;
-			font-size: 5vh;
-
-			line-height: 5.3vh;
-			padding-left: 8vw;
-		}
-	}
-
-	.button {
-		margin-left: 5vw;
-		margin-top: 6vh;
-
-		@include view-wide() {
-			margin-left: 8vw;
-
-			font-size: 1.9vw;
-			padding: 1.76vw 7.35vw;
-			border-width: 0.44vw;
-			border-radius: 1.76vw;
-		}
-
-		@include view-tablet() {
-			margin-left: 8vw;
-
-			font-size: 1.9vh;
-			padding: 1.76vh 7.35vh;
-			border-width: 0.44vh;
-			border-radius: 1.76vh;
-		}
-	}
-
-	.button::before {
-		@include view-tablet() {
-			border-radius: 1.76vh;
-		}
-	}
-}
-
-.about {
-	@include gradient-primary();
-
-	padding-top: 12vw;
-	margin-top: -12vw;
-	clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
-
-	@include view-wide() {
-		padding-top: 8vh;
-		margin-top: -12vh;
-		clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
-	}
-
-	@include view-tablet() {
-		padding-top: 7.5vw;
-		margin-top: -6vw;
-		clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
-
-		// Check grid supported
-		@include supports-grid() {
-			display: grid;
-			grid-template-columns: auto auto;
-			grid-template-areas: "img info";
-		}
-	}
-
-	img {
-		display: block;
-		position: relative;
-
-		width: 55vw;
-		height: auto;
-
-		margin: 0 auto;
-		padding: 8vw 0;
-
-		border-radius: 50%;
-		z-index: 2;
-
-		@include view-tablet() {
-			// Check grid supported
-			@include supports-grid() {
-				grid-area: img;
-
-				width: 20vw;
-				padding: 0;
-
-				margin-left: 8vw;
-				margin-right: 0;
-				margin-bottom: 6vh;
-				margin-top: 3vh;
-
-				align-self: center;
-			}
-		}
-	}
-
-	.about-info {
-		h2 {
-			font-weight: normal;
-			text-decoration: underline;
-			text-align: center;
-			font-size: 8vw;
-			margin-bottom: 3vw;
-
-			a {
-				text-decoration: none;
-				color: inherit;
-			}
-
-			@include view-tablet() {
-				// Check grid supported
-				@include supports-grid() {
-					font-size: 4vw;
-					margin: 1vh 0;
-					margin-bottom: 3vh;
-				}
-			}
-		}
-
-		p {
-			text-align: center;
-			margin: 0 3.5vw;
-			padding-bottom: 8vw;
-			font-size: 4vw;
-
-			@include view-tablet() {
-				// Check grid supported
-				@include supports-grid() {
-					font-size: 1.75vw;
-					padding: 0;
-				}
-			}
-		}
-
-		@include view-tablet() {
-			// Check grid supported
-			@include supports-grid() {
-				grid-area: info;
-
-				margin-top: 4vh;
-				margin-bottom: 4vh;
-				margin-right: 4vw;
-				align-self: top;
-				transform: translateY(-2vh);
-			}
-		}
-	}
-}
-
-.skills {
-	background-color: get-color(base);
-	color: get-color(base-accent);
-	box-shadow: inset 0px 0px 50px -10px rgba(0, 0, 0, 0.4);
-
-	h1 {
-		font-family: "Montserrat";
-		font-weight: normal;
+	.landing-content {
 		text-align: center;
-		font-size: 7.5vw;
-		text-decoration: underline;
-		padding-top: 6vw;
+		margin: 0 $layout-margin;
 
-		@include view-tablet() {
-			@include supports-grid() {
-				text-align: left;
-				margin-left: 5.5vw;
-				font-size: 3vw;
-				padding-top: 3vw;
-			}
+		h1 {
+			padding-top: 10vh;
+			font-size: 28px;
 		}
-	}
-
-	.skills-subtitle {
-		padding-top: 0;
-		text-decoration: none;
-
-		&::before {
-			color: lighten(get-color(base-accent), 10%);
-			display: block;
-
-			text-align: center;
-			padding-bottom: 4vw;
-
-			font-style: italic;
-			font-size: 5vw;
-
-			content: "Tap next to a skill for more details";
-
-			@include view-tablet {
-				content: "Hover over a skill for more details";
-
-				@include supports-grid() {
-					text-align: left;
-					font-size: 2.25vw;
-					padding-bottom: 2.25vw;
-				}
-			}
-		}
-	}
-
-	.skills-content {
-		padding: 4vw;
-		padding-top: 2vw;
-
-		@include view-tablet() {
-			@include supports-grid() {
-				padding: 2vw 0;
-				padding-top: 0;
-
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-			}
-		}
-
-		.skill-section {
-			@include view-tablet() {
-				@include supports-grid() {
-					justify-self: center;
-				}
-			}
-		}
-	}
-
-	h2 {
-		font-size: 6vw;
-		margin-bottom: 0.5vw;
-		font-weight: normal;
-
-		@include view-tablet() {
-			@include supports-grid() {
-				font-size: 2.5vw;
-			}
-		}
-
-		i {
-			margin-left: 2.5vw;
-
-			@include view-tablet() {
-				@include supports-grid() {
-					margin-left: 1vw;
-				}
-			}
-		}
-	}
-
-	ul {
-		list-style: none;
-		padding-bottom: 6vw;
-
-		@include view-tablet() {
-			@include supports-grid() {
-				padding-bottom: 2vw;
-			}
-		}
-
-		li {
-			font-size: 4.25vw;
-			width: 100%;
-
-			@include view-tablet() {
-				@include supports-grid() {
-					font-size: 1.5vw;
-				}
-			}
-
-			a {
-				color: get-color(base-accent);
-				text-decoration: none;
-			}
-
-			a:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-
-	.skill-detail {
-		display: none;
 
 		p {
-			display: inline-block;
-			font-style: italic;
-			font-size: 4vw;
-
-			@include view-tablet() {
-				@include supports-grid() {
-					font-size: 1.25vw;
-				}
-			}
+			padding-top: 0.5vh;
+			font-size: 14px;
 		}
-	}
 
-	.skill-detail-active {
-		display: inline-block;
-	}
-
-	.experience {
-		display: block;
-		overflow: hidden;
-
-		.experience-item {
-			position: relative;
-
-			background-color: white;
-			border-radius: 50px;
-			top: 0;
-
-			transform: translateX(30px);
+		.button {
+			margin-top: 3vh;
 		}
 	}
 }
 
 .projects {
-	background-color: red;
-}
-
-.contact {
-	background-color: get-color(base-accent);
-	color: white;
-
-	h1 {
-		text-align: center;
-	}
-
-	p {
-		text-align: center;
-	}
+	height: calc(40vh - #{$nav-height});
 }
