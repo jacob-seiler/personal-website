@@ -187,17 +187,19 @@ main {
 		margin: 0 $layout-margin;
 
 		h1 {
-			padding-top: 10vh;
-			font-size: 28px;
+			padding-top: 8vh;
+			font-size: 30px;
+			margin: 0 $layout-margin;
 		}
 
 		p {
-			padding-top: 0.5vh;
-			font-size: 14px;
+			padding-top: 1vh;
+			font-size: 16px;
+			margin: 0 $layout-margin + 10px;
 		}
 
 		.button {
-			margin-top: 3vh;
+			margin-top: 6vh;
 		}
 	}
 }
