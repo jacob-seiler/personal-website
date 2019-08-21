@@ -5,6 +5,7 @@ Production URL: https://jacobseiler.com
 Development URL: https://jacob-seiler.github.io/personal-website/
 
 This is all the code and assets for my website.
+Most recent design is in the new-design branch.
 
 _Note: Code in this repository may not be the current code running on the actual website._
 
