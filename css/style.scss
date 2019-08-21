@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans&display=swap");
 
+$nav-height: 50px;
+$layout-margin: 10px;
+
+$colors: (
+	"primary": #209bff,
+	"base": #f3f3f3
+);
+
+@function get-color($color) {
+	@return map-get($colors, $color);
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -8,4 +20,74 @@
 
 h1 {
 	font-family: "Noto Sans", sans-serif;
+}
+
+body {
+	background-color: yellow;
+}
+
+nav {
+	background-color: get-color(base);
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: $nav-height;
+
+	.nav-title {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		margin-left: $layout-margin;
+	}
+
+	.nav-button {
+		cursor: pointer;
+		margin-right: $layout-margin;
+		align-self: center;
+		position: absolute;
+		right: $layout-margin;
+
+		.line {
+			background-color: get-color(primary);
+			width: 36px;
+			height: 6px;
+			margin-bottom: 6px;
+			transition: transform 0.3s;
+		}
+
+		.line-3 {
+			margin-bottom: 0;
+		}
+	}
+
+	.nav-content {
+		display: none;
+	}
+
+	.nav-active {
+		.line {
+			transition: transform 0.3s;
+		}
+
+		.line-1 {
+			transform: translateY(12px) rotate(-45deg);
+		}
+
+		.line-2 {
+			transform: translateX(60px);
+		}
+
+		.line-3 {
+			transform: translateY(-12px) rotate(45deg);
+		}
+	}
+}
+
+main {
+	background-color: red;
+	padding-top: $nav-height;
+}
+
+.landing {
+	color: white;
 }
