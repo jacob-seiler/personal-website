@@ -82,17 +82,17 @@ nav .nav-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 10px;
+  margin-left: 2vw;
 }
 
 nav .nav-button {
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 2vw;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   position: absolute;
-  right: 10px;
+  right: 2vw;
 }
 
 nav .nav-button .line {
@@ -182,31 +182,32 @@ main {
 .landing {
   color: #f3f3f3;
   background-color: #343434;
-  height: 60vh;
+  height: 130vw;
 }
 
 .landing .landing-content {
   text-align: center;
-  margin: 0 10px;
+  margin: 0 2vw;
 }
 
 .landing .landing-content h1 {
-  padding-top: 8vh;
-  font-size: 30px;
-  margin: 0 10px;
+  padding-top: 17vw;
+  font-size: 8vw;
+  margin: 0 2vw;
 }
 
 .landing .landing-content p {
-  padding-top: 1vh;
-  font-size: 16px;
-  margin: 0 20px;
+  padding-top: 2.5vw;
+  font-size: 3.75vw;
+  margin: 0 calc($layout-margin + 10px);
 }
 
 .landing .landing-content .button {
-  margin-top: 6vh;
+  margin-top: 13vw;
 }
 
 .projects {
   height: calc(40vh - 50px);
+  background-color: #f3f3f3;
 }
 /*# sourceMappingURL=style.css.map */

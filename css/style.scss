@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans:400,700&display=swap");
 
 $nav-height: 50px;
-$layout-margin: 10px;
+$layout-margin: 2vw;
 $border-radius: 15px;
 $gradient-angle: 160deg;
 
@@ -180,30 +180,31 @@ main {
 .landing {
 	color: get-color(base);
 	background-color: #343434;
-	height: 60vh;
+	height: 130vw;
 
 	.landing-content {
 		text-align: center;
 		margin: 0 $layout-margin;
 
 		h1 {
-			padding-top: 8vh;
-			font-size: 30px;
+			padding-top: 17vw;
+			font-size: 8vw;
 			margin: 0 $layout-margin;
 		}
 
 		p {
-			padding-top: 1vh;
-			font-size: 16px;
-			margin: 0 $layout-margin + 10px;
+			padding-top: 2.5vw;
+			font-size: 3.75vw;
+			margin: 0 calc($layout-margin + 10px);
 		}
 
 		.button {
-			margin-top: 6vh;
+			margin-top: 13vw;
 		}
 	}
 }
 
 .projects {
 	height: calc(40vh - #{$nav-height});
+	background-color: get-color(base);
 }
