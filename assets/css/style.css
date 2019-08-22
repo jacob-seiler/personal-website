@@ -30,23 +30,23 @@
   border-radius: 15px;
   -webkit-clip-path: circle(0% at 50% 50%);
           clip-path: circle(0% at 50% 50%);
-  -webkit-transition: -webkit-clip-path 0.4s ease-out;
-  transition: -webkit-clip-path 0.4s ease-out;
-  transition: clip-path 0.4s ease-out;
-  transition: clip-path 0.4s ease-out, -webkit-clip-path 0.4s ease-out;
+  -webkit-transition: -webkit-clip-path 0.5s ease-out;
+  transition: -webkit-clip-path 0.5s ease-out;
+  transition: clip-path 0.5s ease-out;
+  transition: clip-path 0.5s ease-out, -webkit-clip-path 0.5s ease-out;
   z-index: -1;
 }
 
 .button:hover::before {
   -webkit-clip-path: circle(100% at center center);
           clip-path: circle(100% at center center);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .button:active::before {
-  background: #2ca0ff;
-  background: linear-gradient(160deg, #2ca0ff 0%, #82e6ff 100%);
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  background: #39a6ff;
+  background: linear-gradient(160deg, #39a6ff 0%, #8fe8ff 100%);
 }
 
 * {
@@ -186,7 +186,7 @@ main {
 }
 
 .landing .landing-content {
-  text-align: center;
+  text-align: left;
   margin: 0 2vw;
 }
 
@@ -197,13 +197,15 @@ main {
 }
 
 .landing .landing-content p {
-  padding-top: 2.5vw;
-  font-size: 3.75vw;
-  margin: 0 calc($layout-margin + 10px);
+  padding-top: 1vw;
+  font-size: 3.5vw;
+  margin: 0 2vw;
+  margin-right: 30vw;
 }
 
 .landing .landing-content .button {
   margin-top: 13vw;
+  margin-left: 2.75vw;
 }
 
 .projects {

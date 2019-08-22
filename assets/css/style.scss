@@ -60,17 +60,17 @@ $colors: (
 	border-radius: $border-radius;
 
 	clip-path: circle(0% at 50% 50%);
-	transition: clip-path 0.4s ease-out;
+	transition: clip-path 0.5s ease-out;
 	z-index: -1;
 }
 
 .button:hover::before {
 	clip-path: circle(100% at center center);
+	transform: scale(1.05);
 }
 
 .button:active::before {
-	@include gradient(lighten(get-color(primary), 7.5%), lighten(get-color(primary-accent), 7.5%));
-	transform: scale(0.95);
+	@include gradient(lighten(get-color(primary), 10%), lighten(get-color(primary-accent), 10%));
 }
 
 * {
@@ -183,7 +183,7 @@ main {
 	height: 130vw;
 
 	.landing-content {
-		text-align: center;
+		text-align: left;
 		margin: 0 $layout-margin;
 
 		h1 {
@@ -193,13 +193,15 @@ main {
 		}
 
 		p {
-			padding-top: 2.5vw;
-			font-size: 3.75vw;
-			margin: 0 calc($layout-margin + 10px);
+			padding-top: 1vw;
+			font-size: 3.5vw;
+			margin: 0 $layout-margin;
+			margin-right: $layout-margin * 15;
 		}
 
 		.button {
 			margin-top: 13vw;
+			margin-left: $layout-margin + 0.75vw;
 		}
 	}
 }
