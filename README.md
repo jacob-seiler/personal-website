@@ -16,10 +16,12 @@ _Note: Code in this repository may not be the current code running on the actual
 -   [ ] Make links go to location on page
 -   [ ] Close navbar when clicked outside or on link
 -   [ ] Replace "Jacob Seiler" with svg
+-   [ ] Add tablet view
 -   [ ] Add desktop view
 
 ## Landing
 
--   [ ] Add background-image
+-   [x] Add background-image
 -   [ ] Make button link to location on page
+-   [x] Add tablet view
 -   [ ] Add desktop view
