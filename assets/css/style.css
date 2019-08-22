@@ -5,13 +5,20 @@
   font-weight: bold;
   color: #f3f3f3;
   border: 0.75vw solid #068fff;
-  border-radius: 15px;
+  border-radius: 2vw;
   font-size: 3.25vw;
   padding: 3vw 12.5vw;
   position: relative;
   z-index: 1;
   -webkit-transition: border-color 0.375s ease-out, color 0.375s ease-out;
   transition: border-color 0.375s ease-out, color 0.375s ease-out;
+}
+
+@media (min-aspect-ratio: 5 / 8) {
+  .button {
+    font-size: 2vh;
+    padding: 1.8vh 7.5vh;
+  }
 }
 
 .button:hover {
@@ -27,7 +34,7 @@
   height: 100%;
   background: #068fff;
   background: linear-gradient(160deg, #068fff 0%, #5cdeff 100%);
-  border-radius: 15px;
+  border-radius: 2vw;
   -webkit-clip-path: circle(0% at 50% 50%);
           clip-path: circle(0% at 50% 50%);
   -webkit-transition: -webkit-clip-path 0.5s ease-out;
@@ -82,7 +89,7 @@ nav .nav-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 2vw;
+  margin-left: 4vw;
 }
 
 nav .nav-button {
@@ -152,7 +159,7 @@ nav .nav-content {
   width: 100%;
   padding-top: 10px;
   height: auto;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 2vw 2vw;
   -webkit-transform-origin: 50% 0%;
           transform-origin: 50% 0%;
   -webkit-transform: rotateX(90deg);
@@ -182,34 +189,83 @@ main {
 .landing {
   color: #f3f3f3;
   background-color: #343434;
+  background-image: url("../images/bg-landing.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-attachment: scroll;
+  background-size: cover;
   height: 130vw;
 }
 
+@media (min-aspect-ratio: 5 / 8) {
+  .landing {
+    height: 70vh;
+  }
+}
+
+.landing::after {
+  z-index: 0;
+  content: "";
+  opacity: 0.66;
+  background-color: #000000;
+  position: absolute;
+  top: 50px;
+  height: inherit;
+  width: 100%;
+}
+
 .landing .landing-content {
+  position: relative;
+  z-index: 2;
   text-align: left;
   margin: 0 2vw;
 }
 
 .landing .landing-content h1 {
-  padding-top: 17vw;
+  padding-top: 20vw;
   font-size: 8vw;
   margin: 0 2vw;
 }
 
+@media (min-aspect-ratio: 5 / 8) {
+  .landing .landing-content h1 {
+    padding-top: 12vh;
+    font-size: 6vh;
+  }
+}
+
 .landing .landing-content p {
-  padding-top: 1vw;
+  padding-top: 2vw;
   font-size: 3.5vw;
   margin: 0 2vw;
   margin-right: 30vw;
 }
 
+@media (min-aspect-ratio: 5 / 8) {
+  .landing .landing-content p {
+    padding-top: 1vh;
+    font-size: 2vh;
+  }
+}
+
 .landing .landing-content .button {
-  margin-top: 13vw;
+  margin-top: 15vw;
   margin-left: 2.75vw;
 }
 
 .projects {
   height: calc(40vh - 50px);
   background-color: #f3f3f3;
+}
+
+.projects h1 {
+  font-size: 7vw;
+  margin-left: 2vw;
+}
+
+@media (min-aspect-ratio: 5 / 8) {
+  .projects h1 {
+    font-size: 5vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */

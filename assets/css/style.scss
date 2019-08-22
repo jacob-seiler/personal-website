@@ -2,7 +2,7 @@
 
 $nav-height: 50px;
 $layout-margin: 2vw;
-$border-radius: 15px;
+$border-radius: 2vw; // 15px
 $gradient-angle: 160deg;
 
 $colors: (
@@ -24,6 +24,12 @@ $colors: (
 	@include gradient(get-color(primary), get-color(primary-accent));
 }
 
+@mixin view-tablet() {
+	@media (min-aspect-ratio: 5/8) {
+		@content;
+	}
+}
+
 .button {
 	display: inline-block;
 	text-decoration: none;
@@ -38,6 +44,11 @@ $colors: (
 	padding: 3vw 12.5vw;
 	position: relative;
 	z-index: 1;
+
+	@include view-tablet() {
+		font-size: 2vh;
+		padding: 1.8vh 7.5vh;
+	}
 
 	transition: border-color 0.375s ease-out, color 0.375s ease-out;
 }
@@ -99,7 +110,7 @@ nav {
 		display: flex;
 		height: 100%;
 		align-items: center;
-		margin-left: $layout-margin;
+		margin-left: $layout-margin * 2;
 	}
 
 	.nav-button {
@@ -180,27 +191,62 @@ main {
 .landing {
 	color: get-color(base);
 	background-color: #343434;
+	background-image: url("../images/bg-landing.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-attachment: scroll;
+	background-size: cover;
+
 	height: 130vw;
 
+	@include view-tablet() {
+		height: 70vh;
+	}
+
+	&::after {
+		z-index: 0;
+		content: "";
+		opacity: 0.66;
+		background-color: #000000;
+
+		position: absolute;
+		top: $nav-height;
+		height: inherit;
+		width: 100%;
+	}
+
 	.landing-content {
+		position: relative;
+		z-index: 2;
+
 		text-align: left;
 		margin: 0 $layout-margin;
 
 		h1 {
-			padding-top: 17vw;
+			padding-top: 20vw;
 			font-size: 8vw;
 			margin: 0 $layout-margin;
+
+			@include view-tablet() {
+				padding-top: 12vh;
+				font-size: 6vh;
+			}
 		}
 
 		p {
-			padding-top: 1vw;
+			padding-top: 2vw;
 			font-size: 3.5vw;
 			margin: 0 $layout-margin;
 			margin-right: $layout-margin * 15;
+
+			@include view-tablet() {
+				padding-top: 1vh;
+				font-size: 2vh;
+			}
 		}
 
 		.button {
-			margin-top: 13vw;
+			margin-top: 15vw;
 			margin-left: $layout-margin + 0.75vw;
 		}
 	}
@@ -209,4 +255,13 @@ main {
 .projects {
 	height: calc(40vh - #{$nav-height});
 	background-color: get-color(base);
+
+	h1 {
+		font-size: 7vw;
+		margin-left: $layout-margin;
+
+		@include view-tablet() {
+			font-size: 5vh;
+		}
+	}
 }
