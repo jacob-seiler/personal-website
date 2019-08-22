@@ -2,7 +2,6 @@
 
 $nav-height: 50px;
 $layout-margin: 2vw;
-$border-radius: 2vw; // 15px
 $gradient-angle: 160deg;
 
 $colors: (
@@ -30,6 +29,14 @@ $colors: (
 	}
 }
 
+@mixin auto-border-radius {
+	border-radius: 2vw;
+
+	@include view-tablet() {
+		border-radius: 2vh;
+	}
+}
+
 .button {
 	display: inline-block;
 	text-decoration: none;
@@ -37,7 +44,7 @@ $colors: (
 	color: get-color(base);
 
 	border: 0.75vw solid get-color(primary);
-	border-radius: $border-radius;
+	@include auto-border-radius();
 
 	font-size: 3.25vw;
 
@@ -46,6 +53,7 @@ $colors: (
 	z-index: 1;
 
 	@include view-tablet() {
+		border-width: 0.5vh;
 		font-size: 2vh;
 		padding: 1.8vh 7.5vh;
 	}
@@ -68,7 +76,7 @@ $colors: (
 	height: 100%;
 
 	@include gradient-primary();
-	border-radius: $border-radius;
+	@include auto-border-radius();
 
 	clip-path: circle(0% at 50% 50%);
 	transition: clip-path 0.5s ease-out;
@@ -163,7 +171,10 @@ nav {
 		width: 100%;
 		padding-top: 10px;
 		height: auto;
-		border-radius: 0 0 $border-radius $border-radius;
+
+		@include auto-border-radius();
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 
 		transform-origin: 50% 0%;
 		transform: rotateX(90deg);

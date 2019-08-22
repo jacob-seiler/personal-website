@@ -16,6 +16,13 @@
 
 @media (min-aspect-ratio: 5 / 8) {
   .button {
+    border-radius: 2vh;
+  }
+}
+
+@media (min-aspect-ratio: 5 / 8) {
+  .button {
+    border-width: 0.5vh;
     font-size: 2vh;
     padding: 1.8vh 7.5vh;
   }
@@ -42,6 +49,12 @@
   transition: clip-path 0.5s ease-out;
   transition: clip-path 0.5s ease-out, -webkit-clip-path 0.5s ease-out;
   z-index: -1;
+}
+
+@media (min-aspect-ratio: 5 / 8) {
+  .button::before {
+    border-radius: 2vh;
+  }
 }
 
 .button:hover::before {
@@ -159,13 +172,21 @@ nav .nav-content {
   width: 100%;
   padding-top: 10px;
   height: auto;
-  border-radius: 0 0 2vw 2vw;
+  border-radius: 2vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   -webkit-transform-origin: 50% 0%;
           transform-origin: 50% 0%;
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media (min-aspect-ratio: 5 / 8) {
+  nav .nav-content {
+    border-radius: 2vh;
+  }
 }
 
 nav .nav-content.nav-active {
