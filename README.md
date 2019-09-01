@@ -8,7 +8,7 @@ This is all the code and assets for my website.
 
 _Note: Code in this repository may not be the current code running on the actual website._
 
-_Working on new design, will update soon <3_
+_Working on new design, will update soon <3_ (I PROMISE!!)
 
 # Task List
 
