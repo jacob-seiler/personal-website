@@ -1,0 +1,54 @@
+{
+	"work": [
+		{
+			"img": "TODO path",
+			"title": "Automation Developer",
+			"org": "Royal Bank of Canada",
+			"date": "MAY 2019 - AUGUST 2019",
+			"loc": "Toronto, Ontario",
+			"desc": "Designed..."
+		},
+		{
+			"img": "TODO path",
+			"title": "Financial Analyst",
+			"org": "Royal Bank of Canada",
+			"date": "JULY 2018 - AUGUST 2018",
+			"loc": "Toronto, Ontario",
+			"desc": "Designed..."
+		},
+		{
+			"img": "TODO path",
+			"title": "Research Assistant",
+			"org": "University Health Network",
+			"date": "JULY 2017 - AUGUST 2017",
+			"loc": "Toronto, Ontario",
+			"desc": "Designed..."
+		}
+	],
+	"other": [
+		{
+			"img": "TODO path",
+			"title": "Data Science Intern",
+			"org": "BetaLab",
+			"date": "MARCH 2018 - PRESENT",
+			"loc": "Kingston, Ontario",
+			"desc": "Designed..."
+		},
+		{
+			"img": "TODO path",
+			"title": "Education Coordinator",
+			"org": "QMIND",
+			"date": "SEPTEMBER 2018 - PRESENT",
+			"loc": "Kingston, Ontario",
+			"desc": "Designed..."
+		},
+		{
+			"img": "TODO path",
+			"title": "Design Member",
+			"org": "QMIND",
+			"date": "SEPTEMBER 2018 - APRIL 2019",
+			"loc": "Kingston, Ontario",
+			"desc": "Designed..."
+		}
+	]
+}
