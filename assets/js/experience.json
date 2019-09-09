@@ -1,7 +1,7 @@
 {
 	"work": [
 		{
-			"img": "TODO path",
+			"img": "../images/logo-rbc.png",
 			"title": "Automation Developer",
 			"org": "Royal Bank of Canada",
 			"date": "MAY 2019 - AUGUST 2019",
@@ -9,7 +9,7 @@
 			"desc": "Designed..."
 		},
 		{
-			"img": "TODO path",
+			"img": "../images/logo-rbc.png",
 			"title": "Financial Analyst",
 			"org": "Royal Bank of Canada",
 			"date": "JULY 2018 - AUGUST 2018",
@@ -17,7 +17,7 @@
 			"desc": "Designed..."
 		},
 		{
-			"img": "TODO path",
+			"img": "../images/logo-uhn.png",
 			"title": "Research Assistant",
 			"org": "University Health Network",
 			"date": "JULY 2017 - AUGUST 2017",
@@ -27,7 +27,7 @@
 	],
 	"other": [
 		{
-			"img": "TODO path",
+			"img": "../images/logo-betalab.png",
 			"title": "Data Science Intern",
 			"org": "BetaLab",
 			"date": "MARCH 2018 - PRESENT",
@@ -35,7 +35,7 @@
 			"desc": "Designed..."
 		},
 		{
-			"img": "TODO path",
+			"img": "../images/logo-qmind.png",
 			"title": "Education Coordinator",
 			"org": "QMIND",
 			"date": "SEPTEMBER 2018 - PRESENT",
@@ -43,7 +43,7 @@
 			"desc": "Designed..."
 		},
 		{
-			"img": "TODO path",
+			"img": "../images/logo-qmind.png",
 			"title": "Design Member",
 			"org": "QMIND",
 			"date": "SEPTEMBER 2018 - APRIL 2019",
