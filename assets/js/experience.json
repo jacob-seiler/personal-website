@@ -6,7 +6,7 @@
 			"org": "Royal Bank of Canada",
 			"date": "MAY 2019 - AUGUST 2019",
 			"loc": "Toronto, Ontario",
-			"desc": "Designed..."
+			"desc": "Designed software solutions using Python, VBA, and RPA for various teams to automate tasks. Researched different approaches based on teams' needs and available resources. Implemented 8 projects saving a total of 15.5 hours of manual work per month."
 		},
 		{
 			"img": "../images/logo-rbc.png",
@@ -14,7 +14,7 @@
 			"org": "Royal Bank of Canada",
 			"date": "JULY 2018 - AUGUST 2018",
 			"loc": "Toronto, Ontario",
-			"desc": "Designed..."
+			"desc": "Developed software tools using Python, VBA, and Dataverse to analyze financial documents. Performed data collection and task monitoring to better understand the flow of information. Implemented systems to automate 5 processes, saving a total of 8 hours per month."
 		},
 		{
 			"img": "../images/logo-uhn.png",
@@ -22,7 +22,7 @@
 			"org": "University Health Network",
 			"date": "JULY 2017 - AUGUST 2017",
 			"loc": "Toronto, Ontario",
-			"desc": "Designed..."
+			"desc": "Assisted with research for medical papers on Scleroderma and Sjogren's syndrome. Performed data collection of patients, medical documents, and lab results. Analyzed and consolidated infromation using software tools."
 		}
 	],
 	"other": [
@@ -32,7 +32,7 @@
 			"org": "BetaLab",
 			"date": "MARCH 2018 - PRESENT",
 			"loc": "Kingston, Ontario",
-			"desc": "Designed..."
+			"desc": "Developed Artificial Intelligence solutions for various businesses in the Kingston community. Conducted research to find the best approach based on client needs and available resources."
 		},
 		{
 			"img": "../images/logo-qmind.png",
@@ -40,7 +40,7 @@
 			"org": "QMIND",
 			"date": "SEPTEMBER 2018 - PRESENT",
 			"loc": "Kingston, Ontario",
-			"desc": "Designed..."
+			"desc": "Designed educational material about Artificial Intelligence to engage others. Researched various topics and engaged with the QMIND community to better understand impact. Collaborated with team to develop a course about Artificial Intelligence to be offered by Queen's University."
 		},
 		{
 			"img": "../images/logo-qmind.png",
@@ -48,7 +48,7 @@
 			"org": "QMIND",
 			"date": "SEPTEMBER 2018 - APRIL 2019",
 			"loc": "Kingston, Ontario",
-			"desc": "Designed..."
+			"desc": "Built an Artificial Intelligence for classifying cancer in CT scans of lungs. Studied medical imaging data and developed a convolutional neural network. The model classifies results with 83% accuracy."
 		}
 	]
 }
