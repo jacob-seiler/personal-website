@@ -251,7 +251,7 @@ main {
 @media (min-aspect-ratio: 5 / 8) {
   .landing .landing-content h1 {
     padding-top: 12vh;
-    font-size: 6vh;
+    font-size: 9vh;
   }
 }
 
@@ -266,6 +266,7 @@ main {
   .landing .landing-content p {
     padding-top: 1vh;
     font-size: 2vh;
+    margin-right: 20vh;
   }
 }
 

@@ -240,7 +240,7 @@ main {
 
 			@include view-tablet() {
 				padding-top: 12vh;
-				font-size: 6vh;
+				font-size: 9vh;
 			}
 		}
 
@@ -253,6 +253,7 @@ main {
 			@include view-tablet() {
 				padding-top: 1vh;
 				font-size: 2vh;
+				margin-right: 20vh;
 			}
 		}
 
