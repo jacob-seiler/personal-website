@@ -10,4 +10,22 @@ _Note: Code in this repository may not be the current code running on the actual
 
 # Task List
 
-_TODO_
+## Style
+
+-   [ ] Navbar
+-   [ ] Landing
+-   [ ] Showcase
+-   [ ] Experience
+-   [ ] About
+-   [ ] Contact
+
+## Layout
+
+-   [x] Main layout
+-   [ ] Mobile layout
+-   [ ] Ultra-wide layout
+
+## Compatability
+
+-   [ ] Ensure cross-browser compatability
+-   [ ] Service workers to enable offline viewing

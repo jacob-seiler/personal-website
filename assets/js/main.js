@@ -38,7 +38,14 @@ function createExperienceCard(data) {
 	if (data.img !== undefined) {
 		let img = document.createElement("IMG");
 		img.classList.add("experience=card-img");
-		img.setAttribute("src", data.img);
+		img.setAttribute("src", "assets/images/" + data.img);
+
+		if (data.org !== undefined) {
+			img.setAttribute("alt", data.org + " Logo");
+		} else {
+			img.setAttribute("alt", "Company Logo");
+		}
+
 		card.appendChild(img);
 	}
 
