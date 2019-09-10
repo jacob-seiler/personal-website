@@ -1,7 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,900&display=swap");
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic Regular"), url("../fonts/GOTHIC.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  font-style: italic;
+  src: local("Century Gothic Italic"), url("../fonts/GOTHICI.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  font-weight: bold;
+  src: local("Century Gothic Bold"), url("../fonts/GOTHICB.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Century Gothic";
+  font-style: italic;
+  font-weight: bold;
+  src: local("Century Gothic Bold Italic"), url("../fonts/GOTHICBI.woff") format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Century Gothic", "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
