@@ -83,16 +83,23 @@ nav {
 
 main {
 	.landing {
-		padding-top: 300px;
+		padding-top: 200px;
+		margin-bottom: 500px;
 		text-align: center;
 
 		h1 {
 			font-size: 150px;
 		}
 
-		p {
-			font-size: 45px;
-			// TODO change width to break into new line
+		.landing-content {
+			display: flex;
+			justify-content: center;
+
+			p {
+				margin-top: 20px;
+				font-size: 45px;
+				width: 1200px;
+			}
 		}
 	}
 }

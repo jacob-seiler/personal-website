@@ -77,7 +77,8 @@ nav .nav-content .nav-icons a {
 }
 
 main .landing {
-  padding-top: 300px;
+  padding-top: 200px;
+  margin-bottom: 500px;
   text-align: center;
 }
 
@@ -85,7 +86,18 @@ main .landing h1 {
   font-size: 150px;
 }
 
-main .landing p {
+main .landing .landing-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .landing .landing-content p {
+  margin-top: 20px;
   font-size: 45px;
+  width: 1200px;
 }
 /*# sourceMappingURL=style.css.map */
