@@ -24,13 +24,75 @@
 	src: local("Century Gothic Bold Italic"), url("../fonts/GOTHICBI.woff") format("woff");
 }
 
-* {
-	margin: 0;
-	padding: 0;
+@mixin font-title() {
+	font-family: "Century Gothic", "Montserrat", sans-serif;
+}
 
+@mixin font-regular() {
 	font-family: "Montserrat", sans-serif;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	@include font-regular();
+}
+
 h1 {
-	font-family: "Century Gothic", "Montserrat", sans-serif;
+	@include font-title();
+}
+
+nav {
+	display: flex;
+	background-color: red;
+	justify-content: center;
+
+	padding: 30px 0;
+
+	font-size: 37.5px;
+	font-weight: bold;
+	@include font-title();
+
+	.nav-logo {
+		display: flex;
+		margin-right: 500px;
+
+		h1 {
+			font-size: 37.5px;
+		}
+	}
+
+	.nav-content {
+		display: flex;
+
+		a {
+			margin-right: 65px;
+		}
+
+		.nav-icons {
+			a {
+				margin-left: 25px;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+main {
+	.landing {
+		padding-top: 300px;
+		text-align: center;
+
+		h1 {
+			font-size: 150px;
+		}
+
+		p {
+			font-size: 45px;
+			// TODO change width to break into new line
+		}
+	}
 }

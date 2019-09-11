@@ -26,10 +26,66 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+html {
   font-family: "Montserrat", sans-serif;
 }
 
 h1 {
   font-family: "Century Gothic", "Montserrat", sans-serif;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: red;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0;
+  font-size: 37.5px;
+  font-weight: bold;
+  font-family: "Century Gothic", "Montserrat", sans-serif;
+}
+
+nav .nav-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 500px;
+}
+
+nav .nav-logo h1 {
+  font-size: 37.5px;
+}
+
+nav .nav-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .nav-content a {
+  margin-right: 65px;
+}
+
+nav .nav-content .nav-icons a {
+  margin-left: 25px;
+  margin-right: 0;
+}
+
+main .landing {
+  padding-top: 300px;
+  text-align: center;
+}
+
+main .landing h1 {
+  font-size: 150px;
+}
+
+main .landing p {
+  font-size: 45px;
 }
 /*# sourceMappingURL=style.css.map */
