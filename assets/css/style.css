@@ -37,43 +37,88 @@ h1 {
 }
 
 nav {
+  margin-top: 20.5px;
+  margin-left: 55px;
+  margin-right: 55px;
+  background-color: blue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: red;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 30px 0;
-  font-size: 37.5px;
-  font-weight: bold;
-  font-family: "Century Gothic", "Montserrat", sans-serif;
 }
 
 nav .nav-logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 500px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 nav .nav-logo h1 {
-  font-size: 37.5px;
+  font-size: 23px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
 }
 
 nav .nav-content {
+  margin-left: auto;
+  margin-right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-family: "Century Gothic", "Montserrat", sans-serif;
+  font-size: 23px;
 }
 
-nav .nav-content a {
-  margin-right: 65px;
+nav .nav-content a:not(.fab):not(.fas) {
+  margin-left: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
 }
 
 nav .nav-content .nav-icons a {
-  margin-left: 25px;
+  padding: 13px;
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
   margin-right: 0;
+  margin-left: 18.69px;
+}
+
+nav .nav-content .nav-icons a:nth-child(1) {
+  margin-left: 40px;
+}
+
+nav .nav-content .nav-icons .fa-github {
+  background: #24292e;
+  color: #ffffff;
+}
+
+nav .nav-content .nav-icons .fa-linkedin {
+  background: #007bb5;
+  color: #ffffff;
+}
+
+nav .nav-content .nav-icons .fa-file-alt {
+  background: #f3f3f3;
+  color: #000000;
+}
+
+nav .nav-content .nav-icons .fa-feather-alt {
+  background: #ff4242;
+  color: #ffffff;
 }
 
 main .landing {
@@ -83,7 +128,7 @@ main .landing {
 }
 
 main .landing h1 {
-  font-size: 150px;
+  font-size: 99px;
 }
 
 main .landing .landing-content {
@@ -96,8 +141,8 @@ main .landing .landing-content {
 }
 
 main .landing .landing-content p {
-  margin-top: 20px;
-  font-size: 45px;
-  width: 1200px;
+  margin-top: 10px;
+  font-size: 30px;
+  width: 801px;
 }
 /*# sourceMappingURL=style.css.map */
