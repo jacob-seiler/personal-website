@@ -78,6 +78,7 @@ html {
 	@include font-regular();
 	color: get-color(white);
 	background-color: get-color(base-1);
+	scroll-behavior: smooth;
 }
 
 h1 {
