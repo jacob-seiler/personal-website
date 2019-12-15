@@ -4,101 +4,62 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Jacob Seiler</title>
+		<title>Document</title>
 		<link rel="stylesheet" href="assets/css/style.css" />
-		<script src="https://kit.fontawesome.com/c8eec4537f.js"></script>
+		<script src="https://kit.fontawesome.com/c8eec4537f.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<!-- Navbar -->
 		<nav>
-			<div class="nav-logo">
-				<!-- TODO svg logo -->
-				<h1>Jacob Seiler (svg)</h1>
-			</div>
-			<div class="nav-content">
-				<a href="#">Projects</a>
-				<a href="#">Experience</a>
-				<a href="#">About Me</a>
-				<div class="nav-icons">
-					<a
-						title="GitHub"
-						href="https://github.com/jacob-seiler"
-						target="_blank"
-						class="fab fa-github"
-					></a>
-					<a
-						title="LinkedIn"
-						href="https://www.linkedin.com/in/jacobseiler/"
-						target="_blank"
-						class="fab fa-linkedin"
-					></a>
-					<a
-						title="Resume"
-						href="assets/pdf/Jacob Seiler Resume.pdf"
-						target="_blank"
-						class="fas fa-file-alt"
-					></a>
-					<a
-						title="Email"
-						href="mailto:seiler.jacob1@gmail.com"
-						class="fas fa-feather-alt"
-					></a>
-					<!-- TODO <i class="fas fa-envelope"></i> -->
-				</div>
-			</div>
+			<span class="nav-button">
+				<i class="fas fa-bars"></i>
+			</span>
+			<a href="#" class="nav-logo">Jacob Seiler</a>
+			<ul class="nav-content">
+				<li>
+					<a href="#" class="nav-links">Projects</a>
+				</li>
+				<li>
+					<a href="#" class="nav-links">Experience</a>
+				</li>
+				<li>
+					<a href="#" class="nav-links">About Me</a>
+				</li>
+				<li class="social-icons">
+					<a href="#" class="nav-links">
+						<i class="fab fa-github social-icon social-icon-github"></i>
+					</a>
+					<a href="#" class="nav-links">
+						<i class="fab fa-linkedin-in social-icon social-icon-linkedin"></i>
+					</a>
+					<a href="#" class="nav-links">
+						<i class="far fa-file-alt social-icon social-icon-resume"></i>
+					</a>
+					<a href="#" class="nav-links nav-envelope">
+						<i class="far fa-envelope social-icon social-icon-email"></i>
+					</a>
+				</li>
+			</ul>
 		</nav>
 		<main>
 			<div class="landing">
 				<h1>Programming Wizard.</h1>
-
-				<div class="landing-content">
-					<p>
-						Computer Science student at Queen's University. Passionate developer,
-						designer, and problem solver.
-					</p>
-				</div>
-
-				<a class="button" href="#">See Projects</a>
-				<a class="button" href="#">Get In Touch</a>
+				<p>Computer Science Student at Queen's University.</p>
+				<p>Passionate developer, designer, and problem solver.</p>
+				<ul>
+					<li>
+						<a href="#" class="button">See Projects</a>
+					</li>
+					<li>
+						<a href="#" class="button">Get In Touch</a>
+					</li>
+				</ul>
 			</div>
 			<div class="showcase">
 				<h1>What I've been working on.</h1>
-
-				<div class="showcase-project">
-					<h2>Project Name</h2>
-					<p>Description</p>
-					<a class="button" href="#">Check it out</a>
-					<a class="button" href="#">GitHub</a>
-				</div>
-			</div>
-			<div class="experience">
-				<h1>Where I've been.</h1>
-				<p>Companies & organizations that I've worked for.</p>
-
-				<!-- Cards are loaded from experience.json -->
-				<div class="experience-work"></div>
-				<div class="experience-other"></div>
-			</div>
-			<div class="about">
-				<h1>Let's get personal.</h1>
-				<!-- TODO image -->
-				<img />
-				<p>
-					I like to work hard and have fun doing it. Ever since I taught myself how to
-					program, I have been passionate about technology. I am a high achiever and I'm
-					always looking for ways to get involved. In my free time, I play guitar,
-					downhill ski, and go scuba diving. I also love my 27-pound cat, Leo.
-				</p>
-			</div>
-			<div class="skills">
-				<h1>Skills & Passions</h1>
-				<!-- TODO content -->
+				<div class="project"></div>
 			</div>
 		</main>
-		<footer>
-			<h1>I Promise I Don't Bite.</h1>
-			<!-- TODO content -->
-		</footer>
-
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

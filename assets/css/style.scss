@@ -1,5 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+// TODO:
+// - Download icons instead of using fontawesome
+// - ServiceWorkers for offline viewing
 
+/* 
+ * Overall theme
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 @font-face {
 	font-family: "Century Gothic";
 	src: local("Century Gothic Regular"), url("../fonts/GOTHIC.woff") format("woff");
@@ -24,6 +31,12 @@
 	src: local("Century Gothic Bold Italic"), url("../fonts/GOTHICBI.woff") format("woff");
 }
 
+@mixin view-desktop() {
+	@media screen and (min-width: 1000px) {
+		@content;
+	}
+}
+
 @mixin font-title() {
 	font-family: "Century Gothic", "Montserrat", sans-serif;
 }
@@ -32,114 +45,181 @@
 	font-family: "Montserrat", sans-serif;
 }
 
+$colors: (
+	accent: #ffc005,
+	base-1: #222f60,
+	base-2: #410e48,
+	light: #f3f3f3,
+	dark: #151617,
+	white: #ffffff,
+	black: #000000
+);
+
+@function get-color($color) {
+	@return map-get($colors, $color);
+}
+
+@mixin gradient($color-1, $color-2, $angle) {
+	background: $color-1;
+	background: linear-gradient(160deg, $color-1 0%, $color-2 100%);
+}
+
+@mixin gradient($color-1, $color-2) {
+	@include gradient($color-1, $color-2, 160deg);
+}
+
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
 html {
 	@include font-regular();
+	color: get-color(white);
+	background-color: get-color(base-1);
 }
 
 h1 {
 	@include font-title();
 }
 
+/*
+ * Theme elements
+ */
+
+.hidden {
+	visibility: hidden;
+}
+
+.social-icon {
+	padding: 10px;
+	font-size: 23px;
+	width: 43px;
+	height: 43px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+}
+
+.social-icon-github {
+	background: #171515;
+	color: white;
+}
+
+.social-icon-linkedin {
+	background: #0077b5;
+	color: white;
+}
+
+.social-icon-resume {
+	background: get-color(light);
+	color: get-color(dark);
+}
+
+.social-icon-email {
+	background: #ff4242;
+	color: get-color(light);
+}
+
+/*
+ * Specific theme
+ */
+
 nav {
-	margin-top: 20.5px;
-	margin-left: 55px;
-	margin-right: 55px;
-	background-color: blue;
+	font-size: 23px;
+	padding-bottom: 10px;
+}
 
-	display: flex;
+.nav-content {
+	list-style-type: none;
+	display: none;
+}
 
-	.nav-logo {
+.nav-links,
+.nav-logo {
+	text-decoration: none;
+	color: get-color(white);
+}
+
+.nav-content li {
+	text-align: center;
+	margin: 15px auto;
+	display: block;
+	align-self: center;
+}
+
+.nav-content li a i {
+	margin: 0px 10px;
+}
+
+.nav-logo {
+	display: inline-block;
+	font-size: 22px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.nav-button {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	cursor: pointer;
+	color: get-color(white);
+	font-size: 24px;
+}
+
+.nav-active {
+	display: block;
+}
+
+@include view-desktop() {
+	nav {
 		display: flex;
-		justify-content: flex-start;
-
-		h1 {
-			font-size: 23px;
-			align-self: center;
-			color: white;
-		}
+		justify-content: space-between;
+		padding-bottom: 0;
+		height: 70px;
+		align-items: center;
 	}
 
 	.nav-content {
-		margin-left: auto;
-		margin-right: 0px;
-
 		display: flex;
+		margin-right: 30px;
+		flex-direction: row;
 		justify-content: flex-end;
+	}
 
-		@include font-title();
-		font-size: 23px;
+	.nav-content li {
+		margin: 0;
+	}
 
-		a:not(.fab):not(.fas) {
-			margin-left: 40px;
-			align-self: center;
-			font-weight: bold;
-			text-decoration: none;
-			color: white;
-		}
+	.nav-content .social-icons {
+		padding-left: 40px;
 
-		.nav-icons {
-			a {
-				padding: 13px;
-				font-size: 20px;
-				width: 20px;
-				text-align: center;
-				text-decoration: none;
-				border-radius: 50%;
-				margin-right: 0;
-				margin-left: 18.69px;
-			}
-
-			a:nth-child(1) {
-				margin-left: 40px;
-			}
-
-			.fa-github {
-				background: #24292e;
-				color: #ffffff;
-			}
-
-			.fa-linkedin {
-				background: #007bb5;
-				color: #ffffff;
-			}
-
-			.fa-file-alt {
-				background: #f3f3f3;
-				color: #000000;
-			}
-
-			.fa-feather-alt {
-				background: #ff4242;
-				color: #ffffff;
-			}
+		.nav-links {
+			margin-left: 20px;
 		}
 	}
-}
 
-main {
-	.landing {
-		padding-top: 176px;
-		margin-bottom: 500px;
-		text-align: center;
-
-		h1 {
-			font-size: 99px;
-		}
-
-		.landing-content {
-			display: flex;
-			justify-content: center;
-
-			p {
-				margin-top: 10px;
-				font-size: 30px;
-				width: 801px;
-			}
-		}
+	.nav-content li a i {
+		margin: 0px;
 	}
+
+	.nav-logo {
+		margin-top: 0;
+	}
+
+	.nav-links {
+		margin-left: 40px;
+	}
+
+	.nav-button {
+		display: none;
+		align-self: auto;
+	}
+
+	// .nav-logo:hover,
+	// .nav-links:hover {
+	// 	// TODO text-decoration: underline;
+	// }
 }

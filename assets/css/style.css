@@ -1,3 +1,6 @@
+/* 
+ * Overall theme
+ */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 @font-face {
   font-family: "Century Gothic";
@@ -24,125 +27,161 @@
 }
 
 * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
   font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  background-color: #222f60;
 }
 
 h1 {
   font-family: "Century Gothic", "Montserrat", sans-serif;
 }
 
-nav {
-  margin-top: 20.5px;
-  margin-left: 55px;
-  margin-right: 55px;
-  background-color: blue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+/*
+ * Theme elements
+ */
+.hidden {
+  visibility: hidden;
 }
 
-nav .nav-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-nav .nav-logo h1 {
+.social-icon {
+  padding: 10px;
   font-size: 23px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: white;
-}
-
-nav .nav-content {
-  margin-left: auto;
-  margin-right: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  font-family: "Century Gothic", "Montserrat", sans-serif;
-  font-size: 23px;
-}
-
-nav .nav-content a:not(.fab):not(.fas) {
-  margin-left: 40px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-nav .nav-content .nav-icons a {
-  padding: 13px;
-  font-size: 20px;
-  width: 20px;
+  width: 43px;
+  height: 43px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  margin-right: 0;
-  margin-left: 18.69px;
 }
 
-nav .nav-content .nav-icons a:nth-child(1) {
-  margin-left: 40px;
+.social-icon-github {
+  background: #171515;
+  color: white;
 }
 
-nav .nav-content .nav-icons .fa-github {
-  background: #24292e;
-  color: #ffffff;
+.social-icon-linkedin {
+  background: #0077b5;
+  color: white;
 }
 
-nav .nav-content .nav-icons .fa-linkedin {
-  background: #007bb5;
-  color: #ffffff;
-}
-
-nav .nav-content .nav-icons .fa-file-alt {
+.social-icon-resume {
   background: #f3f3f3;
-  color: #000000;
+  color: #151617;
 }
 
-nav .nav-content .nav-icons .fa-feather-alt {
+.social-icon-email {
   background: #ff4242;
+  color: #f3f3f3;
+}
+
+/*
+ * Specific theme
+ */
+nav {
+  font-size: 23px;
+  padding-bottom: 10px;
+}
+
+.nav-content {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links,
+.nav-logo {
+  text-decoration: none;
   color: #ffffff;
 }
 
-main .landing {
-  padding-top: 176px;
-  margin-bottom: 500px;
+.nav-content li {
   text-align: center;
+  margin: 15px auto;
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-main .landing h1 {
-  font-size: 99px;
+.nav-content li a i {
+  margin: 0px 10px;
 }
 
-main .landing .landing-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main .landing .landing-content p {
+.nav-logo {
+  display: inline-block;
+  font-size: 22px;
   margin-top: 10px;
-  font-size: 30px;
-  width: 801px;
+  margin-left: 20px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.nav-active {
+  display: block;
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .nav-content li {
+    margin: 0;
+  }
+  .nav-content .social-icons {
+    padding-left: 40px;
+  }
+  .nav-content .social-icons .nav-links {
+    margin-left: 20px;
+  }
+  .nav-content li a i {
+    margin: 0px;
+  }
+  .nav-logo {
+    margin-top: 0;
+  }
+  .nav-links {
+    margin-left: 40px;
+  }
+  .nav-button {
+    display: none;
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
