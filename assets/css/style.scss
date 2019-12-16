@@ -123,6 +123,43 @@ h1 {
 	color: get-color(light);
 }
 
+.button {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	border-radius: 7px;
+	padding: 8px 15px;
+	border: 5px solid white;
+	color: get-color(white);
+	z-index: 1;
+}
+
+.button::after {
+	content: "";
+	position: absolute;
+	display: inline-block;
+
+	background-size: 100% 100%;
+	background-color: yellow;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 7px;
+
+	transform: translate(-100%, -8px) translateX(15px);
+	z-index: -2;
+	//clip-path: circle(50%);
+}
+
+// .button.button-light {
+// 	background-color: transparent;
+// }
+
+// .button:not(.button-light) {
+// 	color: get-color(white);
+// 	background-color: black;
+// }
+
 /*
  * Specific theme
  */
@@ -218,9 +255,12 @@ nav {
 		display: none;
 		align-self: auto;
 	}
+}
 
-	// .nav-logo:hover,
-	// .nav-links:hover {
-	// 	// TODO text-decoration: underline;
-	// }
+.landing {
+	background-color: red;
+}
+
+.showcase {
+	background-color: blue;
 }

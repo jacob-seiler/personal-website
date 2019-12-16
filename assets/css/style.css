@@ -81,6 +81,31 @@ h1 {
   color: #f3f3f3;
 }
 
+.button {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 8px 15px;
+  border: 5px solid white;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  background-size: 100% 100%;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  -webkit-transform: translate(-100%, -8px) translateX(15px);
+          transform: translate(-100%, -8px) translateX(15px);
+  z-index: -2;
+}
+
 /*
  * Specific theme
  */
@@ -184,5 +209,13 @@ nav {
         -ms-grid-row-align: auto;
         align-self: auto;
   }
+}
+
+.landing {
+  background-color: red;
+}
+
+.showcase {
+  background-color: blue;
 }
 /*# sourceMappingURL=style.css.map */
