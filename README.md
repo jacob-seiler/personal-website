@@ -4,7 +4,7 @@ Space for displaying projects I've worked on, social media, and contact informat
 
 ## TODO
 
--   [ ] Add bio
+-   [x] Add bio
 -   [x] Add mail / phone links
 -   [ ] Add tooltip for copy to show item was coppied
 -   [x] Fix formatting for very small displays
