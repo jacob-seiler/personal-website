@@ -1,0 +1,19 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Space for displaying projects I've worked on, social media, and contact information to connect with me.",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacob-seiler/personal-website.git"
+  },
+  "author": "Jacob Seiler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacob-seiler/personal-website/issues"
+  },
+  "homepage": "https://github.com/jacob-seiler/personal-website#readme"
+}
