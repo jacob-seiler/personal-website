@@ -9,7 +9,7 @@ Space for displaying projects I've worked on, social media, and contact informat
 -   [ ] Add tooltip for copy to show item was coppied
 -   [ ] Fix formatting for very small displays
 -   [x] Cleanup formatting for larger displays
--   [ ] Add project cards
+-   [x] Add project cards
 -   [ ] Create production build of code
 -   [ ] Replace github.svg and web.svg with Font Awesome icon
 -   [ ] Figure out hosting
