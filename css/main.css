@@ -19,7 +19,7 @@ main {
 }
 
 .title {
-  color: #56ba86;
+  color: #22b17a;
   font-weight: 700;
   font-style: normal;
   font-size: 54px;
@@ -57,11 +57,11 @@ main {
 }
 
 .social-icons .social-icon.icon-mail:hover {
-  background: #56ba86;
+  background: #22b17a;
 }
 
 .social-icons .social-icon.icon-phone:hover {
-  background: #56ba86;
+  background: #22b17a;
 }
 
 .social-icons .social-icon.icon-github span {
@@ -82,11 +82,11 @@ main {
 }
 
 .info {
-  background-color: #696969;
+  background-color: #22b17a;
   color: #ffffff;
   border-radius: 15px;
-  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(22, 113, 78, 0.75);
+          box-shadow: inset 0px 0px 10px 0px rgba(22, 113, 78, 0.75);
   padding: 20px;
   padding-top: 40px;
   display: -webkit-box;
@@ -124,7 +124,7 @@ main {
 
 .cards .card {
   border: none;
-  background-color: #56ba86;
+  background-color: #22b17a;
   text-align: left;
   border-radius: 0;
   padding: 16px 20px;
@@ -150,6 +150,18 @@ main {
   margin-top: 0;
 }
 
+.cards .card .card-description {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #f3f3f3;
+  margin-top: 0;
+  width: 75%;
+  line-height: 1.25;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
 .cards .card .card-link {
   position: absolute;
   bottom: 0;
@@ -159,7 +171,7 @@ main {
 
 .cards .card .card-link img {
   padding: 16px 20px;
-  height: 100%;
+  height: 70px;
 }
 
 .cards .card .card-link .icon-github {
@@ -170,6 +182,11 @@ main {
 .end {
   font-weight: 400;
   font-style: normal;
-  padding-top: 350px;
+  padding-top: 500px;
+  padding-bottom: 30px;
+}
+
+.end p {
+  margin-bottom: 0px;
 }
 /*# sourceMappingURL=main.css.map */
