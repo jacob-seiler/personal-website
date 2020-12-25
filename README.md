@@ -5,7 +5,9 @@ Space for displaying projects I've worked on, social media, and contact informat
 ## TODO
 
 -   [ ] Add bio
--   [ ] Add mail / phone links
+-   [x] Add mail / phone links
+-   [ ] Fix formatting for very small displays
+-   [ ] Cleanup formatting for larger displays
 -   [ ] Add project cards
 -   [ ] Create production build of code
 -   [ ] Replace github.svg with Font Awesome icon
