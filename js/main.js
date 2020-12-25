@@ -71,14 +71,3 @@ const copy = () => {
 
 	document.body.removeChild(textArea);
 };
-
-// const tooltip = (message) => {
-// 	$(".copyButton").tooltip({
-// 		trigger: "click",
-// 		placement: "bottom",
-// 	});
-// 	$(".copyButton").tooltip("hide").attr("data-original-title", message).tooltip("show");
-// 	setTimeout(() => {
-// 		$(".copyButton").tooltip("hide");
-// 	}, 1000);
-// };
