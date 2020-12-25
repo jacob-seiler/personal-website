@@ -15,5 +15,29 @@
   "bugs": {
     "url": "https://github.com/jacob-seiler/personal-website/issues"
   },
-  "homepage": "https://github.com/jacob-seiler/personal-website#readme"
+  "homepage": "https://github.com/jacob-seiler/personal-website#readme",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ]
 }
