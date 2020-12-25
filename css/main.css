@@ -304,6 +304,10 @@ main {
   background-image: url("../assets/stockpred.png");
 }
 
+.cards .card#card-engine {
+  background-image: url("../assets/engine.png");
+}
+
 @media (max-width: 430px) {
   .cards .card {
     background-size: contain;
