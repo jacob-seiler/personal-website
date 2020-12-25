@@ -31,6 +31,12 @@ main {
 	text-align: center;
 }
 
+.container {
+	@media (min-width: 970px) {
+		max-width: 800px;
+	}
+}
+
 .headshot {
 	object-fit: cover;
 	width: 170px;
