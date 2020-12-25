@@ -264,10 +264,6 @@ main {
 
 		&#card-csstoolkit {
 			background-image: url("../assets/csstoolkit.png");
-
-			@include tiny() {
-				background-image: url("../assets/csstoolkit-mobile.png");
-			}
 		}
 
 		&#card-personalwebsite {

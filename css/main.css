@@ -288,12 +288,6 @@ main {
   background-image: url("../assets/csstoolkit.png");
 }
 
-@media (max-width: 430px) {
-  .cards .card#card-csstoolkit {
-    background-image: url("../assets/csstoolkit-mobile.png");
-  }
-}
-
 .cards .card#card-personalwebsite {
   background-image: url("../assets/personalwebsite.png");
 }
