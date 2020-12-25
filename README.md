@@ -11,5 +11,5 @@ Space for displaying projects I've worked on, social media, and contact informat
 -   [ ] Cleanup formatting for larger displays
 -   [ ] Add project cards
 -   [ ] Create production build of code
--   [ ] Replace github.svg with Font Awesome icon
+-   [ ] Replace github.svg and web.svg with Font Awesome icon
 -   [ ] Figure out hosting
