@@ -85,6 +85,10 @@ main {
 			margin: 0px 5px;
 		}
 
+		&:hover {
+			transform: scale(1.2);
+		}
+
 		background: $color-secondary;
 		color: $color-light;
 
@@ -162,6 +166,15 @@ main {
 	#openButton {
 		color: $color-light;
 		cursor: pointer;
+	}
+
+	.collapse-button:hover {
+		opacity: 0.7;
+	}
+
+	.collapse-button:active {
+		transform: translateY(5px) scale(1.5);
+		opacity: 1;
 	}
 }
 
@@ -242,6 +255,10 @@ main {
 				margin-top: 0;
 				margin-right: 0;
 				margin-left: 0;
+
+				&:hover {
+					opacity: 0.7;
+				}
 
 				img {
 					padding: 16px 0px;

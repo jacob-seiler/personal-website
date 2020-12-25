@@ -83,6 +83,11 @@ main {
   }
 }
 
+.social-icons .social-icon:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .social-icons .social-icon.icon-github:hover {
   background: #24292e;
 }
@@ -165,6 +170,16 @@ main {
 .info #openButton {
   color: #ffffff;
   cursor: pointer;
+}
+
+.info .collapse-button:hover {
+  opacity: 0.7;
+}
+
+.info .collapse-button:active {
+  -webkit-transform: translateY(5px) scale(1.5);
+          transform: translateY(5px) scale(1.5);
+  opacity: 1;
 }
 
 .bio {
@@ -262,6 +277,10 @@ main {
   margin-top: 0;
   margin-right: 0;
   margin-left: 0;
+}
+
+.cards .card .card-links .card-link:hover {
+  opacity: 0.7;
 }
 
 .cards .card .card-links .card-link img {
