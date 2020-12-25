@@ -1,5 +1,14 @@
 let copyVal = "";
 
+$(document).bind("click", (e) => {
+	if (
+		!$(e.target).is(".collapse-element") &&
+		$(e.target).parents(".collapse-element").length === 0
+	) {
+		$("#collapse").collapse("hide");
+	}
+});
+
 const isCollapsed = () => {
 	return !$("#collapse").hasClass("show");
 };
