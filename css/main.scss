@@ -41,6 +41,12 @@ main {
 	object-fit: cover;
 	width: 170px;
 	height: 170px;
+
+	@include tiny() {
+		width: 140px;
+		height: 140px;
+	}
+
 	border-radius: 50%;
 	margin-top: 30px;
 	@include shadow;
@@ -55,6 +61,10 @@ main {
 
 	margin-top: 16px;
 	margin-bottom: 0px;
+
+	@include tiny() {
+		font-size: 42px;
+	}
 }
 
 .social-icons {
@@ -68,6 +78,12 @@ main {
 		height: 45px;
 		padding: 0;
 		margin: 0px 10px;
+
+		@include tiny() {
+			width: 35px;
+			height: 35px;
+			margin: 0px 5px;
+		}
 
 		background: $color-secondary;
 		color: $color-light;
@@ -91,12 +107,20 @@ main {
 		&.icon-github {
 			span {
 				transform: translateY(-75%) scale(1.75);
+
+				@include tiny() {
+					transform: translateY(-75%) scale(1.5);
+				}
 			}
 		}
 
 		&.icon-phone {
 			span {
 				transform: translateY(-75%) scale(1.25);
+
+				@include tiny() {
+					transform: translateY(-75%) scale(1);
+				}
 			}
 		}
 
@@ -104,6 +128,10 @@ main {
 			transform: translateY(-75%) scale(1.5);
 			position: relative;
 			top: 50%;
+
+			@include tiny() {
+				transform: translateY(-75%) scale(1.25);
+			}
 		}
 
 		border-radius: 50px;
@@ -142,6 +170,10 @@ main {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 18px;
+
+	@include tiny() {
+		font-size: 16px;
+	}
 }
 
 .cards {
@@ -163,6 +195,10 @@ main {
 			color: $color-light;
 			margin-bottom: 0;
 			line-height: 1;
+
+			@include tiny() {
+				font-size: 20px;
+			}
 		}
 
 		.card-subtitle {
@@ -171,6 +207,10 @@ main {
 			font-size: 16px;
 			color: $color-light-secondary;
 			margin-top: 0;
+
+			@include tiny() {
+				font-size: 14px;
+			}
 		}
 
 		.card-description {
@@ -182,6 +222,10 @@ main {
 			line-height: 1.25;
 			margin-top: 16px;
 			margin-bottom: 0;
+
+			@include tiny() {
+				font-size: 14px;
+			}
 		}
 
 		.card-links {
@@ -207,7 +251,7 @@ main {
 					@include tiny() {
 						height: 60px;
 						margin-top: 5px;
-						margin-right: 5px;
+						margin-right: 10px;
 						margin-left: 0px;
 					}
 				}
@@ -257,6 +301,11 @@ main {
 .end {
 	font-weight: 400;
 	font-style: normal;
+	font-size: 18px;
+
+	@include tiny() {
+		font-size: 16px;
+	}
 
 	padding-top: 500px;
 	padding-bottom: 30px;
