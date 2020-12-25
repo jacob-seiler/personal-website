@@ -217,6 +217,40 @@ main {
 				}
 			}
 		}
+
+		&#card-csstoolkit {
+			background-image: url("../assets/csstoolkit.png");
+
+			@include tiny() {
+				background-image: url("../assets/csstoolkit-mobile.png");
+			}
+		}
+
+		&#card-personalwebsite {
+			background-image: url("../assets/personalwebsite.png");
+		}
+
+		&#card-fashionclassifier {
+			background-image: url("../assets/fashionclassifier.png");
+		}
+
+		&#card-lyricgen {
+			background-image: url("../assets/lyricgen.png");
+		}
+
+		&#card-stockpred {
+			background-image: url("../assets/stockpred.png");
+		}
+
+		background-blend-mode: multiply;
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: 60%;
+
+		@include tiny() {
+			background-size: contain;
+			background-position: center;
+		}
 	}
 }
 

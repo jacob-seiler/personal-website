@@ -145,6 +145,10 @@ main {
   margin-bottom: 20px;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 60%;
 }
 
 .cards .card .card-title {
@@ -212,6 +216,39 @@ main {
 .cards .card .card-links .card-link .icon {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.cards .card#card-csstoolkit {
+  background-image: url("../assets/csstoolkit.png");
+}
+
+@media (max-width: 430px) {
+  .cards .card#card-csstoolkit {
+    background-image: url("../assets/csstoolkit-mobile.png");
+  }
+}
+
+.cards .card#card-personalwebsite {
+  background-image: url("../assets/personalwebsite.png");
+}
+
+.cards .card#card-fashionclassifier {
+  background-image: url("../assets/fashionclassifier.png");
+}
+
+.cards .card#card-lyricgen {
+  background-image: url("../assets/lyricgen.png");
+}
+
+.cards .card#card-stockpred {
+  background-image: url("../assets/stockpred.png");
+}
+
+@media (max-width: 430px) {
+  .cards .card {
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 .end {
