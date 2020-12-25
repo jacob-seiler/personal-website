@@ -1,31 +1,14 @@
-# My Personal Website
+# Personal Website
 
-Production URL: https://jacobseiler.com
+Space for displaying projects I've worked on, social media, and contact information to connect with me.
 
-Development URL: https://jacob-seiler.github.io/personal-website/
+## TODO
 
-This is all the code and assets for my website.
-
-_Note: Code in this repository may not be the current code running on the actual website._
-
-# Task List
-
-## Style
-
--   [ ] Navbar
--   [ ] Landing
--   [ ] Showcase
--   [ ] Experience
--   [ ] About
--   [ ] Contact
-
-## Layout
-
--   [x] Main layout
--   [ ] Mobile layout
--   [ ] Ultra-wide layout
-
-## Compatability
-
--   [ ] Ensure cross-browser compatability
--   [ ] Service workers to enable offline viewing
+-   [ ] Add bio
+-   [x] Add mail / phone links
+-   [ ] Fix formatting for very small displays
+-   [ ] Cleanup formatting for larger displays
+-   [ ] Add project cards
+-   [ ] Create production build of code
+-   [ ] Replace github.svg with Font Awesome icon
+-   [ ] Figure out hosting

@@ -1,0 +1,180 @@
+@import url("https://use.typekit.net/gby4xoo.css");
+
+$color-main: #56ba86;
+$color-secondary: #696969;
+$color-light: #ffffff;
+$color-light-secondary: #f3f3f3;
+
+@mixin shadow {
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+* {
+	font-family: proxima-nova, "Helvetica Neue", sans-serif;
+}
+
+main {
+	text-align: center;
+}
+
+.headshot {
+	object-fit: cover;
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	margin-top: 30px;
+	@include shadow();
+}
+
+.title {
+	color: $color-main;
+
+	font-weight: 700;
+	font-style: normal;
+	font-size: 54px;
+
+	margin-top: 16px;
+	margin-bottom: 0px;
+}
+
+.social-icons {
+	margin-top: 0;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+
+	.social-icon {
+		width: 45px;
+		height: 45px;
+		padding: 0;
+		margin: 0px 10px;
+
+		background: $color-secondary;
+		color: $color-light;
+
+		&.icon-github:hover {
+			background: #24292e;
+		}
+
+		&.icon-linkedin:hover {
+			background: #0b65c2;
+		}
+
+		&.icon-mail:hover {
+			background: $color-main;
+		}
+
+		&.icon-phone:hover {
+			background: $color-main;
+		}
+
+		&.icon-github {
+			span {
+				transform: translateY(-75%) scale(1.75);
+			}
+		}
+
+		&.icon-phone {
+			span {
+				transform: translateY(-75%) scale(1.25);
+			}
+		}
+
+		span {
+			transform: translateY(-75%) scale(1.5);
+			position: relative;
+			top: 50%;
+		}
+
+		border-radius: 50px;
+	}
+}
+
+.info {
+	background-color: $color-secondary;
+	color: $color-light;
+	border-radius: 15px;
+	box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	padding: 20px;
+
+	padding-top: 40px;
+	display: flex;
+	justify-content: center;
+
+	font-size: 20px;
+
+	.copyButton {
+		margin: 0px;
+		margin-left: 30px;
+		margin-right: 15px;
+		color: $color-light;
+		cursor: pointer;
+	}
+
+	.openButton {
+		color: $color-light;
+		cursor: pointer;
+	}
+}
+
+.bio {
+	margin-top: 40px;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 18px;
+}
+
+.cards {
+	margin-top: 60px;
+
+	.card {
+		border: none;
+		background-color: $color-main;
+		text-align: left;
+		border-radius: 0;
+		padding: 16px 20px;
+		margin-bottom: 25px;
+		@include shadow();
+
+		.card-title {
+			font-weight: 700;
+			font-style: normal;
+			font-size: 24px;
+			color: $color-light;
+			margin-bottom: 0;
+			line-height: 1;
+		}
+
+		.card-subtitle {
+			font-weight: 400;
+			font-style: italic;
+			font-size: 16px;
+			color: $color-light-secondary;
+			margin-top: 0;
+		}
+
+		.card-link {
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			right: 0;
+
+			img {
+				padding: 16px 20px;
+				height: 100%;
+			}
+
+			.icon-github {
+				filter: invert(100%);
+			}
+		}
+	}
+}
+
+.end {
+	font-weight: 400;
+	font-style: normal;
+
+	// TODO stick to bottom
+	padding-top: 350px;
+}
