@@ -31,12 +31,30 @@
 				>
 					<span class="fab fa-linkedin-in"></span>
 				</a>
-				<a href="#" class="social-icon icon-mail">
+				<a href="#" class="social-icon icon-mail" onclick="toggleMail()">
 					<span class="fas fa-at"></span>
 				</a>
-				<a href="#" class="social-icon icon-phone">
+				<a href="#" class="social-icon icon-phone" onclick="togglePhone()">
 					<span class="fas fa-phone-alt"></span>
 				</a>
+			</div>
+			<div class="collapse" id="collapseMail">
+				<div class="info" id="email">
+					<p id="email">seiler.jacob1@gmail.com</p>
+					<a class="copyButton" onclick="copy()"><span class="fas fa-copy"></span></a>
+					<a class="openButton" href="mailto:seiler.jacob1@gmail.com"
+						><span class="fas fa-external-link-alt"></span
+					></a>
+				</div>
+			</div>
+			<div class="collapse" id="collapsePhone">
+				<div class="info">
+					<p id="phone">+1 (416) 557-7215</p>
+					<a class="copyButton" onclick="copy()"><span class="fas fa-copy"></span></a>
+					<a class="openButton" href="tel:+14165577215"
+						><span class="fas fa-external-link-alt"></span
+					></a>
+				</div>
 			</div>
 			<p class="bio">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat cursus neque
@@ -90,5 +108,7 @@
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
