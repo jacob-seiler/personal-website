@@ -1,6 +1,6 @@
 @import url("https://use.typekit.net/gby4xoo.css");
 
-$color-main: #56ba86;
+$color-main: #22b17a;
 $color-secondary: #696969;
 $color-light: #ffffff;
 $color-light-secondary: #f3f3f3;
@@ -91,10 +91,10 @@ main {
 }
 
 .info {
-	background-color: $color-secondary;
+	background-color: $color-main;
 	color: $color-light;
 	border-radius: 15px;
-	box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 0px 0px 10px 0px rgba(darken($color-main, 15%), 0.75);
 	padding: 20px;
 
 	padding-top: 40px;
@@ -133,7 +133,7 @@ main {
 		text-align: left;
 		border-radius: 0;
 		padding: 16px 20px;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		@include shadow();
 
 		.card-title {
@@ -153,6 +153,18 @@ main {
 			margin-top: 0;
 		}
 
+		.card-description {
+			font-weight: 400;
+			font-style: normal;
+			font-size: 16px;
+			color: $color-light-secondary;
+			margin-top: 0;
+			width: 75%;
+			line-height: 1.25;
+			margin-top: 16px;
+			margin-bottom: 0;
+		}
+
 		.card-link {
 			position: absolute;
 			bottom: 0;
@@ -161,7 +173,7 @@ main {
 
 			img {
 				padding: 16px 20px;
-				height: 100%;
+				height: 70px;
 			}
 
 			.icon-github {
@@ -176,5 +188,10 @@ main {
 	font-style: normal;
 
 	// TODO stick to bottom
-	padding-top: 350px;
+	padding-top: 500px;
+	padding-bottom: 30px;
+
+	p {
+		margin-bottom: 0px;
+	}
 }

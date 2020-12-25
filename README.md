@@ -6,6 +6,7 @@ Space for displaying projects I've worked on, social media, and contact informat
 
 -   [ ] Add bio
 -   [x] Add mail / phone links
+-   [ ] Add tooltip for copy to show item was coppied
 -   [ ] Fix formatting for very small displays
 -   [ ] Cleanup formatting for larger displays
 -   [ ] Add project cards
