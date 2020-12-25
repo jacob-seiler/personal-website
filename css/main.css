@@ -1,0 +1,143 @@
+@import url("https://use.typekit.net/gby4xoo.css");
+* {
+  font-family: proxima-nova, "Helvetica Neue", sans-serif;
+}
+
+main {
+  text-align: center;
+}
+
+.headshot {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  color: #56ba86;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 54px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.social-icons {
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-icons .social-icon {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  margin: 0px 10px;
+  background: #696969;
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.social-icons .social-icon.icon-github:hover {
+  background: #24292e;
+}
+
+.social-icons .social-icon.icon-linkedin:hover {
+  background: #0b65c2;
+}
+
+.social-icons .social-icon.icon-mail:hover {
+  background: #3b579d;
+}
+
+.social-icons .social-icon.icon-phone:hover {
+  background: #3b579d;
+}
+
+.social-icons .social-icon.icon-github span {
+  -webkit-transform: translateY(-75%) scale(1.75);
+          transform: translateY(-75%) scale(1.75);
+}
+
+.social-icons .social-icon.icon-phone span {
+  -webkit-transform: translateY(-75%) scale(1.25);
+          transform: translateY(-75%) scale(1.25);
+}
+
+.social-icons .social-icon span {
+  -webkit-transform: translateY(-75%) scale(1.5);
+          transform: translateY(-75%) scale(1.5);
+  position: relative;
+  top: 50%;
+}
+
+.bio {
+  margin-top: 60px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.cards {
+  margin-top: 60px;
+}
+
+.cards .card {
+  border: none;
+  background-color: #56ba86;
+  text-align: left;
+  border-radius: 0;
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.cards .card .card-title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.cards .card .card-subtitle {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  color: #f3f3f3;
+  margin-top: 0;
+}
+
+.cards .card .card-link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+
+.cards .card .card-link img {
+  padding: 16px 20px;
+  height: 100%;
+}
+
+.cards .card .card-link .icon-github {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.end {
+  font-weight: 400;
+  font-style: normal;
+}
+/*# sourceMappingURL=main.css.map */

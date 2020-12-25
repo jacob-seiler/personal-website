@@ -3,79 +3,92 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		<link href="css/main.css" rel="stylesheet" />
 		<title>Document</title>
-		<link rel="stylesheet" href="assets/css/style.css" />
-		<script src="https://kit.fontawesome.com/c8eec4537f.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<!-- Navbar -->
-		<nav>
-			<span class="nav-button">
-				<i class="fas fa-bars"></i>
-			</span>
-			<a href="#" class="nav-logo">Jacob Seiler</a>
-			<ul class="nav-content">
-				<li>
-					<a href="#" class="nav-links">Projects</a>
-				</li>
-				<li>
-					<a href="#" class="nav-links">Experience</a>
-				</li>
-				<li>
-					<a href="#" class="nav-links">About Me</a>
-				</li>
-				<li class="social-icons">
-					<a href="https://github.com/jacob-seiler" class="nav-links">
-						<i class="fab fa-github social-icon social-icon-github"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/jacobseiler/" class="nav-links">
-						<i class="fab fa-linkedin-in social-icon social-icon-linkedin"></i>
-					</a>
-					<a href="#" class="nav-links">
-						<i class="far fa-file-alt social-icon social-icon-resume"></i>
-					</a>
-					<a href="mailto:seiler.jacob1@gmail.com" class="nav-links nav-envelope">
-						<i class="far fa-envelope social-icon social-icon-email"></i>
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<main>
-			<div class="landing">
-				<h1>Programming Wizard.</h1>
-				<p>Computer Science Student at Queen's University.</p>
-				<p>Passionate developer, designer, and problem solver.</p>
-				<ul>
-					<li>
-						<a href="#" class="button">See Projects</a>
-					</li>
-					<li>
-						<a href="#" class="button">Get In Touch</a>
-					</li>
-				</ul>
+		<main class="container">
+			<img class="headshot" src="assets/headshot.png" />
+			<h1 class="title">Jacob Seiler</h1>
+			<div class="row social-icons">
+				<a
+					href="https://github.com/jacob-seiler"
+					target="_blank"
+					class="social-icon icon-github"
+				>
+					<span class="fab fa-github"></span>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/jacobseiler/"
+					target="_blank"
+					class="social-icon icon-linkedin"
+				>
+					<span class="fab fa-linkedin-in"></span>
+				</a>
+				<a href="#" class="social-icon icon-mail">
+					<span class="fas fa-at"></span>
+				</a>
+				<a href="#" class="social-icon icon-phone">
+					<span class="fas fa-phone-alt"></span>
+				</a>
 			</div>
-			<div class="showcase">
-				<h1>What I've been working on.</h1>
-				<div class="project">
-					<h2 class="project-name">Project Name</h2>
-					<p class="project-desc">project description.</p>
-					<ul class="project-btns">
-						<li>
-							<a href="#" class="button">Check it out</a>
-						</li>
-						<li>
-							<a href="#" class="button">Github</a>
-						</li>
-						<li>
-							<a href="#" class="button">Other projects</a>
-						</li>
-					</ul>
-					<img class="project-img" />
+			<p class="bio">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat cursus neque
+				non ultricies. Donec vestibulum tincidunt condimentum. Donec et risus ut augue
+				maximus luctus.
+			</p>
+			<div class="cards">
+				<div class="card">
+					<p class="card-title">CSS Toolkit</p>
+					<p class="card-subtitle">React, TypeScript, Sass</p>
+					<a class="card-link" href="https://www.google.com">
+						<img class="icon-github" src="assets/github.svg" />
+					</a>
+				</div>
+				<div class="card">
+					<p class="card-title">CSS Toolkit</p>
+					<p class="card-subtitle">React, TypeScript, Sass</p>
+					<a class="card-link" href="https://www.google.com">
+						<img class="icon-github" src="assets/github.svg" />
+					</a>
+				</div>
+				<div class="card">
+					<p class="card-title">CSS Toolkit</p>
+					<p class="card-subtitle">React, TypeScript, Sass</p>
+					<a class="card-link" href="https://www.google.com">
+						<img class="icon-github" src="assets/github.svg" />
+					</a>
+				</div>
+				<div class="card">
+					<p class="card-title">CSS Toolkit</p>
+					<p class="card-subtitle">React, TypeScript, Sass</p>
+					<a class="card-link" href="https://www.google.com">
+						<img class="icon-github" src="assets/github.svg" />
+					</a>
+				</div>
+				<div class="card">
+					<p class="card-title">CSS Toolkit</p>
+					<p class="card-subtitle">React, TypeScript, Sass</p>
+					<a class="card-link" href="https://www.google.com">
+						<img class="icon-github" src="assets/github.svg" />
+					</a>
 				</div>
 			</div>
-			<div class="experience"></div>
+			<div class="end">
+				<p>Oh. I also like scuba diving and playing guitar.</p>
+			</div>
 		</main>
-		<script src="assets/js/main.js"></script>
+		<script src="https://kit.fontawesome.com/5a558688dd.js" crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
