@@ -1,27 +1,53 @@
-let copyText = "";
+let copyVal = "";
+
+const isCollapsed = () => {
+	return !$("#collapse").hasClass("show");
+};
+
+const show = (displayText, copyText, open) => {
+	copyVal = copyText;
+
+	$("#collapse-text").text(displayText);
+	$("#openButton").attr("href", open);
+	$("#collapse").collapse("show");
+};
+
+const toggle = (displayText, copyText, open) => {
+	if (isCollapsed()) show(displayText, copyText, open);
+	else {
+		$("#collapse")
+			.collapse("hide")
+			.on("hidden.bs.collapse", () => {
+				$("#collapse").off();
+				if (copyText !== copyVal) show(displayText, copyText, open);
+			});
+	}
+};
 
 const toggleMail = () => {
-	$("#collapseMail").collapse("toggle");
-	$("#collapsePhone").collapse("hide");
+	let displayText = "seiler.jacob1@gmail.com";
+	let copyText = "seiler.jacob1@gmail.com";
+	let open = "mailto:seiler.jacob1@gmail.com";
 
-	copyText = "seiler.jacob1@gmail.com";
+	toggle(displayText, copyText, open);
 };
 
 const togglePhone = () => {
-	$("#collapsePhone").collapse("toggle");
-	$("#collapseMail").collapse("hide");
+	let displayText = "+1 (416) 557-7215";
+	let copyText = "+14165577215";
+	let open = "tel:+14165577215";
 
-	copyText = "+14165577215";
+	toggle(displayText, copyText, open);
 };
 
 const copy = () => {
 	if (navigator.clipboard) {
-		navigator.clipboard.writeText(copyText);
+		navigator.clipboard.writeText(copyVal);
 		return;
 	}
 
 	const textArea = document.createElement("textarea");
-	textArea.value = copyText;
+	textArea.value = copyVal;
 
 	// Avoid scrolling to bottom
 	textArea.style.top = "0";
@@ -36,3 +62,14 @@ const copy = () => {
 
 	document.body.removeChild(textArea);
 };
+
+// const tooltip = (message) => {
+// 	$(".copyButton").tooltip({
+// 		trigger: "click",
+// 		placement: "bottom",
+// 	});
+// 	$(".copyButton").tooltip("hide").attr("data-original-title", message).tooltip("show");
+// 	setTimeout(() => {
+// 		$(".copyButton").tooltip("hide");
+// 	}, 1000);
+// };
