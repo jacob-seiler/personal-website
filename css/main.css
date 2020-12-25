@@ -3,6 +3,14 @@
   font-family: proxima-nova, "Helvetica Neue", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 main {
   text-align: center;
 }
@@ -156,25 +164,46 @@ main {
   font-size: 16px;
   color: #f3f3f3;
   margin-top: 0;
-  width: 75%;
   line-height: 1.25;
   margin-top: 16px;
   margin-bottom: 0;
 }
 
-.cards .card .card-link {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
+.cards .card .card-links {
+  text-align: end;
+  margin-top: -16px;
+  text-decoration: none;
 }
 
-.cards .card .card-link img {
-  padding: 16px 20px;
+@media (max-width: 375px) {
+  .cards .card .card-links {
+    text-align: start;
+    margin-right: 27%;
+  }
+}
+
+.cards .card .card-links .card-link {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.cards .card .card-links .card-link img {
+  padding: 16px 0px;
   height: 70px;
+  margin-left: 5px;
 }
 
-.cards .card .card-link .icon-github {
+@media (max-width: 375px) {
+  .cards .card .card-links .card-link img {
+    height: 60px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 0px;
+  }
+}
+
+.cards .card .card-links .card-link .icon-github {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -188,5 +217,9 @@ main {
 
 .end p {
   margin-bottom: 0px;
+}
+
+.end a {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */

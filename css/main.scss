@@ -9,8 +9,22 @@ $color-light-secondary: #f3f3f3;
 	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
+@mixin tiny {
+	@media (max-width: 375px) {
+		@content;
+	}
+}
+
 * {
 	font-family: proxima-nova, "Helvetica Neue", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
 }
 
 main {
@@ -23,7 +37,7 @@ main {
 	height: 170px;
 	border-radius: 50%;
 	margin-top: 30px;
-	@include shadow();
+	@include shadow;
 }
 
 .title {
@@ -134,7 +148,7 @@ main {
 		border-radius: 0;
 		padding: 16px 20px;
 		margin-bottom: 20px;
-		@include shadow();
+		@include shadow;
 
 		.card-title {
 			font-weight: 700;
@@ -159,25 +173,42 @@ main {
 			font-size: 16px;
 			color: $color-light-secondary;
 			margin-top: 0;
-			width: 75%;
 			line-height: 1.25;
 			margin-top: 16px;
 			margin-bottom: 0;
 		}
 
-		.card-link {
-			position: absolute;
-			bottom: 0;
-			top: 0;
-			right: 0;
+		.card-links {
+			text-align: end;
+			margin-top: -16px;
+			text-decoration: none;
 
-			img {
-				padding: 16px 20px;
-				height: 70px;
+			@include tiny() {
+				text-align: start;
+				margin-right: 27%;
 			}
 
-			.icon-github {
-				filter: invert(100%);
+			.card-link {
+				margin-top: 0;
+				margin-right: 0;
+				margin-left: 0;
+
+				img {
+					padding: 16px 0px;
+					height: 70px;
+					margin-left: 5px;
+
+					@include tiny() {
+						height: 60px;
+						margin-top: 5px;
+						margin-right: 5px;
+						margin-left: 0px;
+					}
+				}
+
+				.icon-github {
+					filter: invert(100%);
+				}
 			}
 		}
 	}
@@ -187,11 +218,14 @@ main {
 	font-weight: 400;
 	font-style: normal;
 
-	// TODO stick to bottom
 	padding-top: 500px;
 	padding-bottom: 30px;
 
 	p {
 		margin-bottom: 0px;
+	}
+
+	a {
+		text-decoration: underline;
 	}
 }
