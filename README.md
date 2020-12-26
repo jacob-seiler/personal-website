@@ -17,3 +17,4 @@ Development: https://jacob-seiler.github.io/personal-website/
 -   [x] Create production build of code
 -   [ ] Replace github.svg and web.svg with Font Awesome icon
 -   [x] Figure out hosting
+-   [ ] Figure out SSL
