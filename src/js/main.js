@@ -34,17 +34,17 @@ const toggle = (displayText, copyText, open) => {
 };
 
 const toggleMail = () => {
-	let displayText = "seiler.jacob1@gmail.com";
-	let copyText = "seiler.jacob1@gmail.com";
-	let open = "mailto:seiler.jacob1@gmail.com";
+	let displayText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
+	let copyText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
+	let open = "mailto:seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
 
 	toggle(displayText, copyText, open);
 };
 
 const togglePhone = () => {
-	let displayText = "+1 (416) 557-7215";
-	let copyText = "+14165577215";
-	let open = "tel:+14165577215";
+	let displayText = "+1 (416) " + String.fromCharCode(53) + "57-7215";
+	let copyText = "+1416" + String.fromCharCode(53) + "577215";
+	let open = "tel:+1416" + String.fromCharCode(53) + "577215";
 
 	toggle(displayText, copyText, open);
 };
