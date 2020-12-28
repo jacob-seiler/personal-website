@@ -21,6 +21,33 @@ main {
   }
 }
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg) scale(1.1);
+            transform: rotateZ(0deg) scale(1.1);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scale(1);
+            transform: rotateZ(360deg) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg) scale(1.1);
+            transform: rotateZ(0deg) scale(1.1);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scale(1);
+            transform: rotateZ(360deg) scale(1);
+  }
+}
+
+.spin {
+  -webkit-animation: spin 1s ease-out;
+          animation: spin 1s ease-out;
+}
+
 .headshot {
   -o-object-fit: cover;
      object-fit: cover;
@@ -30,6 +57,25 @@ main {
   margin-top: 30px;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.headshot:not(.spin) {
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
+}
+
+.headshot:not(.spin):hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
 }
 
 @media (max-width: 430px) {

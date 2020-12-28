@@ -71,3 +71,12 @@ const copy = () => {
 
 	document.body.removeChild(textArea);
 };
+
+const spin = () => {
+	if ($(".headshot").hasClass("spin")) return;
+
+	$(".headshot").addClass("spin");
+	$(".headshot").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function () {
+		$(".headshot").removeClass("spin");
+	});
+};
