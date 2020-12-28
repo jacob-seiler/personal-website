@@ -364,6 +364,10 @@ main {
 		margin-right: auto;
 		border-radius: 15px;
 		margin-top: 40px;
+
+		@include tiny() {
+			width: 75%;
+		}
 	}
 
 	a {

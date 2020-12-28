@@ -413,6 +413,12 @@ main {
   margin-top: 40px;
 }
 
+@media (max-width: 430px) {
+  .end img {
+    width: 75%;
+  }
+}
+
 .end a {
   text-decoration: underline;
 }
