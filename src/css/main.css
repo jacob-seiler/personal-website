@@ -27,15 +27,12 @@ html.color-transition,
 html.color-transition *,
 html.color-transition *::before,
 html.color-transition *::after {
-  -webkit-transition: all 750ms !important;
-  transition: all 750ms !important;
-  -webkit-transition-delay: 0 !important;
-          transition-delay: 0 !important;
+  -webkit-transition: background-color 750ms !important;
+  transition: background-color 750ms !important;
 }
 
 body {
   background-color: var(--color-background);
-  color: var(--color-text);
 }
 
 @-webkit-keyframes spin {
@@ -283,6 +280,7 @@ main {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+  color: var(--color-text);
 }
 
 @media (max-width: 430px) {
@@ -430,6 +428,7 @@ main {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+  color: var(--color-text);
   padding-top: 100vh;
   padding-bottom: 100px;
 }
