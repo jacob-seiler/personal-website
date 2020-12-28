@@ -116,6 +116,12 @@ main {
   height: 45px;
   padding: 0;
   margin: 0px 10px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
   background: #696969;
   color: #ffffff;
   border-radius: 50px;
@@ -132,6 +138,10 @@ main {
 .social-icons .social-icon:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
 }
 
 .social-icons .social-icon.icon-github:hover {
