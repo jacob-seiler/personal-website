@@ -15,6 +15,20 @@ $color-light-secondary: #f3f3f3;
 	}
 }
 
+@keyframes spin {
+	0% {
+		transform: rotateZ(20deg) scale(1.1);
+	}
+	100% {
+		transform: rotateZ(360deg) scale(1);
+	}
+}
+
+.spin {
+	animation: spin 1s ease-out;
+	cursor: wait;
+}
+
 * {
 	font-family: proxima-nova, "Helvetica Neue", sans-serif;
 }
@@ -35,19 +49,6 @@ main {
 	@media (min-width: 970px) {
 		max-width: 720px;
 	}
-}
-
-@keyframes spin {
-	0% {
-		transform: rotateZ(0deg) scale(1.1);
-	}
-	100% {
-		transform: rotateZ(360deg) scale(1);
-	}
-}
-
-.spin {
-	animation: spin 1s ease-out;
 }
 
 .headshot {
