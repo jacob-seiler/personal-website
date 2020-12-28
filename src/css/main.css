@@ -161,6 +161,7 @@ main {
   transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
   background: var(--color-secondary);
   color: var(--color-accent);
+  border: none;
   border-radius: 50px;
 }
 
@@ -210,18 +211,18 @@ main {
 }
 
 .social-icons .social-icon.icon-phone span {
-  -webkit-transform: translateY(-75%) scale(1.25);
-          transform: translateY(-75%) scale(1.25);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 @media (max-width: 430px) {
   .social-icons .social-icon.icon-phone span {
-    -webkit-transform: translateY(-75%) scale(1);
-            transform: translateY(-75%) scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-.social-icons .social-icon span {
+.social-icons .social-icon:not(button) span {
   -webkit-transform: translateY(-75%) scale(1.5);
           transform: translateY(-75%) scale(1.5);
   position: relative;
@@ -229,9 +230,22 @@ main {
 }
 
 @media (max-width: 430px) {
-  .social-icons .social-icon span {
+  .social-icons .social-icon:not(button) span {
     -webkit-transform: translateY(-75%) scale(1.25);
             transform: translateY(-75%) scale(1.25);
+  }
+}
+
+.social-icons .social-icon span {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  position: relative;
+}
+
+@media (max-width: 430px) {
+  .social-icons .social-icon span {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
 }
 

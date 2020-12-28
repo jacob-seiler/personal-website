@@ -150,6 +150,7 @@ main {
 
 		background: var(--color-secondary);
 		color: var(--color-accent);
+		border: none;
 
 		&.icon-github:hover {
 			background: var(--color-github);
@@ -179,21 +180,30 @@ main {
 
 		&.icon-phone {
 			span {
-				transform: translateY(-75%) scale(1.25);
+				transform: scale(1.25);
 
 				@include tiny() {
-					transform: translateY(-75%) scale(1);
+					transform: scale(1);
 				}
 			}
 		}
 
-		span {
+		&:not(button) span {
 			transform: translateY(-75%) scale(1.5);
 			position: relative;
 			top: 50%;
 
 			@include tiny() {
 				transform: translateY(-75%) scale(1.25);
+			}
+		}
+
+		span {
+			transform: scale(1.5);
+			position: relative;
+
+			@include tiny() {
+				transform: scale(1.25);
 			}
 		}
 
