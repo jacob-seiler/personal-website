@@ -62,13 +62,13 @@ gulp.task("images", function () {
 	return gulp.src("./src/assets/*").pipe(imagemin()).pipe(gulp.dest("./dist/assets"));
 });
 
-// Gulp task to copy favicons
-gulp.task("favicon", function () {
-	return gulp.src("./src/*.{png,xml,ico,svg,webmanifest}").pipe(gulp.dest("./dist"));
+// Gulp task to copy favicons and .htaccess
+gulp.task("other", function () {
+	return gulp.src("./src/{*.{png,xml,ico,svg,webmanifest},.htaccess}").pipe(gulp.dest("./dist"));
 });
 
 // Clean output directory
 gulp.task("clean", () => del(["dist"]));
 
 // Gulp task to minify all files
-gulp.task("default", gulp.series("clean", "styles", "scripts", "pages", "images", "favicon"));
+gulp.task("default", gulp.series("clean", "other", "styles", "scripts", "pages", "images"));
