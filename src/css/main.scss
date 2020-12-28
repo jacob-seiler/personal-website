@@ -82,29 +82,39 @@ main {
 }
 
 .headshot {
-	object-fit: cover;
+	padding: 0;
 	width: 170px;
 	height: 170px;
 
-	&:not(.spin) {
-		cursor: pointer;
-		transform: scale(1);
-		transition: transform 0.1s ease-out;
-
-		&:hover {
-			transform: scale(1.1);
-			transition: transform 0.1s ease-out;
-		}
-	}
-
-	@include tiny() {
+	@include tiny {
 		width: 140px;
 		height: 140px;
 	}
 
-	border-radius: 50%;
 	margin-top: 30px;
-	@include shadow;
+	border-radius: 50%;
+	background: none;
+	border: none;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+
+		&:not(.spin) {
+			cursor: pointer;
+			transform: scale(1);
+			transition: transform 0.1s ease-out;
+
+			&:hover {
+				transform: scale(1.1);
+				transition: transform 0.1s ease-out;
+			}
+		}
+
+		border-radius: 50%;
+		@include shadow;
+	}
 }
 
 .title {

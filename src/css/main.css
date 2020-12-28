@@ -86,17 +86,33 @@ main {
 }
 
 .headshot {
-  -o-object-fit: cover;
-     object-fit: cover;
+  padding: 0;
   width: 170px;
   height: 170px;
-  border-radius: 50%;
   margin-top: 30px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 430px) {
+  .headshot {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.headshot img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   -webkit-box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
           box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
 }
 
-.headshot:not(.spin) {
+.headshot img:not(.spin) {
   cursor: pointer;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -106,20 +122,13 @@ main {
   transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
 }
 
-.headshot:not(.spin):hover {
+.headshot img:not(.spin):hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: -webkit-transform 0.1s ease-out;
   transition: -webkit-transform 0.1s ease-out;
   transition: transform 0.1s ease-out;
   transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
-}
-
-@media (max-width: 430px) {
-  .headshot {
-    width: 140px;
-    height: 140px;
-  }
 }
 
 .title {
