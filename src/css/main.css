@@ -390,7 +390,7 @@ main {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
-  padding-top: 500px;
+  padding-top: 100vh;
   padding-bottom: 30px;
 }
 
@@ -402,6 +402,15 @@ main {
 
 .end p {
   margin-bottom: 0px;
+}
+
+.end img {
+  display: block;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  margin-top: 40px;
 }
 
 .end a {
