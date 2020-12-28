@@ -82,6 +82,12 @@ main {
 }
 
 .headshot {
+	&:focus {
+		body:not(.using-tab) & {
+			outline: none;
+		}
+	}
+
 	padding: 0;
 	width: 170px;
 	height: 170px;
@@ -208,6 +214,12 @@ main {
 			}
 		}
 
+		&:focus {
+			body:not(.using-tab) & {
+				outline: none;
+			}
+		}
+
 		span {
 			transform: scale(1.5);
 			position: relative;
@@ -254,12 +266,24 @@ main {
 		border: none;
 		background: none;
 		height: 100%;
+
+		&:focus {
+			body:not(.using-tab) & {
+				outline: none;
+			}
+		}
 	}
 
 	#openButton {
 		color: var(--color-accent);
 		cursor: pointer;
 		height: 100%;
+
+		&:focus {
+			body:not(.using-tab) & {
+				outline: none;
+			}
+		}
 	}
 
 	.collapse-button:hover {
@@ -267,7 +291,7 @@ main {
 	}
 
 	.collapse-button:active {
-		transform: translateY(5px) scale(1.5);
+		transform: scale(1.5);
 		opacity: 1;
 	}
 }
@@ -351,6 +375,12 @@ main {
 				margin-right: 0;
 				margin-left: 0;
 
+				&:focus {
+					body:not(.using-tab) & {
+						outline: none;
+					}
+				}
+
 				&:hover {
 					opacity: 0.7;
 				}
@@ -426,5 +456,11 @@ main {
 
 	a {
 		text-decoration: underline;
+
+		&:focus {
+			body:not(.using-tab) & {
+				outline: none;
+			}
+		}
 	}
 }

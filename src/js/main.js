@@ -116,3 +116,15 @@ $(document).ready(() => {
 		setTheme("light", false);
 	}
 });
+
+// Let the document know when the mouse is being used
+document.body.addEventListener("mousedown", function () {
+	document.body.classList.remove("using-tab");
+});
+
+// Re-enable focus styling when Tab is pressed
+document.body.addEventListener("keydown", function (event) {
+	if (event.key === "Tab" || event.key === "Enter") {
+		document.body.classList.add("using-tab");
+	}
+});

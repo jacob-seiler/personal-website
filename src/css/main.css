@@ -95,6 +95,10 @@ main {
   border: none;
 }
 
+body:not(.using-tab) .headshot:focus {
+  outline: none;
+}
+
 @media (max-width: 430px) {
   .headshot {
     width: 140px;
@@ -245,6 +249,10 @@ main {
   }
 }
 
+body:not(.using-tab) .social-icons .social-icon:focus {
+  outline: none;
+}
+
 .social-icons .social-icon span {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
@@ -299,10 +307,18 @@ main {
   }
 }
 
+body:not(.using-tab) .info #copyButton:focus {
+  outline: none;
+}
+
 .info #openButton {
   color: var(--color-accent);
   cursor: pointer;
   height: 100%;
+}
+
+body:not(.using-tab) .info #openButton:focus {
+  outline: none;
 }
 
 .info .collapse-button:hover {
@@ -310,8 +326,8 @@ main {
 }
 
 .info .collapse-button:active {
-  -webkit-transform: translateY(5px) scale(1.5);
-          transform: translateY(5px) scale(1.5);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   opacity: 1;
 }
 
@@ -413,6 +429,10 @@ main {
   margin-left: 0;
 }
 
+body:not(.using-tab) .cards .card .card-links .card-link:focus {
+  outline: none;
+}
+
 .cards .card .card-links .card-link:hover {
   opacity: 0.7;
 }
@@ -485,5 +505,9 @@ main {
 
 .end a {
   text-decoration: underline;
+}
+
+body:not(.using-tab) .end a:focus {
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */
