@@ -224,17 +224,32 @@ main {
 
 	font-size: 20px;
 
+	@include tiny() {
+		font-size: 14px;
+	}
+
 	#copyButton {
 		margin: 0px;
 		margin-left: 30px;
 		margin-right: 15px;
+
+		@include tiny {
+			margin-left: 20px;
+			margin-right: 5px;
+		}
+
 		color: var(--color-accent);
 		cursor: pointer;
+
+		border: none;
+		background: none;
+		height: 100%;
 	}
 
 	#openButton {
 		color: var(--color-accent);
 		cursor: pointer;
+		height: 100%;
 	}
 
 	.collapse-button:hover {
