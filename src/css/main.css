@@ -391,7 +391,7 @@ main {
   font-style: normal;
   font-size: 18px;
   padding-top: 100vh;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
 }
 
 @media (max-width: 430px) {
@@ -401,22 +401,7 @@ main {
 }
 
 .end p {
-  margin-bottom: 0px;
-}
-
-.end img {
-  display: block;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-  margin-top: 40px;
-}
-
-@media (max-width: 430px) {
-  .end img {
-    width: 75%;
-  }
+  margin-bottom: 10px;
 }
 
 .end a {

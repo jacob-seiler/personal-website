@@ -351,23 +351,10 @@ main {
 	}
 
 	padding-top: 100vh;
-	padding-bottom: 30px;
+	padding-bottom: 100px;
 
 	p {
-		margin-bottom: 0px;
-	}
-
-	img {
-		display: block;
-		width: 400px;
-		margin-left: auto;
-		margin-right: auto;
-		border-radius: 15px;
-		margin-top: 40px;
-
-		@include tiny() {
-			width: 75%;
-		}
+		margin-bottom: 10px;
 	}
 
 	a {
