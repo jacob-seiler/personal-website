@@ -1,12 +1,44 @@
 @import url("https://use.typekit.net/gby4xoo.css");
 
-$color-main: #22b17a;
-$color-secondary: #696969;
-$color-light: #ffffff;
-$color-light-secondary: #f3f3f3;
+html:not([data-theme="dark"]) {
+	--color-primary: #22b17a;
+	--color-primary-shadow: rgba(0, 0, 0, 0.3);
+	--color-secondary: #696969;
+	--color-accent: #ffffff;
+	--color-accent-secondary: #f3f3f3;
+	--color-background: #ffffff;
+	--color-text: #000000;
+	--color-github: #24292e;
+	--color-linkedin: #0b65c2;
+}
+
+html[data-theme="dark"] {
+	--color-primary: #22b17a;
+	--color-primary-shadow: rgba(0, 0, 0, 0.8);
+	--color-secondary: #696969;
+	--color-accent: #ffffff;
+	--color-accent-secondary: #f3f3f3;
+	--color-background: #242424;
+	--color-text: #ffffff;
+	--color-github: #24292e;
+	--color-linkedin: #0b65c2;
+}
+
+html.color-transition,
+html.color-transition *,
+html.color-transition *::before,
+html.color-transition *::after {
+	transition: all 750ms !important;
+	transition-delay: 0 !important;
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
 
 @mixin shadow {
-	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
 }
 
 @mixin tiny {
@@ -78,7 +110,7 @@ main {
 }
 
 .title {
-	color: $color-main;
+	color: var(--color-primary);
 
 	font-weight: 700;
 	font-style: normal;
@@ -118,23 +150,23 @@ main {
 		transform: scale(1);
 		transition: transform 0.1s ease-out;
 
-		background: $color-secondary;
-		color: $color-light;
+		background: var(--color-secondary);
+		color: var(--color-accent);
 
 		&.icon-github:hover {
-			background: #24292e;
+			background: var(--color-github);
 		}
 
 		&.icon-linkedin:hover {
-			background: #0b65c2;
+			background: var(--color-linkedin);
 		}
 
 		&.icon-mail:hover {
-			background: $color-main;
+			background: var(--color-primary);
 		}
 
 		&.icon-phone:hover {
-			background: $color-main;
+			background: var(--color-primary);
 		}
 
 		&.icon-github {
@@ -172,10 +204,10 @@ main {
 }
 
 .info {
-	background-color: $color-main;
-	color: $color-light;
+	background-color: var(--color-primary);
+	color: var(--color-accent);
 	border-radius: 15px;
-	box-shadow: inset 0px 0px 10px 0px rgba(darken($color-main, 15%), 0.75);
+	box-shadow: inset 0px 0px 10px 0px var(--color-primary-shadow);
 	padding: 20px;
 
 	padding-top: 40px;
@@ -188,12 +220,12 @@ main {
 		margin: 0px;
 		margin-left: 30px;
 		margin-right: 15px;
-		color: $color-light;
+		color: var(--color-accent);
 		cursor: pointer;
 	}
 
 	#openButton {
-		color: $color-light;
+		color: var(--color-accent);
 		cursor: pointer;
 	}
 
@@ -223,7 +255,7 @@ main {
 
 	.card {
 		border: none;
-		background-color: $color-main;
+		background-color: var(--color-primary);
 		text-align: left;
 		border-radius: 0;
 		padding: 16px 20px;
@@ -234,7 +266,7 @@ main {
 			font-weight: 700;
 			font-style: normal;
 			font-size: 24px;
-			color: $color-light;
+			color: var(--color-accent);
 			margin-bottom: 0;
 			line-height: 1;
 
@@ -247,7 +279,7 @@ main {
 			font-weight: 400;
 			font-style: italic;
 			font-size: 16px;
-			color: $color-light-secondary;
+			color: var(--color-accent-secondary);
 			margin-top: 0;
 
 			@include tiny() {
@@ -259,7 +291,7 @@ main {
 			font-weight: 400;
 			font-style: normal;
 			font-size: 16px;
-			color: $color-light-secondary;
+			color: var(--color-accent-secondary);
 			margin-top: 0;
 			line-height: 1.25;
 			margin-top: 16px;
@@ -292,7 +324,7 @@ main {
 				i {
 					padding: 16px 0px;
 					margin-left: 10px;
-					color: white;
+					color: var(--color-accent);
 					font-size: 38px;
 
 					@include tiny() {

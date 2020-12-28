@@ -1,4 +1,43 @@
 @import url("https://use.typekit.net/gby4xoo.css");
+html:not([data-theme="dark"]) {
+  --color-primary: #22b17a;
+  --color-primary-shadow: rgba(0, 0, 0, 0.3);
+  --color-secondary: #696969;
+  --color-accent: #ffffff;
+  --color-accent-secondary: #f3f3f3;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-github: #24292e;
+  --color-linkedin: #0b65c2;
+}
+
+html[data-theme="dark"] {
+  --color-primary: #22b17a;
+  --color-primary-shadow: rgba(0, 0, 0, 0.8);
+  --color-secondary: #696969;
+  --color-accent: #ffffff;
+  --color-accent-secondary: #f3f3f3;
+  --color-background: #242424;
+  --color-text: #ffffff;
+  --color-github: #24292e;
+  --color-linkedin: #0b65c2;
+}
+
+html.color-transition,
+html.color-transition *,
+html.color-transition *::before,
+html.color-transition *::after {
+  -webkit-transition: all 750ms !important;
+  transition: all 750ms !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotateZ(20deg) scale(1.1);
@@ -9,6 +48,7 @@
             transform: rotateZ(360deg) scale(1);
   }
 }
+
 @keyframes spin {
   0% {
     -webkit-transform: rotateZ(20deg) scale(1.1);
@@ -55,8 +95,8 @@ main {
   height: 170px;
   border-radius: 50%;
   margin-top: 30px;
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
+          box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
 }
 
 .headshot:not(.spin) {
@@ -86,7 +126,7 @@ main {
 }
 
 .title {
-  color: #22b17a;
+  color: var(--color-primary);
   font-weight: 700;
   font-style: normal;
   font-size: 54px;
@@ -122,8 +162,8 @@ main {
   transition: -webkit-transform 0.1s ease-out;
   transition: transform 0.1s ease-out;
   transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
-  background: #696969;
-  color: #ffffff;
+  background: var(--color-secondary);
+  color: var(--color-accent);
   border-radius: 50px;
 }
 
@@ -145,19 +185,19 @@ main {
 }
 
 .social-icons .social-icon.icon-github:hover {
-  background: #24292e;
+  background: var(--color-github);
 }
 
 .social-icons .social-icon.icon-linkedin:hover {
-  background: #0b65c2;
+  background: var(--color-linkedin);
 }
 
 .social-icons .social-icon.icon-mail:hover {
-  background: #22b17a;
+  background: var(--color-primary);
 }
 
 .social-icons .social-icon.icon-phone:hover {
-  background: #22b17a;
+  background: var(--color-primary);
 }
 
 .social-icons .social-icon.icon-github span {
@@ -199,11 +239,11 @@ main {
 }
 
 .info {
-  background-color: #22b17a;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
   border-radius: 15px;
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(22, 113, 78, 0.75);
-          box-shadow: inset 0px 0px 10px 0px rgba(22, 113, 78, 0.75);
+  -webkit-box-shadow: inset 0px 0px 10px 0px var(--color-primary-shadow);
+          box-shadow: inset 0px 0px 10px 0px var(--color-primary-shadow);
   padding: 20px;
   padding-top: 40px;
   display: -webkit-box;
@@ -219,12 +259,12 @@ main {
   margin: 0px;
   margin-left: 30px;
   margin-right: 15px;
-  color: #ffffff;
+  color: var(--color-accent);
   cursor: pointer;
 }
 
 .info #openButton {
-  color: #ffffff;
+  color: var(--color-accent);
   cursor: pointer;
 }
 
@@ -257,13 +297,13 @@ main {
 
 .cards .card {
   border: none;
-  background-color: #22b17a;
+  background-color: var(--color-primary);
   text-align: left;
   border-radius: 0;
   padding: 16px 20px;
   margin-bottom: 20px;
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
+          box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
   background-blend-mode: multiply;
   background-position: right;
   background-repeat: no-repeat;
@@ -274,7 +314,7 @@ main {
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
-  color: #ffffff;
+  color: var(--color-accent);
   margin-bottom: 0;
   line-height: 1;
 }
@@ -289,7 +329,7 @@ main {
   font-weight: 400;
   font-style: italic;
   font-size: 16px;
-  color: #f3f3f3;
+  color: var(--color-accent-secondary);
   margin-top: 0;
 }
 
@@ -303,7 +343,7 @@ main {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  color: #f3f3f3;
+  color: var(--color-accent-secondary);
   margin-top: 0;
   line-height: 1.25;
   margin-top: 16px;
@@ -342,7 +382,7 @@ main {
 .cards .card .card-links .card-link i {
   padding: 16px 0px;
   margin-left: 10px;
-  color: white;
+  color: var(--color-accent);
   font-size: 38px;
 }
 

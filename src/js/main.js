@@ -72,6 +72,27 @@ const copy = () => {
 	document.body.removeChild(textArea);
 };
 
+const setTheme = (value, transition) => {
+	if (document.documentElement.getAttribute("data-theme") === value) return;
+
+	document.documentElement.setAttribute("data-theme", value);
+
+	if (!transition) return;
+
+	document.documentElement.classList.add("color-transition");
+
+	window.setTimeout(() => {
+		document.documentElement.classList.remove("color-transition");
+	}, 1000);
+};
+
+const swapTheme = () => {
+	const newTheme =
+		document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+
+	setTheme(newTheme, true);
+};
+
 const spin = () => {
 	if ($(".headshot").hasClass("spin")) return;
 
@@ -79,4 +100,19 @@ const spin = () => {
 	$(".headshot").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function () {
 		$(".headshot").removeClass("spin");
 	});
+
+	swapTheme();
 };
+
+$(document).ready(() => {
+	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+		const newTheme = e.matches ? "dark" : "light";
+		setTheme(newTheme, true);
+	});
+
+	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+		setTheme("dark", false);
+	} else {
+		setTheme("light", false);
+	}
+});
