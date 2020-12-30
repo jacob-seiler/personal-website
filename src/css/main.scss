@@ -54,6 +54,31 @@ body {
 	}
 }
 
+.hidden-link {
+	background: var(--color-primary);
+	color: var(--color-accent);
+	@include shadow();
+	padding: 16px 32px;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 24px;
+
+	@include tiny() {
+		font-size: 20px;
+	}
+
+	position: fixed;
+	top: -200px;
+	left: 50%;
+	z-index: 1000;
+	transform: translateX(-50%);
+	transition: transform 0.3s;
+}
+
+.hidden-link:focus {
+	transform: translate(-50%, 220px);
+}
+
 .spin {
 	animation: spin 1s ease-out;
 	cursor: wait;

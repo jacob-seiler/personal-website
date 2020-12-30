@@ -57,6 +57,38 @@ body {
   }
 }
 
+.hidden-link {
+  background: var(--color-primary);
+  color: var(--color-accent);
+  -webkit-box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
+          box-shadow: 0px 3px 6px 0px var(--color-primary-shadow);
+  padding: 16px 32px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+@media (max-width: 430px) {
+  .hidden-link {
+    font-size: 20px;
+  }
+}
+
+.hidden-link:focus {
+  -webkit-transform: translate(-50%, 220px);
+          transform: translate(-50%, 220px);
+}
+
 .spin {
   -webkit-animation: spin 1s ease-out;
           animation: spin 1s ease-out;

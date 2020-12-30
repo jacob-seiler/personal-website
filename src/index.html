@@ -22,12 +22,14 @@
 	<body>
 		<span id="top"></span>
 		<main class="container">
-			<button class="headshot" type="button" onclick="spin()">
-				<img src="assets/headshot.png" />
+			<a class="hidden-link" href="#projects">Skip to projects</a>
+			<button aria-label="Change theme" class="headshot" type="button" onclick="spin()">
+				<img src="assets/headshot.png" alt="Headshot" />
 			</button>
 			<h1 class="title">Jacob Seiler</h1>
 			<div class="row social-icons">
 				<a
+					aria-label="My Github (opens in a new window)"
 					href="https://github.com/jacob-seiler"
 					target="_blank"
 					class="social-icon icon-github"
@@ -35,6 +37,7 @@
 					<span class="fab fa-github"></span>
 				</a>
 				<a
+					aria-label="My LinkedIn (opens in a new window)"
 					href="https://www.linkedin.com/in/jacobseiler/"
 					target="_blank"
 					class="social-icon icon-linkedin"
@@ -42,6 +45,7 @@
 					<span class="fab fa-linkedin-in"></span>
 				</a>
 				<button
+					aria-label="Show email"
 					type="button"
 					href="#"
 					class="social-icon icon-mail collapse-element"
@@ -50,6 +54,7 @@
 					<span class="fas fa-envelope"></span>
 				</button>
 				<button
+					aria-label="Show phone number"
 					type="button"
 					href="#"
 					class="social-icon icon-phone collapse-element"
@@ -61,10 +66,16 @@
 			<div class="collapse collapse-element" id="collapse">
 				<div class="info">
 					<p id="collapse-text"></p>
-					<button type="button" class="collapse-button" id="copyButton" onclick="copy()">
+					<button
+						aria-label="Copy"
+						type="button"
+						class="collapse-button"
+						id="copyButton"
+						onclick="copy()"
+					>
 						<span class="fas fa-copy"></span>
 					</button>
-					<a class="collapse-button" id="openButton" href="">
+					<a aria-label="Open" class="collapse-button" id="openButton" href="">
 						<span class="fas fa-external-link-alt"></span>
 					</a>
 				</div>
@@ -75,15 +86,18 @@
 				clubs, or my own personal initiative.
 				<b>I like to work hard and have fun doing it.</b>
 			</p>
+			<span id="projects"></span>
+			<a class="hidden-link" href="#end">Skip to footer</a>
 			<div class="cards">
 				<div class="card" id="card-csstoolkit">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">CSS Toolkit</p>
+							<h2 class="card-title">CSS Toolkit</h2>
 							<p class="card-subtitle">React, TypeScript, Bootstrap, Sass</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: CSS Toolkit (opens in a new window)"
 								class="card-link"
 								href="https://github.com/jacob-seiler/css-toolkit"
 								target="_blank"
@@ -91,6 +105,7 @@
 								<i class="fab fa-github"></i>
 							</a>
 							<a
+								aria-label="Demo: CSS Toolkit (opens in a new window)"
 								class="card-link"
 								href="https://jacob-seiler.github.io/CSS-Toolkit/build/"
 								target="_blank"
@@ -113,18 +128,19 @@
 				<div class="card" id="card-personalwebsite">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">Personal Website</p>
+							<h2 class="card-title">Personal Website</h2>
 							<p class="card-subtitle">Bootstrap, Sass</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: Personal Website (opens in a new window)"
 								class="card-link"
 								href="https://github.com/jacob-seiler/personal-website"
 								target="_blank"
 							>
 								<i class="fab fa-github"></i>
 							</a>
-							<a class="card-link" href="#top">
+							<a aria-label="Top" class="card-link" href="#top">
 								<i class="fas fa-external-link-alt"></i>
 							</a>
 						</div>
@@ -142,11 +158,12 @@
 				<div class="card" id="card-fashionclassifier">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">Fashion Classifier</p>
+							<h2 class="card-title">Fashion Classifier</h2>
 							<p class="card-subtitle">Keras, NumPy</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: Fashion Classifier (opens in a new window)"
 								class="card-link"
 								href="https://github.com/jacob-seiler/CampQMINDTeamB20"
 								target="_blank"
@@ -170,11 +187,12 @@
 				<div class="card" id="card-lyricgen">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">Lyric Generation A.I.</p>
+							<h2 class="card-title">Lyric Generation A.I.</h2>
 							<p class="card-subtitle">Keras, NumPy, Pandas</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: Lyric Generation A.I. (opens in a new window)"
 								class="card-link"
 								href="https://github.com/QMIND-Team/Lyric-Gen"
 								target="_blank"
@@ -197,11 +215,12 @@
 				<div class="card" id="card-stockpred">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">Stock Prediction A.I.</p>
+							<h2 class="card-title">Stock Prediction A.I.</h2>
 							<p class="card-subtitle">Keras, NumPy, Pandas</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: Stock Prediction A.I. (opens in a new window)"
 								class="card-link"
 								href="https://github.com/BetaLab-Queens/quant"
 								target="_blank"
@@ -224,11 +243,12 @@
 				<div class="card" id="card-engine">
 					<div class="row">
 						<div class="col-auto col-sm-9">
-							<p class="card-title">2D Game Engine</p>
+							<h2 class="card-title">2D Game Engine</h2>
 							<p class="card-subtitle">Java</p>
 						</div>
 						<div class="col col-sm-3 card-links">
 							<a
+								aria-label="Github: 2D Game Engine (opens in a new window)"
 								class="card-link"
 								href="https://github.com/jacob-seiler/Java-2D-Game-Engine"
 								target="_blank"
@@ -250,8 +270,9 @@
 				</div>
 			</div>
 			<div class="end">
+				<span id="end"></span>
 				<p>Oh, I also like scuba diving and playing my guitar.</p>
-				<a href="#top">Back to top</a>
+				<a aria-label="Top" href="#top">Back to top</a>
 			</div>
 		</main>
 		<script src="https://kit.fontawesome.com/5a558688dd.js" crossorigin="anonymous"></script>
