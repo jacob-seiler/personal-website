@@ -412,7 +412,15 @@ main {
 
 				i {
 					padding: 16px 0px;
-					margin-left: 10px;
+
+					&:not(.fa-github) {
+						margin-left: 10px;
+
+						@include tiny() {
+							margin-left: 0px;
+						}
+					}
+
 					color: var(--color-accent);
 					font-size: 38px;
 
@@ -428,6 +436,10 @@ main {
 
 		&#card-csstoolkit {
 			background-image: url("../assets/csstoolkit.png");
+		}
+
+		&#card-seetgeek {
+			background-image: url("../assets/seetgeek.png");
 		}
 
 		&#card-personalwebsite {

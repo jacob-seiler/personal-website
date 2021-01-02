@@ -471,9 +471,18 @@ body:not(.using-tab) .cards .card .card-links .card-link:focus {
 
 .cards .card .card-links .card-link i {
   padding: 16px 0px;
-  margin-left: 10px;
   color: var(--color-accent);
   font-size: 38px;
+}
+
+.cards .card .card-links .card-link i:not(.fa-github) {
+  margin-left: 10px;
+}
+
+@media (max-width: 430px) {
+  .cards .card .card-links .card-link i:not(.fa-github) {
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 430px) {
@@ -487,6 +496,10 @@ body:not(.using-tab) .cards .card .card-links .card-link:focus {
 
 .cards .card#card-csstoolkit {
   background-image: url("../assets/csstoolkit.png");
+}
+
+.cards .card#card-seetgeek {
+  background-image: url("../assets/seetgeek.png");
 }
 
 .cards .card#card-personalwebsite {
