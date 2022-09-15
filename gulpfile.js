@@ -5,7 +5,7 @@ var csso = require("gulp-csso");
 var del = require("del");
 var gulp = require("gulp");
 var htmlmin = require("gulp-htmlmin");
-var sass = require("gulp-sass");
+var sass = require('gulp-sass')(require('node-sass'));
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 
