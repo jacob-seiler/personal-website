@@ -12,6 +12,9 @@ var htmlreplace = require('gulp-html-replace');
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 var pngquant = require('imagemin-pngquant');
+var CacheBuster = require('gulp-cachebust');
+
+var cachebust = new CacheBuster();
 
 // Gulp task to minify CSS files
 gulp.task("styles", function () {
@@ -31,6 +34,9 @@ gulp.task("styles", function () {
 			.pipe(autoprefixer())
 			// Minify the file
 			.pipe(csso())
+			// Caching
+			.pipe(cachebust.references())
+			.pipe(cachebust.resources())
 			// Output
 			.pipe(gulp.dest("./dist/styles"))
 	);
@@ -59,6 +65,8 @@ gulp.task("modules", function () {
 			// Merge node_module files
 			.src([pathBootstrap, pathJQuery, 'dist/scripts/temp/*.js'])
 			.pipe(concat('bundle.js'))
+			// Caching
+			.pipe(cachebust.resources())
 			.pipe(gulp.dest("./dist/scripts"))
 	);
 })
@@ -77,6 +85,8 @@ gulp.task("pages", function () {
 					removeComments: true,
 				})
 			)
+			// Caching
+			.pipe(cachebust.references())
 			.pipe(gulp.dest("./dist"))
 	)
 });
@@ -89,6 +99,8 @@ gulp.task("images", function () {
 			.pipe(imagemin([
 				pngquant({ quality: [0.5, 0.5] })
 			]))
+			// Caching
+			.pipe(cachebust.resources())
 			.pipe(gulp.dest("./dist/assets"))
 	);
 });
@@ -105,4 +117,4 @@ gulp.task("clear", () => del(["dist"]));
 gulp.task("tidy", () => del(["dist/scripts/temp"]));
 
 // Gulp task to minify all files
-gulp.task("default", gulp.series("clear", "other", "styles", "scripts", "modules", "pages", "images", "tidy"));
+gulp.task("default", gulp.series("clear", "other", "images", "styles", "scripts", "modules", "pages", "tidy"));

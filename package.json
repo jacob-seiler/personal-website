@@ -23,6 +23,7 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-cachebust": "^0.0.11",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-html-replace": "^1.6.2",
