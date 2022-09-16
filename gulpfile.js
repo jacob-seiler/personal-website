@@ -4,9 +4,11 @@ var autoprefixer = require("gulp-autoprefixer");
 var csso = require("gulp-csso");
 var del = require("del");
 var gulp = require("gulp");
+var concat = require('gulp-concat');
 var htmlmin = require("gulp-htmlmin");
 var sass = require('gulp-sass')(require('node-sass'));
 var ts = require('gulp-typescript');
+var htmlreplace = require('gulp-html-replace');
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 
@@ -43,21 +45,39 @@ gulp.task("scripts", function () {
 			// Minify the file
 			.pipe(uglify())
 			// Output
-			.pipe(gulp.dest("./dist/scripts"))
+			.pipe(gulp.dest("./dist/scripts/temp"))
 	);
 });
 
+gulp.task("modules", function () {
+	const pathBootstrap = 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+	const pathJQuery = 'node_modules/jquery/dist/jquery.min.js'
+
+	return (
+		gulp
+			// Merge node_module files
+			.src([pathBootstrap, pathJQuery, 'dist/scripts/temp/*.js'])
+			.pipe(concat('bundle.js'))
+			.pipe(gulp.dest("./dist/scripts"))
+	);
+})
+
 // Gulp task to minify HTML files
 gulp.task("pages", function () {
-	return gulp
-		.src(["./src/*.html"])
-		.pipe(
-			htmlmin({
-				collapseWhitespace: true,
-				removeComments: true,
-			})
-		)
-		.pipe(gulp.dest("./dist"));
+	return (
+		gulp
+			.src(["./src/*.html"])
+			.pipe(htmlreplace({
+				'scripts': 'scripts/bundle.js'
+			}))
+			.pipe(
+				htmlmin({
+					collapseWhitespace: true,
+					removeComments: true,
+				})
+			)
+			.pipe(gulp.dest("./dist"))
+	)
 });
 
 // Gulp task to minify images
@@ -70,8 +90,11 @@ gulp.task("other", function () {
 	return gulp.src("./src/{*.{png,xml,ico,svg,webmanifest},.htaccess}").pipe(gulp.dest("./dist"));
 });
 
-// Clean output directory
-gulp.task("clean", () => del(["dist"]));
+// Clear output directory
+gulp.task("clear", () => del(["dist"]));
+
+// Tidy output directory
+gulp.task("tidy", () => del(["dist/scripts/temp"]));
 
 // Gulp task to minify all files
-gulp.task("default", gulp.series("clean", "other", "styles", "scripts", "pages", "images"));
+gulp.task("default", gulp.series("clear", "other", "styles", "scripts", "modules", "pages", "images", "tidy"));
