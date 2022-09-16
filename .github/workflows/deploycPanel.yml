@@ -1,19 +1,60 @@
-name: Publish Website to cPanel
+# name: Publish Website to cPanel
+# on:
+#   push:
+#     branches:
+#       - master
+# jobs:
+#   FTP-Deploy-Action:
+#     name: FTP-Deploy-Action
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2.1.0
+#       with:
+#         fetch-depth: 2
+#     - name: FTP-Deploy-Action
+#       uses: SamKirkland/FTP-Deploy-Action@4.3.1
+#       with:
+#         server: ${{ secrets.FTP_SERVER }}
+#         username: ${{ secrets.FTP_USERNAME }}
+#         password: ${{ secrets.FTP_PASSWORD }}
+
+name: Build and Deploy
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  workflow_dispatch:
+  
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@4.3.1
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build dependencies
+        run: yarn build
+      - name: Archive production artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Download artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@4.3.1
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
