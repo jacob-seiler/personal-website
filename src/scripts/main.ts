@@ -105,7 +105,6 @@ const spin = () => {
 	swapTheme();
 };
 
-
 $(document).ready(() => {
 	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
 		const newTheme = e.matches ? "dark" : "light";
