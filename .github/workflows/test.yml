@@ -5,8 +5,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
+    - name: Checkout 🛎
+      uses: actions/checkout@v2
+    - name: Cache node_modules 📦
+      uses: actions/cache@v3
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+    - name: Install dependencies 👨🏻‍💻
       run: yarn
-    - name: Run ESLint
-      run: yarn run eslint . --ext .ts
+    - name: Run linter 👀
+      run: yarn lint
