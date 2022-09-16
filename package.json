@@ -4,7 +4,8 @@
   "description": "Space for displaying projects I've worked on, social media, and contact information to connect with me.",
   "main": "src/index.html",
   "scripts": {
-    "build": "tsc"
+    "build": "gulp",
+    "compile": "tsc && node-sass src/styles -o src/styles"
   },
   "repository": {
     "type": "git",
