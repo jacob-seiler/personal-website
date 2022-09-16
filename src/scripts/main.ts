@@ -131,12 +131,7 @@ document.body.addEventListener("keydown", function (event) {
 });
 
 // Assign action to buttons
-const spinButton = document.getElementById("button-spin");
-const mailButton = document.getElementById("button-mail");
-const phoneButton = document.getElementById("button-phone");
-const copyButton = document.getElementById("button-copy");
-
-spinButton?.addEventListener("click", spin);
-mailButton?.addEventListener("click", toggleMail);
-phoneButton?.addEventListener("click", togglePhone);
-copyButton?.addEventListener("click", copy);
+document.getElementById("button-spin")?.addEventListener("click", spin);
+document.getElementById("button-mail")?.addEventListener("click", toggleMail);
+document.getElementById("button-phone")?.addEventListener("click", togglePhone);
+document.getElementById("button-copy")?.addEventListener("click", copy);

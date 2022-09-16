@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b, _c, _d;
 /* eslint-env jquery */
 let copyVal = "";
 $(document).bind("click", (e) => {
@@ -105,11 +106,7 @@ document.body.addEventListener("keydown", function (event) {
     }
 });
 // Assign action to buttons
-const spinButton = document.getElementById("button-spin");
-const mailButton = document.getElementById("button-mail");
-const phoneButton = document.getElementById("button-phone");
-const copyButton = document.getElementById("button-copy");
-spinButton === null || spinButton === void 0 ? void 0 : spinButton.addEventListener('click', spin);
-mailButton === null || mailButton === void 0 ? void 0 : mailButton.addEventListener('click', toggleMail);
-phoneButton === null || phoneButton === void 0 ? void 0 : phoneButton.addEventListener('click', togglePhone);
-copyButton === null || copyButton === void 0 ? void 0 : copyButton.addEventListener('click', copy);
+(_a = document.getElementById("button-spin")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", spin);
+(_b = document.getElementById("button-mail")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", toggleMail);
+(_c = document.getElementById("button-phone")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", togglePhone);
+(_d = document.getElementById("button-copy")) === null || _d === void 0 ? void 0 : _d.addEventListener("click", copy);
