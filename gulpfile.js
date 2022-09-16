@@ -6,6 +6,7 @@ var del = require("del");
 var gulp = require("gulp");
 var htmlmin = require("gulp-htmlmin");
 var sass = require('gulp-sass')(require('node-sass'));
+var ts = require('gulp-typescript');
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
 
@@ -13,7 +14,7 @@ var imagemin = require("gulp-imagemin");
 gulp.task("styles", function () {
 	return (
 		gulp
-			.src("./src/css/main.scss")
+			.src("./src/styles/*.scss")
 			// Compile SASS files
 			.pipe(
 				sass({
@@ -28,7 +29,7 @@ gulp.task("styles", function () {
 			// Minify the file
 			.pipe(csso())
 			// Output
-			.pipe(gulp.dest("./dist/css"))
+			.pipe(gulp.dest("./dist/styles"))
 	);
 });
 
@@ -36,11 +37,13 @@ gulp.task("styles", function () {
 gulp.task("scripts", function () {
 	return (
 		gulp
-			.src("./src/js/*.js")
+			.src('src/scripts/*.ts')
+			// Compile TypeScript files
+			.pipe(ts())
 			// Minify the file
 			.pipe(uglify())
 			// Output
-			.pipe(gulp.dest("./dist/js"))
+			.pipe(gulp.dest("./dist/scripts"))
 	);
 });
 

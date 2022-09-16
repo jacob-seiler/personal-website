@@ -4,7 +4,8 @@
   "description": "Space for displaying projects I've worked on, social media, and contact information to connect with me.",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp",
+    "compile": "tsc && node-sass src/styles -o src/styles"
   },
   "repository": {
     "type": "git",
@@ -17,17 +18,23 @@
   },
   "homepage": "https://github.com/jacob-seiler/personal-website#readme",
   "devDependencies": {
+    "@types/bootstrap": "^5.2.4",
+    "@types/jquery": "^3.5.14",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^7.0.3"
+    "node-sass": "^7.0.3",
+    "typescript": "^4.8.3"
   },
   "dependencies": {
-    "gulp-sass": "^5.1.0"
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1"
   },
   "browserslist": [
     "> 1%",

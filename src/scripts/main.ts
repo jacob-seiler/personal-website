@@ -13,7 +13,7 @@ const isCollapsed = () => {
 	return !$("#collapse").hasClass("show");
 };
 
-const show = (displayText, copyText, open) => {
+const show = (displayText: string, copyText: string, open: string) => {
 	copyVal = copyText;
 
 	$("#collapse-text").text(displayText);
@@ -21,7 +21,7 @@ const show = (displayText, copyText, open) => {
 	$("#collapse").collapse("show");
 };
 
-const toggle = (displayText, copyText, open) => {
+const toggle = (displayText: string, copyText: string, open: string) => {
 	if (isCollapsed()) show(displayText, copyText, open);
 	else {
 		$("#collapse")
@@ -34,9 +34,9 @@ const toggle = (displayText, copyText, open) => {
 };
 
 const toggleMail = () => {
-	let displayText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
-	let copyText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
-	let open = "mailto:seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
+	const displayText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
+	const copyText = "seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
+	const open = "mailto:seiler.jac" + String.fromCharCode(111) + "b1@gmail.com";
 
 	toggle(displayText, copyText, open);
 };
@@ -72,7 +72,7 @@ const copy = () => {
 	document.body.removeChild(textArea);
 };
 
-const setTheme = (value, transition) => {
+const setTheme = (value: string, transition: boolean) => {
 	if (document.documentElement.getAttribute("data-theme") === value) return;
 
 	document.documentElement.setAttribute("data-theme", value);
