@@ -5,20 +5,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    # - name: Cache node modules
-    #   id: cache
-    #   uses: actions/cache@v3
-    #   env:
-    #     cache-name: cache-node-modules
-    #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-build-${{ env.cache.name }}-${{ hashFiles('**/yarn.lock') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-build-${{ env.cache-name }}-
-    #       ${{ runner.os }}-build-
-    #       ${{ runner.os }}-
-    - name: Install dependencies
-      # if: steps.cache.outputs.cache-hit != 'true'
+    - uses: actions/checkout@v2
+    - name: Install modules
       run: yarn
-    - name: Lint using ESLint
+    - name: Run ESLint
       run: yarn run eslint . --ext .ts
