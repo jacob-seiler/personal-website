@@ -1,28 +1,38 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+require("../styles/main.scss");
+const jquery_1 = __importDefault(require("jquery"));
+require("bootstrap");
+var bootstrap_enabled = (typeof (0, jquery_1.default)().modal == 'function');
+var jquery_disabled = typeof jQuery == 'undefined';
+console.log(bootstrap_enabled, !jquery_disabled);
 let copyVal = "";
-$(document).bind("click", (e) => {
-    if (!$(e.target).is(".collapse-element") &&
-        $(e.target).parents(".collapse-element").length === 0) {
-        $("#collapse").collapse("hide");
+(0, jquery_1.default)(document).on("click", (e) => {
+    if (!(0, jquery_1.default)(e.target).is(".collapse-element") &&
+        (0, jquery_1.default)(e.target).parents(".collapse-element").length === 0) {
+        (0, jquery_1.default)("#collapse").collapse("hide");
     }
 });
 const isCollapsed = () => {
-    return !$("#collapse").hasClass("show");
+    return !(0, jquery_1.default)("#collapse").hasClass("show");
 };
 const show = (displayText, copyText, open) => {
     copyVal = copyText;
-    $("#collapse-text").text(displayText);
-    $("#openButton").attr("href", open);
-    $("#collapse").collapse("show");
+    (0, jquery_1.default)("#collapse-text").text(displayText);
+    (0, jquery_1.default)("#openButton").attr("href", open);
+    (0, jquery_1.default)("#collapse").collapse("show");
 };
 const toggle = (displayText, copyText, open) => {
     if (isCollapsed())
         show(displayText, copyText, open);
     else {
-        $("#collapse")
+        (0, jquery_1.default)("#collapse")
             .collapse("hide")
             .on("hidden.bs.collapse", () => {
-            $("#collapse").off();
+            (0, jquery_1.default)("#collapse").off();
             if (copyText !== copyVal)
                 show(displayText, copyText, open);
         });
@@ -73,15 +83,15 @@ const swapTheme = () => {
     setTheme(newTheme, true);
 };
 const spin = () => {
-    if ($(".headshot").hasClass("spin"))
+    if ((0, jquery_1.default)(".headshot").hasClass("spin"))
         return;
-    $(".headshot").addClass("spin");
-    $(".headshot").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function () {
-        $(".headshot").removeClass("spin");
+    (0, jquery_1.default)(".headshot").addClass("spin");
+    (0, jquery_1.default)(".headshot").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function () {
+        (0, jquery_1.default)(".headshot").removeClass("spin");
     });
     swapTheme();
 };
-$(document).ready(() => {
+(0, jquery_1.default)(() => {
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
         const newTheme = e.matches ? "dark" : "light";
         setTheme(newTheme, true);
@@ -103,3 +113,16 @@ document.body.addEventListener("keydown", function (event) {
         document.body.classList.add("using-tab");
     }
 });
+// Listen for button presses
+const spinButton = document.getElementById("spin-button");
+const toggleMailButton = document.getElementById("toggle-mail-button");
+const togglePhoneButton = document.getElementById("toggle-phone-button");
+const copyButton = document.getElementById("copy-button");
+if (spinButton !== null)
+    spinButton.addEventListener("click", spin);
+if (toggleMailButton !== null)
+    toggleMailButton.addEventListener("click", toggleMail);
+if (togglePhoneButton !== null)
+    togglePhoneButton.addEventListener("click", togglePhone);
+if (copyButton !== null)
+    copyButton.addEventListener("click", copy);

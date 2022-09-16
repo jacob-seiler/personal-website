@@ -1,6 +1,14 @@
+import '../styles/main.scss';
+import $ from 'jquery';
+import 'bootstrap';
+
+var bootstrap_enabled = (typeof $().modal == 'function');
+var jquery_disabled = typeof jQuery == 'undefined'
+console.log(bootstrap_enabled, !jquery_disabled)
+
 let copyVal = "";
 
-$(document).bind("click", (e) => {
+$(document).on("click", (e) => {
 	if (
 		!$(e.target).is(".collapse-element") &&
 		$(e.target).parents(".collapse-element").length === 0
@@ -104,7 +112,7 @@ const spin = () => {
 	swapTheme();
 };
 
-$(document).ready(() => {
+$(() => {
 	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
 		const newTheme = e.matches ? "dark" : "light";
 		setTheme(newTheme, true);
@@ -128,3 +136,14 @@ document.body.addEventListener("keydown", function (event) {
 		document.body.classList.add("using-tab");
 	}
 });
+
+// Listen for button presses
+const spinButton = document.getElementById("spin-button");
+const toggleMailButton = document.getElementById("toggle-mail-button");
+const togglePhoneButton = document.getElementById("toggle-phone-button");
+const copyButton = document.getElementById("copy-button");
+
+if (spinButton !== null) spinButton.addEventListener("click", spin);
+if (toggleMailButton !== null) toggleMailButton.addEventListener("click", toggleMail);
+if (togglePhoneButton !== null) togglePhoneButton.addEventListener("click", togglePhone);
+if (copyButton !== null) copyButton.addEventListener("click", copy);

@@ -8570,7 +8570,7 @@ main {
   @media (max-width: 430px) {
     .info {
       font-size: 14px; } }
-  .info #copyButton {
+  .info #copy-button {
     margin: 0px;
     margin-left: 30px;
     margin-right: 15px;
@@ -8580,10 +8580,10 @@ main {
     background: none;
     height: 100%; }
     @media (max-width: 430px) {
-      .info #copyButton {
+      .info #copy-button {
         margin-left: 20px;
         margin-right: 5px; } }
-    body:not(.using-tab) .info #copyButton:focus {
+    body:not(.using-tab) .info #copy-button:focus {
       outline: none; }
   .info #openButton {
     color: var(--color-accent);
