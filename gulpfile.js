@@ -11,6 +11,7 @@ var ts = require('gulp-typescript');
 var htmlreplace = require('gulp-html-replace');
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
+var pngquant = require('imagemin-pngquant');
 
 // Gulp task to minify CSS files
 gulp.task("styles", function () {
@@ -82,7 +83,14 @@ gulp.task("pages", function () {
 
 // Gulp task to minify images
 gulp.task("images", function () {
-	return gulp.src("./src/assets/*").pipe(imagemin()).pipe(gulp.dest("./dist/assets"));
+	return (
+		gulp
+			.src("./src/assets/*")
+			.pipe(imagemin([
+				pngquant({ quality: [0.5, 0.5] })
+			]))
+			.pipe(gulp.dest("./dist/assets"))
+	);
 });
 
 // Gulp task to copy favicons and .htaccess
