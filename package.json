@@ -5,7 +5,9 @@
   "main": "src/index.html",
   "scripts": {
     "build": "gulp",
-    "compile": "tsc && node-sass src/styles -o src/styles"
+    "compile": "tsc && node-sass src/styles -o src/styles",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
   "devDependencies": {
     "@types/bootstrap": "^5.2.4",
     "@types/jquery": "^3.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
     "del": "^6.0.0",
+    "eslint": "^8.23.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cachebust": "^0.0.11",

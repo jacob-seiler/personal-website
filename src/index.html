@@ -17,7 +17,7 @@
 		<span id="top"></span>
 		<main class="container">
 			<a class="hidden-link" href="#projects">Skip to projects</a>
-			<button aria-label="Change theme" class="headshot" type="button" onclick="spin()">
+			<button aria-label="Change theme" class="headshot" type="button" id="button-spin">
 				<img src="assets/headshot.png" alt="Headshot" />
 			</button>
 			<h1 class="title">Jacob Seiler</h1>
@@ -43,7 +43,7 @@
 					type="button"
 					href="#"
 					class="social-icon icon-mail collapse-element"
-					onclick="toggleMail()"
+					id="button-mail"
 				>
 					<span class="fas fa-envelope"></span>
 				</button>
@@ -52,7 +52,7 @@
 					type="button"
 					href="#"
 					class="social-icon icon-phone collapse-element"
-					onclick="togglePhone()"
+					id="button-phone"
 				>
 					<span class="fas fa-phone-alt"></span>
 				</button>
@@ -64,8 +64,7 @@
 						aria-label="Copy"
 						type="button"
 						class="collapse-button"
-						id="copyButton"
-						onclick="copy()"
+						id="button-copy"
 					>
 						<span class="fas fa-copy"></span>
 					</button>
