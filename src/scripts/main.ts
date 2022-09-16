@@ -134,4 +134,4 @@ document.body.addEventListener("keydown", function (event) {
 document.getElementById("button-spin")?.addEventListener("click", spin);
 document.getElementById("button-mail")?.addEventListener("click", toggleMail);
 document.getElementById("button-phone")?.addEventListener("click", togglePhone);
-document.getElementById("button-copy")?.addEventListener("click", copy);
+document.getElementById("button-copy")?.addEventListener("click", copy)
