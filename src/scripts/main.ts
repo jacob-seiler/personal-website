@@ -1,3 +1,4 @@
+/* eslint-env jquery */
 let copyVal = "";
 
 $(document).bind("click", (e) => {
@@ -42,9 +43,9 @@ const toggleMail = () => {
 };
 
 const togglePhone = () => {
-	let displayText = "+1 (416) " + String.fromCharCode(53) + "57-7215";
-	let copyText = "+1416" + String.fromCharCode(53) + "577215";
-	let open = "tel:+1416" + String.fromCharCode(53) + "577215";
+	const displayText = "+1 (416) " + String.fromCharCode(53) + "57-7215";
+	const copyText = "+1416" + String.fromCharCode(53) + "577215";
+	const open = "tel:+1416" + String.fromCharCode(53) + "577215";
 
 	toggle(displayText, copyText, open);
 };
@@ -128,3 +129,9 @@ document.body.addEventListener("keydown", function (event) {
 		document.body.classList.add("using-tab");
 	}
 });
+
+// Assign action to buttons
+document.getElementById("button-spin")?.addEventListener("click", spin);
+document.getElementById("button-mail")?.addEventListener("click", toggleMail);
+document.getElementById("button-phone")?.addEventListener("click", togglePhone);
+document.getElementById("button-copy")?.addEventListener("click", copy);

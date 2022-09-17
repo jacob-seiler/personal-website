@@ -4,15 +4,15 @@ var autoprefixer = require("gulp-autoprefixer");
 var csso = require("gulp-csso");
 var del = require("del");
 var gulp = require("gulp");
-var concat = require('gulp-concat');
+var concat = require("gulp-concat");
 var htmlmin = require("gulp-htmlmin");
-var sass = require('gulp-sass')(require('node-sass'));
-var ts = require('gulp-typescript');
-var htmlreplace = require('gulp-html-replace');
+var sass = require("gulp-sass")(require("node-sass"));
+var ts = require("gulp-typescript");
+var htmlreplace = require("gulp-html-replace");
 var uglify = require("gulp-uglify");
 var imagemin = require("gulp-imagemin");
-var pngquant = require('imagemin-pngquant');
-var CacheBuster = require('gulp-cachebust');
+var pngquant = require("imagemin-pngquant");
+var CacheBuster = require("gulp-cachebust");
 
 var cachebust = new CacheBuster();
 
@@ -46,7 +46,7 @@ gulp.task("styles", function () {
 gulp.task("scripts", function () {
 	return (
 		gulp
-			.src('src/scripts/*.ts')
+			.src("src/scripts/*.ts")
 			// Compile TypeScript files
 			.pipe(ts())
 			// Minify the file
@@ -57,19 +57,19 @@ gulp.task("scripts", function () {
 });
 
 gulp.task("modules", function () {
-	const pathBootstrap = 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-	const pathJQuery = 'node_modules/jquery/dist/jquery.min.js'
+	const pathBootstrap = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+	const pathJQuery = "node_modules/jquery/dist/jquery.min.js";
 
 	return (
 		gulp
 			// Merge node_module files
-			.src([pathBootstrap, pathJQuery, 'dist/scripts/temp/*.js'])
-			.pipe(concat('bundle.js'))
+			.src([pathBootstrap, pathJQuery, "dist/scripts/temp/*.js"])
+			.pipe(concat("bundle.js"))
 			// Caching
 			.pipe(cachebust.resources())
 			.pipe(gulp.dest("./dist/scripts"))
 	);
-})
+});
 
 // Gulp task to minify HTML files
 gulp.task("pages", function () {
@@ -77,7 +77,7 @@ gulp.task("pages", function () {
 		gulp
 			.src(["./src/*.html"])
 			.pipe(htmlreplace({
-				'scripts': 'scripts/bundle.js'
+				"scripts": "scripts/bundle.js"
 			}))
 			.pipe(
 				htmlmin({
@@ -88,7 +88,7 @@ gulp.task("pages", function () {
 			// Caching
 			.pipe(cachebust.references())
 			.pipe(gulp.dest("./dist"))
-	)
+	);
 });
 
 // Gulp task to minify images

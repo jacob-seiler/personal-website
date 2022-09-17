@@ -1,4 +1,6 @@
 "use strict";
+var _a, _b, _c, _d;
+/* eslint-env jquery */
 let copyVal = "";
 $(document).bind("click", (e) => {
     if (!$(e.target).is(".collapse-element") &&
@@ -35,9 +37,9 @@ const toggleMail = () => {
     toggle(displayText, copyText, open);
 };
 const togglePhone = () => {
-    let displayText = "+1 (416) " + String.fromCharCode(53) + "57-7215";
-    let copyText = "+1416" + String.fromCharCode(53) + "577215";
-    let open = "tel:+1416" + String.fromCharCode(53) + "577215";
+    const displayText = "+1 (416) " + String.fromCharCode(53) + "57-7215";
+    const copyText = "+1416" + String.fromCharCode(53) + "577215";
+    const open = "tel:+1416" + String.fromCharCode(53) + "577215";
     toggle(displayText, copyText, open);
 };
 const copy = () => {
@@ -103,3 +105,8 @@ document.body.addEventListener("keydown", function (event) {
         document.body.classList.add("using-tab");
     }
 });
+// Assign action to buttons
+(_a = document.getElementById("button-spin")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", spin);
+(_b = document.getElementById("button-mail")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", toggleMail);
+(_c = document.getElementById("button-phone")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", togglePhone);
+(_d = document.getElementById("button-copy")) === null || _d === void 0 ? void 0 : _d.addEventListener("click", copy);
