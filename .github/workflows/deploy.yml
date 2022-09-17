@@ -1,15 +1,9 @@
 name: Deploy to cPanel
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - src/**
-  pull_request:
-    branches:
-      - master
-    paths:
-      - src/**
+  workflow_run:
+    workflows: ["Lint and Test"]
+    types:
+      - completed
   workflow_dispatch:
   
 jobs:
