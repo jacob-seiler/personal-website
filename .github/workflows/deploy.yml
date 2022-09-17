@@ -11,13 +11,18 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout 🛎
         uses: actions/checkout@master
-      - name: Install dependencies
+      - name: Cache node_modules 📦
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies 👨🏻‍💻
         run: yarn install --frozen-lockfile
-      - name: Build dependencies
+      - name: Build dist 🏗️
         run: yarn build
-      - name: Archive production artifact
+      - name: Upload dist 🗃️
         uses: actions/upload-artifact@master
         with:
           name: dist
@@ -27,14 +32,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout 🛎
         uses: actions/checkout@master
-      - name: Download artifact
+      - name: Download dist 🗃️
         uses: actions/download-artifact@master
         with:
           name: dist
           path: dist
-      - name: Sync files to hosting
+      - name: Deploy to host 🚀
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
           server: ${{ secrets.FTP_SERVER }}
