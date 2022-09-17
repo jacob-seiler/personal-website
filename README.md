@@ -4,7 +4,7 @@ Space for displaying projects I've worked on, social media, and contact informat
 
 <https://jacobseiler.com/>
 
-## TODO (someday... maybe...)
+## To do (someday... maybe...)
 
 ### DevOps
 
