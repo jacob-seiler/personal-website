@@ -1,5 +1,9 @@
 # Personal Website
 
+[![Lint and Test](https://github.com/jacob-seiler/personal-website/actions/workflows/test.yml/badge.svg)](https://github.com/jacob-seiler/personal-website/actions/workflows/test.yml)
+
+[![Deploy to cPanel](https://github.com/jacob-seiler/personal-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/jacob-seiler/personal-website/actions/workflows/deploy.yml)
+
 Space for displaying projects I've worked on, social media, and contact information to connect with me.
 
 <https://jacobseiler.com/>
