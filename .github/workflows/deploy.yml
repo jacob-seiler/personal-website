@@ -1,7 +1,15 @@
 name: Deploy to cPanel
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+    paths:
+      - src/**
+  pull_request:
+    branches:
+      - master
+    paths:
+      - src/**
   workflow_dispatch:
   
 jobs:
