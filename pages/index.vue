@@ -1,19 +1,20 @@
 <template>
   <div class="container text-center">
     <!-- image -->
-    <img alt="Headshot">
-    <h1 class="text-green font-bold">
+    <Headshot />
+    <h1 class="text-green font-bold text-5xl tiny:text-4xl">
       Jacob Seiler
+      <!-- For some reason it adds a space :/  -->
     </h1>
     <SocialLinks />
-    <p>
+    <p class="text-md tiny:text-sm">
       <b>I like to work hard and have fun doing it.</b> As a
       <b>software engineer</b> working for <b>Amazon</b>, and software design
       graduate from <b>Queen's University</b>, I continually look for ways to
       learn and utilize new skills.
     </p>
     <ProjectCards />
-    <p id="bottom">
+    <p class="text-md tiny:text-sm p-end">
       Oh, I also like scuba diving and playing guitar.
     </p>
     <!-- back to top -->

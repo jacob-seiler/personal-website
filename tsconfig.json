@@ -25,6 +25,7 @@
     },
     "types": [
       "@nuxt/types",
+      "@nuxt/image",
       "@types/node"
     ]
   },

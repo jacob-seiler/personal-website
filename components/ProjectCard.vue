@@ -1,14 +1,16 @@
 <template>
-  <div class="card bg-green text-left">
-    <p class="text-white">
+  <div class="card bg-green text-left p-card">
+    <p class="text-white font-bold text-xl tiny:text-lg">
       {{ data.name }}
     </p>
-    <p class="text-off-white italic">
+    <p class="text-off-white italic text-sm tiny:text-xs">
       {{ data.technologies.join(", ") }}
     </p>
-    <p class="text-off-white">
+    <p class="text-off-white text-sm tiny:text-sm">
       {{ data.description }}
     </p>
+    <!-- text-3xl -->
+    <!-- tiny:text-2xl -->
     <!-- sourceURL -->
     <!-- externalURL -->
     <!-- courseURL -->
