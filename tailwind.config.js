@@ -14,7 +14,7 @@ module.exports = {
       github: '#24292E',
       linkedin: '#0B65C2'
     },
-    bosShadow: {
+    boxShadow: {
       light: '0px 3px 6px 0px rgba(0, 0, 0, 0.3)'
     },
     fontFamily: {
@@ -50,7 +50,8 @@ module.exports = {
       24: '24px',
       32: '32px',
       40: '40px',
-      64: '64px'
+      64: '64px',
+      auto: 'auto'
     },
     width: {
       headshot: '170px',

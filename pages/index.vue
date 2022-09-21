@@ -1,11 +1,9 @@
 <template>
   <div class="container text-center">
     <!-- image -->
-    <Headshot />
-    <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">
-      Jacob Seiler
-      <!-- For some reason it adds a space :/  -->
-    </h1>
+    <Headshot class="mx-auto mt-32" />
+    <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+    <p class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</p>
     <SocialLinks />
     <p class="mt-40 text-md tiny:text-sm">
       <b>I like to work hard and have fun doing it.</b> As a

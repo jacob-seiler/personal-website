@@ -1,5 +1,5 @@
 <template>
-  <nuxt-img class="p-none mt-30 w-headshot tiny:w-headshot-tiny" alt="Headshot" src="assets/headshot.png" />
+  <nuxt-img class="p-none shadow-light w-headshot tiny:w-headshot-tiny" alt="Headshot" src="assets/headshot.png" />
 </template>
 
 <script lang="ts">

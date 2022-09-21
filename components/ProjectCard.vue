@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green text-left p-card mb-24">
+  <div class="bg-green text-left shadow-light p-card mb-24">
     <p class="text-white font-bold leading-none text-xl tiny:text-lg">
       {{ data.name }}
     </p>
