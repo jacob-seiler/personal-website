@@ -8,7 +8,7 @@ module.exports = {
     // screens: {},
     colors: {
       white: '#FFFFFF',
-      'off-white': '#f3f3f3',
+      'off-white': '#F3F3F3',
       black: '#000000',
       green: '#22B17A',
       grey: '#696969',

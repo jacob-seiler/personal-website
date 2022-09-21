@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-green">
+  <div class="card bg-green text-left">
     <p class="text-white">
       {{ data.name }}
     </p>

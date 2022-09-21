@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container text-center">
     <!-- image -->
     <img alt="Headshot">
     <h1 class="text-green font-bold">
