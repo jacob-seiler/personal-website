@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-64">
     <div v-for="(project, i) in projects" :key="i">
       <ProjectCard :data="project" />
     </div>

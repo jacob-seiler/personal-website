@@ -36,17 +36,21 @@ module.exports = {
       bold: 700
     },
     lineHeight: {
-      'leading-none': 1,
-      'leading-tight': 1.25
+      none: 1,
+      tight: 1.25
     },
     padding: {
       none: '0',
-      card: '16px 20px',
+      card: '16px 24px',
       end: '100vh 0 100px 0'
     },
     margin: {
       none: '0',
-      30: '30px'
+      16: '16px',
+      24: '24px',
+      32: '32px',
+      40: '40px',
+      64: '64px'
     },
     width: {
       headshot: '170px',

@@ -1,12 +1,12 @@
 <template>
-  <div class="card bg-green text-left p-card">
-    <p class="text-white font-bold text-xl tiny:text-lg">
+  <div class="bg-green text-left p-card mb-24">
+    <p class="text-white font-bold leading-none text-xl tiny:text-lg">
       {{ data.name }}
     </p>
     <p class="text-off-white italic text-sm tiny:text-xs">
       {{ data.technologies.join(", ") }}
     </p>
-    <p class="text-off-white text-sm tiny:text-sm">
+    <p class="text-off-white leading-tight mt-16 text-sm tiny:text-sm">
       {{ data.description }}
     </p>
     <!-- text-3xl -->
