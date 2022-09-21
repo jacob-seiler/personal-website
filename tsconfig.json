@@ -32,5 +32,8 @@
     "node_modules",
     ".nuxt",
     "dist"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  }
 }
