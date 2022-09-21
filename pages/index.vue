@@ -1,5 +1,6 @@
 <template>
   <div class="container text-center">
+    <span ref="top" />
     <!-- image -->
     <Headshot class="mx-auto mt-32" />
     <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
@@ -12,9 +13,14 @@
       learn and utilize new skills.
     </p>
     <ProjectCards />
-    <p class="text-md tiny:text-sm p-end">
-      Oh, I also like scuba diving and playing guitar.
-    </p>
+    <div class="p-end">
+      <p class="text-md tiny:text-sm mb-8">
+        Oh, I also like scuba diving and playing guitar.
+      </p>
+      <p class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollTo('top')">
+        Back to top
+      </p>
+    </div>
     <!-- back to top -->
   </div>
 </template>
@@ -23,6 +29,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'IndexPage'
+  name: 'IndexPage',
+  methods: {
+    scrollTo (refName: string) {
+      const element = this.$refs[refName] as undefined | HTMLElement
+      if (element) { window.scrollTo({ top: element.offsetTop, behavior: 'smooth' }) }
+    }
+  }
 })
 </script>
