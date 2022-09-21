@@ -4,7 +4,7 @@
     <!-- image -->
     <Headshot class="mx-auto mt-32" />
     <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-    <p class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</p>
+    <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</h1>
     <SocialLinks />
     <p class="mt-40 text-md tiny:text-sm">
       <b>I like to work hard and have fun doing it.</b> As a
@@ -17,9 +17,9 @@
       <p class="text-md tiny:text-sm mb-8">
         Oh, I also like scuba diving and playing guitar.
       </p>
-      <p class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollTo('top')">
+      <button class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollTo('top')">
         Back to top
-      </p>
+      </button>
     </div>
     <!-- back to top -->
   </div>
