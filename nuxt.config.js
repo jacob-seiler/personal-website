@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'personal-website',
+    title: 'Jacob Seiler',
     htmlAttrs: {
       lang: 'en'
     },
