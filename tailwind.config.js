@@ -42,7 +42,8 @@ module.exports = {
     padding: {
       none: '0',
       card: '16px 24px',
-      end: '100vh 0 100px 0'
+      end: '100vh 0 100px 0',
+      32: '32px'
     },
     margin: {
       none: '0',

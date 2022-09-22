@@ -1,8 +1,8 @@
 <template>
   <div class="container text-center">
-    <span ref="top" />
+    <div ref="top" class="pb-32" />
     <!-- image -->
-    <Headshot class="mx-auto mt-32" />
+    <Headshot class="mx-auto" />
     <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
     <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</h1>
     <SocialLinks />
