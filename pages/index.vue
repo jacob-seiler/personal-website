@@ -21,7 +21,8 @@
       <p class="text-md tiny:text-sm mb-8">
         Oh, I also like scuba diving and playing guitar.
       </p>
-      <button ref="footer" class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollTo('top')">
+      <div ref="footer" />
+      <button class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollTo('top')">
         Back to top
       </button>
     </div>
