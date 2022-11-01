@@ -57,7 +57,13 @@ module.exports = {
     },
     width: {
       headshot: '170px',
-      'headshot-tiny': '140px'
+      'headshot-tiny': '140px',
+      social: '45px',
+      'social-tiny': '35px'
+    },
+    height: {
+      social: '45px',
+      'social-tiny': '35px'
     },
     extend: {
       screens: {
