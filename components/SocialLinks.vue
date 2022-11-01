@@ -18,25 +18,25 @@ const socials: Social[] = [
   {
     label: 'GitHub',
     url: 'https://github.com/jacob-seiler',
-    color: 'text-github',
+    color: 'bg-github',
     icon: 'assets/github.svg'
   },
   {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jacobseiler/',
-    color: 'text-linkedin',
+    color: 'bg-linkedin',
     icon: 'assets/linkedin.svg'
   },
   {
     label: 'Email',
     url: '',
-    color: 'text-green',
+    color: 'bg-green',
     icon: 'assets/email.svg'
   },
   {
     label: 'Phone',
     url: '',
-    color: 'text-green',
+    color: 'bg-green',
     icon: 'assets/phone.svg'
   }
 ]
