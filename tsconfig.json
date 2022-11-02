@@ -36,6 +36,6 @@
   ],
   "vueCompilerOptions": {
     "experimentalDisableTemplateSupport": true,
-    "target": 3
+    "target": 2.7
   }
 }
