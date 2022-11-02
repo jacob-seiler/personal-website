@@ -1,5 +1,15 @@
+<template>
+  <p class="text-off-white leading-tight text-sm tiny:text-xs">
+    <template v-for="(seg, i) in value.split('**')">
+      <b v-if="i % 2 === 1" :key="i">{{ seg }}</b>
+      <!-- eslint-disable-next-line vue/mustache-interpolation-spacing vue/singleline-html-element-content-newline -->
+      <template v-else>{{seg}}</template>
+    </template>
+  </p>
+</template>
+
 <script lang="ts">
-import { defineComponent, h } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -7,20 +17,6 @@ export default defineComponent({
       type: String,
       required: true
     }
-  },
-  // https://stackoverflow.com/questions/68127272/vue-js-3-property-projects-does-not-exist-on-type-createcomponentpublicinst
-  computed: {
-    description (): string {
-      return this.value
-    }
-  },
-  render () {
-    const text = this.description.split('**').map((seg, i) => {
-      if (i % 2 === 0) { return seg }
-      return h('b', { class: 'text-white' }, seg)
-    })
-
-    return h('p', { class: 'text-off-white leading-tight text-sm tiny:text-sm' }, text)
   }
 })
 </script>
