@@ -39,7 +39,7 @@ const projects: Project[] = [
     technologies: ['NuxtJS', 'TypeScript', 'TailwindCSS', 'Jest'],
     description: 'The same website you are on right now! A space for me to showcase my projects and ways to connect with me. This website was built using NuxtJS with TypeScript, TailwindCSS, and Jest.',
     sourceURL: 'https://github.com/jacob-seiler/personal-website',
-    externalURL: 'https://jacobseiler.com#top'
+    externalURL: 'https://jacobseiler.com'
   },
   {
     name: 'Fashion Classifier',

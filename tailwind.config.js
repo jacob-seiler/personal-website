@@ -59,11 +59,15 @@ module.exports = {
       headshot: '170px',
       'headshot-tiny': '140px',
       social: '45px',
-      'social-tiny': '35px'
+      'social-tiny': '35px',
+      card: '38px',
+      'card-tiny': '28.5px'
     },
     height: {
       social: '45px',
-      'social-tiny': '35px'
+      'social-tiny': '35px',
+      card: '38px',
+      'card-tiny': '28.5px'
     },
     extend: {
       screens: {
