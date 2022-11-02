@@ -1,5 +1,5 @@
 <template>
-  <a :class="`flex bg-grey hover:${data.color} mx-8 rounded-full h-social w-social tiny:h-social-tiny tiny:w-headshot-tiny`" :href="data.url" target="_blank">
+  <a :class="`flex bg-grey hover:${data.color} mx-8 rounded-full h-social w-social tiny:h-social-tiny tiny:w-social-tiny`" :href="data.url" target="_blank">
     <img :id="data.id" class="m-auto invert-0" :src="data.icon" :alt="data.label">
   </a>
 </template>
@@ -7,10 +7,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { PropType } from 'vue/types/v3-component-props'
-import { Social } from './SocialLinks.vue'
+import { Social } from './SocialAnchors.vue'
 
 export default defineComponent({
-  name: 'SocialLink',
+  name: 'SocialAnchor',
   props: {
     data: {
       type: Object as PropType<Social>,

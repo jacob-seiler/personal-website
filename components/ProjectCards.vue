@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-64">
+  <div>
     <div v-for="(project, i) in projects" :key="i">
-      <ProjectCard :data="project" />
+      <ProjectCard class="mb-24" :data="project" />
     </div>
   </div>
 </template>

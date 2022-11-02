@@ -6,17 +6,17 @@
     <Headshot class="mx-auto" />
     <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
     <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</h1>
-    <SocialLinks />
+    <SocialAnchors />
     <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
     <HiddenAnchor @click="scrollTo('footer')">Skip to footer</HiddenAnchor>
-    <p class="mt-40 text-md tiny:text-sm">
+    <p class="mt-40 text-md tiny:text-sm mx-24">
       <b>I like to work hard and have fun doing it.</b> As a
       <b>software engineer</b> working for <b>Amazon</b>, and software design
       graduate from <b>Queen's University</b>, I continually look for ways to
       learn and apply new skills and technologies.
     </p>
     <div ref="projects" />
-    <ProjectCards />
+    <ProjectCards class="mt-64" />
     <div class="p-end">
       <p class="text-md tiny:text-sm mb-8">
         Oh, I also like scuba diving and playing guitar.

@@ -1,6 +1,6 @@
 <template>
   <div id="social-links" class="flex justify-center">
-    <SocialLink v-for="social in socials" :key="social.id" :data="social" />
+    <SocialAnchor v-for="social in socials" :key="social.id" :data="social" />
   </div>
 </template>
 
@@ -47,7 +47,7 @@ const socials: Social[] = [
 ]
 
 export default Vue.extend({
-  name: 'SocialLinks',
+  name: 'SocialAnchors',
   data () {
     return {
       socials
