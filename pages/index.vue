@@ -13,7 +13,7 @@
       <b>I like to work hard and have fun doing it.</b> As a
       <b>software engineer</b> working for <b>Amazon</b>, and software design
       graduate from <b>Queen's University</b>, I continually look for ways to
-      learn and utilize new skills.
+      learn and apply new skills and technologies.
     </p>
     <div ref="projects" />
     <ProjectCards />
