@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green text-left shadow-light p-card">
+  <div id="card" :class="`bg-green ${data.backgroundImage} text-left shadow-light p-card`">
     <div class="grid grid-cols-3 tiny:grid-cols-1">
       <div class="col-span-2">
         <p class="text-white font-bold leading-none text-xl tiny:text-lg">
@@ -42,3 +42,17 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped lang="scss">
+#card {
+  background-blend-mode: multiply;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 60%;
+
+  @screen tiny {
+    background-size: contain;
+    background-position: center;
+  }
+}
+</style>

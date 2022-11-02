@@ -69,6 +69,15 @@ module.exports = {
       card: '38px',
       'card-tiny': '28.5px'
     },
+    backgroundImage: {
+      csstoolkit: "url('static/assets/csstoolkit.png')",
+      seetgeek: "url('static/assets/seetgeek.png')",
+      personalwebsite: "url('static/assets/personalwebsite.png')",
+      fashionclassifier: "url('static/assets/fashionclassifier.png')",
+      lyricgen: "url('static/assets/lyricgen.png')",
+      stockpred: "url('static/assets/stockpred.png')",
+      engine: "url('static/assets/engine.png')"
+    },
     extend: {
       screens: {
         tiny: { max: '430px' }
