@@ -1,6 +1,6 @@
 <template>
   <a :class="`flex bg-grey hover:${data.color} mx-8 rounded-full h-social w-social tiny:h-social-tiny tiny:w-headshot-tiny`" :href="data.url" target="_blank">
-    <img class="m-auto invert-0" :src="data.icon" :alt="data.label">
+    <img :id="data.id" class="m-auto invert-0" :src="data.icon" :alt="data.label">
   </a>
 </template>
 
@@ -27,5 +27,13 @@ a {
   &:hover {
     transform: scale(1.2);
   }
+}
+
+#linkedin {
+  transform: translate(1px, -2px);
+}
+
+#phone {
+  transform: translateX(0.5px) rotateZ(-15deg) scale(1.1);
 }
 </style>
