@@ -17,14 +17,7 @@
         </div>
       </div>
     </div>
-    <p class="text-off-white leading-tight mt-16 text-sm tiny:text-sm">
-      {{ data.description }}
-    </p>
-    <!-- text-3xl -->
-    <!-- tiny:text-2xl -->
-    <!-- sourceURL -->
-    <!-- externalURL -->
-    <!-- courseURL -->
+    <ProjectCardDescription class="mt-16" :value="data.description" />
   </div>
 </template>
 
