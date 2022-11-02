@@ -1,5 +1,5 @@
 <template>
-  <a class="ml-8" :href="href" target="_blank">
+  <a class="ml-8 tiny:ml-none tiny:mr-8 tiny:my-8" :href="href" target="_blank">
     <img class="w-card h-card tiny:w-card-tiny tiny:h-card-tiny" :src="icon.src" :alt="icon.alt">
   </a>
 </template>
