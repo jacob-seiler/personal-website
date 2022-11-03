@@ -10,8 +10,11 @@ export default defineNuxtConfig({
             title: 'Jacob Seiler'
         }
     },
-    modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', '@nuxtjs/color-mode'],
     image: {
         dir: 'assets/images'
+    },
+    colorMode: {
+        classSuffix: ''
     }
 })

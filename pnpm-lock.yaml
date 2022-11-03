@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@nuxt/image-edge': 1.0.0-27769790.4b27db3
+  '@nuxtjs/color-mode': ^3.1.8
   '@nuxtjs/tailwindcss': ^6.1.2
   nuxt: 3.0.0-rc.12
   sass: ^1.55.0
@@ -9,6 +10,7 @@ specifiers:
 
 devDependencies:
   '@nuxt/image-edge': 1.0.0-27769790.4b27db3
+  '@nuxtjs/color-mode': 3.1.8
   '@nuxtjs/tailwindcss': 6.1.2
   nuxt: 3.0.0-rc.12_sass@1.55.0
   sass: 1.55.0
@@ -622,6 +624,16 @@ packages:
       - typescript
       - vls
       - vti
+    dev: true
+
+  /@nuxtjs/color-mode/3.1.8:
+    resolution: {integrity: sha512-ahgjmSzpjTpaxvyyGA/1wD2rNcSFXiqs3/A/GEllB1s4BboJVnBIqkwIQpAguq7IDVZG2tMAvqmnZHSfwrI3IA==}
+    dependencies:
+      '@nuxt/kit': 3.0.0-rc.12
+      lodash.template: 4.5.0
+      pathe: 0.3.9
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@nuxtjs/tailwindcss/6.1.2:
