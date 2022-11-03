@@ -32,7 +32,7 @@ const projects: Project[] = [
     description: 'Course project for **Software Quality Assurance** (CISC 327). Developed ticket buying and selling **web application** using **Flask**. Performed **white and black box testing** using **Selenium** and **PyTest**.',
     backgroundImage: 'seetgeek.webp',
     sourceURL: 'https://github.com/jacob-seiler/seetgeek',
-    courseURL: 'http://www2.cs.queensu.ca/undergrad/courses/profile.php?id=CISC-327'
+    courseURL: 'https://www.cs.queensu.ca/undergraduate/courses/CISC-327'
   },
   {
     name: 'Personal Website',
