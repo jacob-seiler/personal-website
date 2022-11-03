@@ -4,7 +4,11 @@ export default <Partial<Config>>{
   darkMode: 'class',
   theme: {
       container: {
-        center: true
+        center: true,
+        screens: {
+          sm: '640px',
+          md: '768px'
+        },
       },
       colors: {
           white: '#FFFFFF',
