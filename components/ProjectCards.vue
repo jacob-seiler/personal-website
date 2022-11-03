@@ -36,7 +36,7 @@ const projects: Project[] = [
   },
   {
     name: 'Personal Website',
-    technologies: ['NuxtJS', 'TypeScript', 'TailwindCSS', 'Jest'],
+    technologies: ['NuxtJS', 'TypeScript', 'TailwindCSS'],
     description: 'The same website you are on right now! A space for me to showcase my **projects** and ways to **connect** with me. This website was built using **NuxtJS** with **TypeScript**, and **TailwindCSS**.',
     backgroundImage: 'personalwebsite.webp',
     sourceURL: 'https://github.com/jacob-seiler/personal-website',
