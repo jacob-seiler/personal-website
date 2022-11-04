@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div ref="top" class="pb-32"  tabindex=-1></div>
         <HiddenAnchor :el="projects">Skip to projects</HiddenAnchor>
-        <button @click="changeColorTheme()" class="absolute right-[50px]">Change theme</button>
+        <ThemeButton class="absolute right-[50px]" />
         <Headshot class="mx-auto" />
         <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</h1>
         <SocialAnchors />
@@ -39,23 +39,4 @@ const scrollToTop = () => {
     top.value.focus({ preventScroll: true });
     top.value.blur();
 }
-
-const changeColorTheme = (color?: 'light' | 'dark' | 'system') => {
-    if (color) {
-        useColorMode().value = color;
-        return;
-    }
-
-    useColorMode().value = useColorMode().value === 'dark' ? 'light' : 'dark';
-}
-
-changeColorTheme('system');
-
-onMounted(() => {
-    // System color mode change listener
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const color = event.matches ? "dark" : "light";
-        changeColorTheme(color);
-    });
-})
 </script>
