@@ -31,14 +31,14 @@ const socials: Social[] = [
   {
     id: 'email',
     label: 'Email',
-    url: '',
+    url: 'mailto:seiler.jacob1@gmail.com',
     color: 'bg-green',
     icon: 'email.svg'
   },
   {
     id: 'phone',
     label: 'Phone',
-    url: '',
+    url: 'tel:14165577215',
     color: 'bg-green',
     icon: 'phone.svg'
   }
