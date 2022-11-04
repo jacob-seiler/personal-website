@@ -68,13 +68,15 @@ export default <Partial<Config>>{
         social: '45px',
         'social-tiny': '64px',
         card: '38px',
-        'card-tiny': '28.5px'
+        'card-tiny': '28.5px',
+        theme: '24px'
       },
       height: {
         social: '45px',
         'social-tiny': '35px',
         card: '38px',
-        'card-tiny': '28.5px'
+        'card-tiny': '28.5px',
+        theme: '24px'
       },
       extend: {
         screens: {

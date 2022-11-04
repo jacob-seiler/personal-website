@@ -1,6 +1,6 @@
 <template>
     <button @click="changeColorTheme()" id="theme-button">
-        <NuxtImg :src="$colorMode.value === 'light' ? 'moon.svg' : 'sun.svg'" :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'" />
+        <NuxtImg :src="$colorMode.value === 'light' ? 'moon.svg' : 'sun.svg'" :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'" class="w-theme h-theme" />
     </button>
 </template>
 
@@ -30,7 +30,7 @@ onMounted(() => {
     transition: transform 0.1s ease-out;
 
     &:hover {
-        transform: scale(1.5);
+        transform: scale(1.3);
     }
 }
 </style>

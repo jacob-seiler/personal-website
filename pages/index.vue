@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div ref="top" class="pb-32"  tabindex=-1></div>
         <HiddenAnchor :el="projects">Skip to projects</HiddenAnchor>
-        <ThemeButton class="absolute right-[50px]" />
+        <ThemeButton class="absolute top-[24px] right-[32px] tiny:top-[18px] tiny:right-[24px]" />
         <Headshot class="mx-auto" />
         <h1 class="text-green font-bold mt-16 text-5xl tiny:text-4xl">Jacob Seiler</h1>
         <SocialAnchors />
