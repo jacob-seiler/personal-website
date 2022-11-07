@@ -5,6 +5,7 @@
             :src="icon"
             :alt="alt"
             sizes="tiny:28.5px sm:38px"
+            :aria-label="`${alt}: ${name} (opens in a new window)`"
         />
     </NuxtLink>
 </template>
@@ -14,5 +15,6 @@ defineProps<{
     href: string;
     icon: string;
     alt: string;
+    name: string;
 }>();
 </script>

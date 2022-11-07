@@ -1,5 +1,5 @@
 <template>
-    <button @click="changeColorTheme()" id="theme-button">
+    <button type="button" aria-label="Change theme" @click="changeColorTheme()" id="theme-button">
         <NuxtImg
             class="w-theme h-theme"
             :src="$colorMode.value === 'light' ? 'v1667806580/personal%20website/moon.svg' : 'v1667806582/personal%20website/sun.svg'"
