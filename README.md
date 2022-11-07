@@ -1,29 +1,42 @@
-# Personal Website
+# Nuxt 3 Minimal Starter
 
-[![Lint and Test](https://github.com/jacob-seiler/personal-website/actions/workflows/test.yml/badge.svg)](https://github.com/jacob-seiler/personal-website/actions/workflows/test.yml)
-[![Deploy to cPanel](https://github.com/jacob-seiler/personal-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/jacob-seiler/personal-website/actions/workflows/deploy.yml)
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-Space for displaying projects I've worked on, social media, and contact information to connect with me.
+## Setup
 
-<https://jacobseiler.com/>
+Make sure to install the dependencies:
 
-## To do (someday... maybe...)
+```bash
+# yarn
+yarn install
 
-### DevOps
+# npm
+npm install
 
-- Implement testing
-- Compile favicon on build
-- Add live-server like functionality to package.json
-- Add PR template
-- Bundle or replace fontawesome
+# pnpm
+pnpm install --shamefully-hoist
+```
 
-### Features
+## Development Server
 
-- Konami code
-- Version timeline
-- Offline cached using service workers
+Start the development server on http://localhost:3000
 
-### Other
+```bash
+npm run dev
+```
 
-- Fix accessibility highlight focused items
-- Use rem instead of px for font
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

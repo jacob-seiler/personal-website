@@ -1,63 +1,18 @@
 {
-  "name": "personal-website",
-  "version": "1.0.0",
-  "description": "Space for displaying projects I've worked on, social media, and contact information to connect with me.",
-  "main": "src/index.html",
+  "private": true,
   "scripts": {
-    "build": "gulp",
-    "compile": "tsc && node-sass src/styles -o src/styles",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "test": "jest"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jacob-seiler/personal-website.git"
-  },
-  "author": "Jacob Seiler",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jacob-seiler/personal-website/issues"
-  },
-  "homepage": "https://github.com/jacob-seiler/personal-website#readme",
   "devDependencies": {
-    "@types/bootstrap": "^5.2.4",
-    "@types/jquery": "^3.5.14",
-    "@typescript-eslint/eslint-plugin": "^5.37.0",
-    "@typescript-eslint/parser": "^5.37.0",
-    "del": "^6.0.0",
-    "eslint": "^8.23.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-cachebust": "^0.0.11",
-    "gulp-concat": "^2.6.1",
-    "gulp-csso": "^4.0.1",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "gulp-uglify": "^3.0.2",
-    "imagemin-pngquant": "^9.0.2",
-    "node-sass": "^7.0.3",
-    "typescript": "^4.8.3"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.1",
-    "jquery": "^3.6.1"
-  },
-  "browserslist": [
-    "> 1%",
-    "ie >= 8",
-    "edge >= 15",
-    "ie_mob >= 10",
-    "ff >= 45",
-    "chrome >= 45",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4",
-    "bb >= 10"
-  ]
+    "@nuxt/image-edge": "1.0.0-27769790.4b27db3",
+    "@nuxtjs/color-mode": "^3.1.8",
+    "@nuxtjs/tailwindcss": "^6.1.2",
+    "nuxt": "3.0.0-rc.12",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
+  }
 }
