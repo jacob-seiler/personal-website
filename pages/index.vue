@@ -35,6 +35,9 @@ const projects = ref<HTMLInputElement | null>(null);
 const footer = ref<HTMLInputElement | null>(null);
 
 const scrollToTop = () => {
+    if (top === null || top.value === null)
+        return;
+
     top.value.scrollIntoView({ behavior: "smooth" });
     top.value.focus({ preventScroll: true });
     top.value.blur();

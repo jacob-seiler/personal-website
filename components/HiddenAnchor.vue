@@ -6,10 +6,13 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-    el: HTMLInputElement;
+    el: HTMLInputElement | null;
 }>();
 
 const handleClick = () => {
+    if (props.el === null)
+        return;
+
     props.el.scrollIntoView({ behavior: "smooth" });
     props.el.focus({ preventScroll: true });
     props.el.blur();

@@ -33,12 +33,15 @@ import { Project } from './ProjectCards.vue';
 export default {
     props: {
         data: {
-            type: Object as PropType<Project>
+            type: Object as PropType<Project>,
+            required: true
         }
     },
     computed: {
         styles() {
-            const imgUrl = this.$img(this.data.backgroundImage);
+            const $img = useImage()
+
+            const imgUrl = $img(this.data.backgroundImage);
 
             return {
                 backgroundImage: `url('${imgUrl}')`,
