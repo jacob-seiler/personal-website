@@ -26,31 +26,23 @@
     </div>
 </template>
 
-<script lang="ts">
-import { PropType } from 'vue';
+<script setup lang="ts">
 import { Project } from './ProjectCards.vue';
 
-export default {
-    props: {
-        data: {
-            type: Object as PropType<Project>,
-            required: true
-        }
-    },
-    computed: {
-        styles() {
-            const $img = useImage()
+const props = defineProps<{
+    data: Project;
+}>();
 
-            const imgUrl = $img(this.data.backgroundImage);
+const styles = computed(() => {
+    const $img = useImage()
+    const imgUrl = $img(props.data.backgroundImage);
 
-            return {
-                backgroundImage: `url('${imgUrl}')`,
-                backgroundBlendMode: 'multiply',
-                backgroundPosition: 'right',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '60%',
-            }
-        }
+    return {
+        backgroundImage: `url('${imgUrl}')`,
+        backgroundBlendMode: 'multiply',
+        backgroundPosition: 'right',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '60%',
     }
-}
+});
 </script>
