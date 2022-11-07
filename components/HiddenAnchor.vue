@@ -24,6 +24,10 @@ const handleClick = () => {
     transform: translate(-50%, -200px);
 	transition: transform 0.3s;
 
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
     &:focus {
         transform: translate(-50%, 20px);
     }

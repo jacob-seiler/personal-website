@@ -31,6 +31,10 @@ a {
     cursor: pointer;
     transition: transform 0.1s ease-out;
 
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
+
     &:hover {
         transform: scale(1.2);
     }
