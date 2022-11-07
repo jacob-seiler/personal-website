@@ -12,7 +12,12 @@ export default defineNuxtConfig({
     },
     modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', '@nuxtjs/color-mode'],
     image: {
-        dir: 'assets/images'
+        dir: 'assets/images',
+        screens: {
+            tiny: 430,
+            sm: 640,
+            md: 768
+        }
     },
     colorMode: {
         classSuffix: ''
