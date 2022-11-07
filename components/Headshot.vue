@@ -4,7 +4,5 @@
         src="v1667806508/personal%20website/headshot.webp"
         alt="Headshot"
         sizes="tiny:412px sm:500px"
-        width="tiny:412px sm:500px"
-        height="tiny:412px sm:500px"
     />
 </template>
