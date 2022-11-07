@@ -14,7 +14,7 @@ export default <Partial<Config>>{
           white: '#FFFFFF',
           'off-white': '#F3F3F3',
           black: '#000000',
-          green: '#22B17A',
+          green: '#2BA878',
           grey: '#696969',
           github: '#24292E',
           linkedin: '#0B65C2',
