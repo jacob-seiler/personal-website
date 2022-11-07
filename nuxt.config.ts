@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     },
     modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', '@nuxtjs/color-mode'],
     image: {
-        dir: 'assets/images',
+        dir: 'public/images',
         screens: {
             tiny: 430,
             sm: 640,
