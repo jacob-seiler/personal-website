@@ -20,7 +20,7 @@
             <p class="dark:text-white text-md tiny:text-sm mb-8">
                 Oh, I also like scuba diving and playing guitar.
             </p>
-            <button class="text-green underline cursor-pointer text-md tiny:text-sm" @click="scrollToTop">
+            <button class="text-green underline cursor-pointer text-md tiny:text-sm font-bold" @click="scrollToTop">
                 Back to top
             </button>
         </div>
