@@ -67,6 +67,7 @@ export default <Partial<Config>>{
         'headshot-tiny': '140px',
         social: '45px',
         'social-tiny': '64px',
+        'social-icon': '24px',
         card: '38px',
         'card-tiny': '28.5px',
         theme: '24px'
@@ -76,6 +77,7 @@ export default <Partial<Config>>{
         'headshot-tiny': '140px',
         social: '45px',
         'social-tiny': '35px',
+        'social-icon': '24px',
         card: '38px',
         'card-tiny': '28.5px',
         theme: '24px'

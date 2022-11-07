@@ -12,10 +12,14 @@ export default defineNuxtConfig({
     },
     modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', '@nuxtjs/color-mode'],
     image: {
+        provider: 'cloudinary',
         screens: {
             tiny: 430,
             sm: 640,
             md: 768
+        },
+        cloudinary: {
+            baseURL: 'https://res.cloudinary.com/dwp4w2mpq/image/upload/'
         }
     },
     colorMode: {

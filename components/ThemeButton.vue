@@ -1,6 +1,11 @@
 <template>
     <button @click="changeColorTheme()" id="theme-button">
-        <NuxtImg :src="$colorMode.value === 'light' ? 'moon.svg' : 'sun.svg'" :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'" class="w-theme h-theme" />
+        <NuxtImg
+            class="w-theme h-theme"
+            :src="$colorMode.value === 'light' ? 'v1667806580/personal%20website/moon.svg' : 'v1667806582/personal%20website/sun.svg'"
+            :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'"
+            sizes="tiny:28.5px sm:38px"
+        />
     </button>
 </template>
 

@@ -2,7 +2,13 @@
     <div class="temp">
         <NuxtLink :id="`link-${data.id}`" :to="data.url" target="_blank"
             :class="`flex bg-grey mx-8 rounded-full w-social h-social tiny:w-social-tiny tiny:h-social-tiny`">
-            <NuxtImg :id="data.id" class="m-auto" :src="data.icon" :alt="data.label" />
+            <NuxtImg
+                class="m-auto w-social-icon h-social-icon"
+                :id="data.id"
+                :src="data.icon"
+                :alt="data.label"
+                sizes="tiny:28.5px sm:38px"
+            />
         </NuxtLink>
     </div>
 </template>

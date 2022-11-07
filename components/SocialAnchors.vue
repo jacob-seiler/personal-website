@@ -19,28 +19,28 @@ const socials: Social[] = [
     label: 'GitHub',
     url: 'https://github.com/jacob-seiler',
     color: 'bg-github',
-    icon: 'github.svg'
+    icon: 'v1667806580/personal%20website/github.svg'
   },
   {
     id: 'linkedin',
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jacobseiler/',
     color: 'bg-linkedin',
-    icon: 'linkedin.svg'
+    icon: 'v1667806580/personal%20website/linkedin.svg'
   },
   {
     id: 'email',
     label: 'Email',
     url: 'mailto:seiler.jacob1@gmail.com',
     color: 'bg-green',
-    icon: 'email.svg'
+    icon: 'v1667806579/personal%20website/email.svg'
   },
   {
     id: 'phone',
     label: 'Phone',
     url: 'tel:14165577215',
     color: 'bg-green',
-    icon: 'phone.svg'
+    icon: 'v1667806581/personal%20website/phone.svg'
   }
 ];
 </script>
