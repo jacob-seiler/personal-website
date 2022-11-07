@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'en'
+            },
             meta: [
                 { charset: 'utf-8' },
                 { 'http-equiv': 'x-ua-compatible', content: 'IE=edge' },
