@@ -8,7 +8,8 @@ export default defineNuxtConfig({
             meta: [
                 { charset: 'utf-8' },
                 { 'http-equiv': 'x-ua-compatible', content: 'IE=edge' },
-                { name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+                { name: 'viewport', content: 'width=device-width, initial-scale=1.0'},
+                { name: 'description', content: 'Personal website' }
             ],
             title: 'Jacob Seiler'
         }
