@@ -72,6 +72,8 @@ export default <Partial<Config>>{
         theme: '24px'
       },
       height: {
+        headshot: '170px',
+        'headshot-tiny': '140px',
         social: '45px',
         'social-tiny': '35px',
         card: '38px',
