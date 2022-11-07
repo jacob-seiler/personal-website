@@ -5,6 +5,8 @@
             :src="$colorMode.value === 'light' ? 'v1667806580/personal%20website/moon.svg' : 'v1667806582/personal%20website/sun.svg'"
             :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'"
             sizes="tiny:28.5px sm:38px"
+            width="tiny:28.5px sm:38px"
+            height="tiny:28.5px sm:38px"
         />
     </button>
 </template>

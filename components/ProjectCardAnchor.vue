@@ -10,6 +10,8 @@
             :src="icon"
             :alt="alt"
             sizes="tiny:28.5px sm:38px"
+            width="tiny:28.5px sm:38px"
+            height="tiny:28.5px sm:38px"
         />
         <span class="sr-only">opens in a new tab</span>
     </NuxtLink>
