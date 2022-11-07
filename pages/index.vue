@@ -1,5 +1,5 @@
 <template>
-    <div class="container text-center">
+    <main class="container text-center">
         <div ref="top" class="pb-32"  tabindex=-1></div>
         <HiddenAnchor :el="projects">Skip to projects</HiddenAnchor>
         <ThemeButton class="absolute top-[24px] right-[32px] tiny:top-[18px] tiny:right-[24px]" />
@@ -24,7 +24,7 @@
                 Back to top
             </button>
         </div>
-    </div>
+    </main>
 </template>
 
 <script setup lang="ts">

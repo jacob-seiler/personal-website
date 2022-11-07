@@ -2,9 +2,9 @@
     <div :style="styles" :class="`bg-green text-left shadow-light dark:shadow-heavy p-card`">
         <div class="grid grid-cols-3 tiny:grid-cols-1">
             <div class="col-span-2">
-                <p class="text-white font-bold leading-none text-xl tiny:text-lg">
+                <h2 class="text-white font-bold leading-none text-xl tiny:text-lg">
                     {{ data.name }}
-                </p>
+                </h2>
                 <p class="text-off-white italic text-sm tiny:text-xs">
                     {{ data.technologies.join(', ') }}
                 </p>
