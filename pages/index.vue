@@ -20,7 +20,7 @@
             <p class="dark:text-white text-md tiny:text-sm mb-8">
                 Oh, I also like scuba diving and playing guitar.
             </p>
-            <button type="button" aria-label="Top" class="text-green underline cursor-pointer text-md tiny:text-sm font-bold" @click="scrollToTop">
+            <button type="button" aria-label="Back to top" class="text-green underline cursor-pointer text-md tiny:text-sm font-bold" @click="scrollToTop">
                 Back to top
             </button>
         </div>
