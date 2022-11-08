@@ -1,19 +1,4 @@
-@font-face {
-    font-family: "proxima-nova";
-    src: url("https://use.typekit.net/af/98e3f6/000000000000000077359562/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2");
-    font-style: normal;
-    font-weight: 700;
-    font-stretch: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family:"proxima-nova";
-    src: url("https://use.typekit.net/af/d45b9a/000000000000000077359577/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;

@@ -25,7 +25,7 @@ export default <Partial<Config>>{
         heavy: '0px 3px 6px 0px rgba(0, 0, 0, 0.8)'
       },
       fontFamily: {
-        sans: ['proxima-nova', 'Helvetica Neue', 'sans-serif']
+        sans: ['Figtree', 'proxima-nova', 'Helvetica Neue', 'sans-serif']
       },
       fontSize: {
         xs: '.875rem',
