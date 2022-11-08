@@ -1,33 +1,18 @@
 <template>
-    <button type="button" aria-label="Change theme" @click="changeColorTheme()" id="theme-button">
-        <NuxtImg
-            class="w-theme h-theme"
-            :src="$colorMode.value === 'light' ? 'v1667806580/personal%20website/moon.svg' : 'v1667806582/personal%20website/sun.svg'"
-            :alt="$colorMode.value === 'light' ? 'Dark mode' : 'Light mode'"
-            sizes="tiny:28.5px sm:38px"
-        />
+    <button type="button" aria-label="Toggle color theme" @click="theme.toggle()" id="theme-button">
+        <ClientOnly>
+            <NuxtImg
+                class="w-theme h-theme"
+                :src="theme.mode.value === 'dark' ? 'v1667806582/personal%20website/sun.svg' : 'v1667806580/personal%20website/moon.svg'"
+                :alt="theme.mode.value === 'dark' ? 'Light mode' : 'Dark mode'"
+                sizes="tiny:28.5px sm:38px"
+            />
+        </ClientOnly>
     </button>
 </template>
 
 <script setup lang="ts">
-const changeColorTheme = (color?: 'light' | 'dark' | 'system') => {
-    if (color) {
-        useColorMode().value = color;
-        return;
-    }
-
-    useColorMode().value = useColorMode().value === 'dark' ? 'light' : 'dark';
-}
-
-changeColorTheme('system');
-
-onMounted(() => {
-    // System color mode change listener
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const color = event.matches ? "dark" : "light";
-        changeColorTheme(color);
-    });
-})
+const theme = useTheme();
 </script>
 
 <style scoped lang="scss">
