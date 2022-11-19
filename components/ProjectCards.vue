@@ -1,6 +1,6 @@
 <template>
     <div>
-        <template v-for="(project, i) in projects">
+        <template v-for="project in projects">
             <ProjectCard class="mb-24" :data="project" />
         </template>
     </div>

@@ -11,9 +11,9 @@
             </div>
             <div>
                 <div class="flex float-right tiny:float-left">
-                    <ProjectCardAnchor :href="data.sourceURL" icon="v1667806580/personal%20website/github.svg" alt="GitHub" :name="data.name" />
-                    <ProjectCardAnchor :href="data.courseURL" icon="v1667806579/personal%20website/course.svg" alt="Course" :name="data.name" v-if="data.courseURL" />
-                    <ProjectCardAnchor :href="data.externalURL" icon="v1667806579/personal%20website/external.svg" alt="Demo" :name="data.name" v-if="data.externalURL" />
+                    <ProjectCardAnchor :href="data.sourceURL" icon="github" alt="GitHub" :name="data.name" />
+                    <ProjectCardAnchor :href="data.courseURL" icon="course" alt="Course" :name="data.name" v-if="data.courseURL" />
+                    <ProjectCardAnchor :href="data.externalURL" icon="external" alt="Demo" :name="data.name" v-if="data.externalURL" />
                 </div>
             </div>
         </div>

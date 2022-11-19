@@ -5,12 +5,7 @@
         class="ml-8 tiny:ml-none tiny:mr-8 tiny:my-8 hover:opacity-70"
         :aria-label="ariaLabel"
     >
-        <NuxtImg
-            class="text-white w-card h-card tiny:w-card-tiny tiny:h-card-tiny"
-            :src="icon"
-            :alt="alt"
-            sizes="tiny:28.5px sm:38px"
-        />
+        <NuxtIcon class="text-white text-[38px] tiny:text-[28.5px]" :name="icon" />
         <span class="sr-only">{{ ariaLabel }}</span>
     </NuxtLink>
 </template>
