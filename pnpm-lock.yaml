@@ -5,6 +5,7 @@ specifiers:
   '@nuxtjs/color-mode': ^3.1.8
   '@nuxtjs/tailwindcss': ^6.1.2
   nuxt: ^3.0.0
+  nuxt-icons: ^3.0.0
   sass: ^1.55.0
   sass-loader: ^13.1.0
 
@@ -13,6 +14,7 @@ devDependencies:
   '@nuxtjs/color-mode': 3.1.8
   '@nuxtjs/tailwindcss': 6.1.2
   nuxt: 3.0.0_sass@1.55.0
+  nuxt-icons: 3.0.0
   sass: 1.55.0
   sass-loader: 13.1.0_sass@1.55.0
 
@@ -3906,6 +3908,15 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /nuxt-icons/3.0.0:
+    resolution: {integrity: sha512-7F9/uug7T23d2IGsmz0Jyi4gw86HRZeuzfxC1+e5vsAfQ4MhUMRaANki+uDgiUWub1y5TsclxptG06EH1e3bRQ==}
+    dependencies:
+      '@nuxt/kit': 3.0.0
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /nuxt/3.0.0_sass@1.55.0:

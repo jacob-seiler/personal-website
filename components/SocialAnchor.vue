@@ -7,13 +7,7 @@
             :class="`flex bg-grey mx-8 rounded-full w-social h-social tiny:w-social-tiny tiny:h-social-tiny`"
             :aria-label="data.ariaLabel"
         >
-            <NuxtImg
-                class="m-auto w-social-icon h-social-icon"
-                :id="data.id"
-                :src="data.icon"
-                :alt="data.label"
-                sizes="tiny:28.5px sm:38px"
-            />
+            <NuxtIcon class="text-white m-auto text-xl pt-[3px]" :id="data.id" :name="data.icon" />
             <span class="sr-only">{{ data.ariaLabel }}</span>
         </NuxtLink>
     </div>

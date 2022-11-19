@@ -21,7 +21,7 @@ const socials: Social[] = [
     ariaLabel: "My GitHub (opens in a new window)",
     url: 'https://github.com/jacob-seiler',
     color: 'bg-github',
-    icon: 'v1667806580/personal%20website/github.svg'
+    icon: 'github'
   },
   {
     id: 'linkedin',
@@ -29,7 +29,7 @@ const socials: Social[] = [
     ariaLabel: "My LinkedIn (opens in a new window)",
     url: 'https://www.linkedin.com/in/jacobseiler/',
     color: 'bg-linkedin',
-    icon: 'v1667806580/personal%20website/linkedin.svg'
+    icon: 'linkedin'
   },
   {
     id: 'email',
@@ -37,7 +37,7 @@ const socials: Social[] = [
     ariaLabel: "My Email (opens email)",
     url: 'mailto:seiler.jacob1@gmail.com',
     color: 'bg-green',
-    icon: 'v1667806579/personal%20website/email.svg'
+    icon: 'email'
   },
   {
     id: 'phone',
@@ -45,7 +45,7 @@ const socials: Social[] = [
     ariaLabel: "My Phone (opens phone)",
     url: 'tel:14165577215',
     color: 'bg-green',
-    icon: 'v1667806581/personal%20website/phone.svg'
+    icon: 'phone'
   }
 ];
 </script>
