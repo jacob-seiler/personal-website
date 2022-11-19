@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Personal Website
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Built using Nuxt 3. Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
 ## Setup
 
@@ -24,7 +24,7 @@ pnpm run dev -o
 Build the application for production:
 
 ```bash
-pnpm run build
+pnpm run generate
 ```
 
 Locally preview production build:
