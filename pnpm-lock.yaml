@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@nuxt/image-edge': 1.0.0-27809804.194d2d6
   '@nuxtjs/color-mode': ^3.1.8
-  '@nuxtjs/robots': ^3.0.0
   '@nuxtjs/tailwindcss': ^6.1.2
   nuxt: ^3.0.0
   nuxt-icons: ^3.0.0
@@ -13,7 +12,6 @@ specifiers:
 devDependencies:
   '@nuxt/image-edge': 1.0.0-27809804.194d2d6
   '@nuxtjs/color-mode': 3.1.8
-  '@nuxtjs/robots': 3.0.0
   '@nuxtjs/tailwindcss': 6.1.2
   nuxt: 3.0.0_sass@1.55.0
   nuxt-icons: 3.0.0
@@ -826,16 +824,6 @@ packages:
       '@nuxt/kit': 3.0.0
       lodash.template: 4.5.0
       pathe: 0.3.9
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
-  /@nuxtjs/robots/3.0.0:
-    resolution: {integrity: sha512-qsHGW1KXBvV5Kq7u3huPnFCUTbHS4Fk8Za2mNPgmUXcwLgp3exvhPtdZfIdjrCF/aZk3A8OZONNmGghs6CecBA==}
-    dependencies:
-      '@nuxt/kit': 3.0.0
-      h3: 1.0.1
     transitivePeerDependencies:
       - rollup
       - supports-color

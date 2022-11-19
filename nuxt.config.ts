@@ -19,7 +19,7 @@ export default defineNuxtConfig({
             ]
         }
     },
-    modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-icons', '@nuxtjs/color-mode', '@nuxtjs/robots'],
+    modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-icons', '@nuxtjs/color-mode'],
     image: {
         provider: 'cloudinary',
         screens: {
