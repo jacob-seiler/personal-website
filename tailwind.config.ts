@@ -69,8 +69,7 @@ export default <Partial<Config>>{
         'social-tiny': '64px',
         'social-icon': '24px',
         card: '38px',
-        'card-tiny': '28.5px',
-        theme: '24px'
+        'card-tiny': '28.5px'
       },
       height: {
         headshot: '170px',
@@ -79,8 +78,7 @@ export default <Partial<Config>>{
         'social-tiny': '35px',
         'social-icon': '24px',
         card: '38px',
-        'card-tiny': '28.5px',
-        theme: '24px'
+        'card-tiny': '28.5px'
       },
       extend: {
         screens: {
