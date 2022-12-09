@@ -1,17 +1,25 @@
 ---
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component front matter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Headshot from "../components/Headshot.astro";
+import SocialAnchors from "../components/SocialAnchors.astro";
+import ProjectCards from "../components/ProjectCards.astro";
 ---
-<!-- Below is your "component template." It's just HTML, but with
-     some magic sprinkled in to help you build great templates. -->
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+
+<DefaultLayout>
+	<!-- Hidden anchor -->
+	<!-- Theme button -->
+	<Headshot />
+	<h1>Jacob Seiler</h1>
+	<SocialAnchors />
+	<p>
+		<b>I like to work hard and have fun doing it.</b> As a
+		<b>software engineer</b> working for <b>Amazon</b>, and software design graduate from <b>Queen's University</b>, I continually look for ways to
+		<b>learn and apply</b> new <b>skills and technologies</b>.
+	</p>
+	<!-- Hidden anchor -->
+	<ProjectCards />
+	<div>
+		<p>Oh, I also like scuba diving and playing guitar.</p>
+		<!-- Back to top button -->
+	</div>
+</DefaultLayout>
