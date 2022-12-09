@@ -1,0 +1,26 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacob-seiler/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacob-seiler/personal-website/issues"
+  },
+  "homepage": "https://github.com/jacob-seiler/personal-website#readme",
+  "dependencies": {
+    "astro": "^1.6.14"
+  }
+}
