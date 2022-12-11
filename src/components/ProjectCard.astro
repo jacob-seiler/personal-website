@@ -1,5 +1,6 @@
 ---
 import type { Project } from "./ProjectCards.astro";
+import ProjectCardAnchor from "./ProjectCardAnchor.astro";
 
 interface Props {
   data: Project
@@ -17,7 +18,9 @@ const { data } = Astro.props;
         </div>
         <div>
             <div class="flex float-right">
-                <!-- TODO: ProjectCardAnchor -->
+                <ProjectCardAnchor href={data.sourceURL} icon="github" alt="GitHub" name={data.name} />
+                { data.courseURL ? <ProjectCardAnchor href={data.courseURL} icon="course" alt="Course" name={data.name} /> : null }
+                { data.externalURL ? <ProjectCardAnchor href={data.externalURL} icon="external" alt="Demo" name={data.name} /> : null }
             </div>
         </div>
     </div>

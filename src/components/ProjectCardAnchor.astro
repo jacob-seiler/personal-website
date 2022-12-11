@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+  href: string;
+  icon: string;
+  alt: string;
+  name: string;
+}
+
+const { href, icon, alt, name } = Astro.props;
+const ariaLabel = `${alt}: ${name} (opens in a new window)`;
+---
+
+<a
+    href={href}
+    target="_blank"
+    class="ml-2 hover:opacity-70"
+>
+    <Icon
+        name={icon}
+        class="text-white w-9"
+    />
+    <span class="sr-only">{ariaLabel}</span>
+</a>
