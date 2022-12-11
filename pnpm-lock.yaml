@@ -2,12 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/tailwind': ^2.1.3
+  '@fontsource/figtree': ^4.5.2
+  '@fontsource/twinkle-star': ^4.5.9
   astro: ^1.6.14
   astro-icon: ^0.8.0
   tailwindcss: ^3.0.24
 
 dependencies:
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
+  '@fontsource/figtree': 4.5.2
+  '@fontsource/twinkle-star': 4.5.9
   astro: 1.6.14
   astro-icon: 0.8.0
   tailwindcss: 3.2.4
@@ -396,6 +400,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/figtree/4.5.2:
+    resolution: {integrity: sha512-CcYdtTbjkbgyZZaFo9H0HnON2HtK16YAkpvqkXHvEmbAYmBXUPqw0ENmZtd8L/IfvPuwXApiBr93CIVoEu3xow==}
+    dev: false
+
+  /@fontsource/twinkle-star/4.5.9:
+    resolution: {integrity: sha512-41Z1cV7Dp505+/ceDMMSRRbeaSdkXYJyKGJzkUAu0lJWkUZHShuxzjHPa1Pq8hEndvBoBtAtq6MVgaryZ2DTgA==}
+    dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}

@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+export default <Partial<Config>> {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		container: {
@@ -8,6 +10,9 @@ module.exports = {
 			  sm: '640px',
 			  md: '768px'
 			},
+		},
+		fontFamily: {
+			sans: ["Figtree", ...defaultTheme.fontFamily.sans]
 		},
 		extend: {
 			colors: {
