@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jacobseiler.com/sitemap.xml
+Sitemap: https://jacobseiler.com/sitemap-index.xml
