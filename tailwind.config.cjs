@@ -12,6 +12,8 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: "#2BA878",
+				github: "#24292E",
+				linkedin: "#0B65C2",
 			}
 		},
 	},

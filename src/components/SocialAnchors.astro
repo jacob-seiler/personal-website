@@ -1,0 +1,51 @@
+---
+import SocialAnchor from "./SocialAnchor.astro";
+
+export type Social = {
+  id: string;
+  label: string;
+  ariaLabel: string;
+  url: string;
+  colour: string;
+  icon: string;
+};
+
+const socials: Social[] = [
+  {
+    id: 'github',
+    label: 'GitHub',
+    ariaLabel: "My GitHub (opens in a new window)",
+    url: 'https://github.com/jacob-seiler',
+    colour: 'hover:bg-github',
+    icon: 'github'
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    ariaLabel: "My LinkedIn (opens in a new window)",
+    url: 'https://www.linkedin.com/in/jacobseiler/',
+    colour: 'hover:bg-linkedin',
+    icon: 'linkedin'
+  },
+  {
+    id: 'email',
+    label: 'Email',
+    ariaLabel: "My Email (opens email)",
+    url: 'mailto:seiler.jacob1@gmail.com',
+    colour: 'hover:bg-primary',
+    icon: 'email'
+  },
+  {
+    id: 'phone',
+    label: 'Phone',
+    ariaLabel: "My Phone (opens phone)",
+    url: 'tel:14165577215',
+    colour: 'hover:bg-primary',
+    icon: 'phone'
+  }
+];
+---
+
+<div class="flex justify-center">
+    {socials.map(social => <SocialAnchor data={social} />)}
+</div>
