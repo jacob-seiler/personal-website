@@ -3,6 +3,7 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Headshot from "../components/Headshot.astro";
 import SocialAnchors from "../components/SocialAnchors.astro";
 import ProjectCards from "../components/ProjectCards.astro";
+import TopButton from "../components/TopButton";
 ---
 
 <DefaultLayout>
@@ -23,6 +24,6 @@ import ProjectCards from "../components/ProjectCards.astro";
   </div>
 	<div class="pt-[100vh] pb-24 text-lg tiny:text-base">
 		<p class="mb-2">Oh, I also like scuba diving and playing guitar.</p>
-		<a class="font-bold underline text-primary">Back to top</a>
+		<TopButton client:visible />
 	</div>
 </DefaultLayout>
