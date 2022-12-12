@@ -8,7 +8,7 @@ import HiddenAnchor from "../components/HiddenAnchor";
 ---
 
 <DefaultLayout>
-	<div id="top" class="pb-8"></div>
+	<div id="top" class="pb-8" tabindex="-1"></div>
 	<HiddenAnchor to="projects" client:visible />
 	<!-- Theme button -->
 	<Headshot />
@@ -19,13 +19,13 @@ import HiddenAnchor from "../components/HiddenAnchor";
 		<b>software engineer</b> working for <b>Amazon</b>, and software design graduate from <b>Queen's University</b>, I continually look for ways to
 		<b>learn and apply</b> new <b>skills and technologies</b>.
 	</p>
-	<div id="projects"></div>
+	<div id="projects" tabindex="-1"></div>
 	<HiddenAnchor to="footer" client:visible />
 	<div class="mt-16">
 		<ProjectCards />
 	</div>
-	<div id="footer"></div>
 	<div class="pt-[100vh] pb-24 text-lg tiny:text-base">
+		<div id="footer" tabindex="-1"></div>
 		<p class="mb-2">Oh, I also like scuba diving and playing guitar.</p>
 		<TopButton client:visible />
 	</div>
