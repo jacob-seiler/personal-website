@@ -21,6 +21,10 @@ module.exports = {
 				linkedin: "#0B65C2",
 			}
 		},
+		boxShadow: {
+		  light: '0px 3px 6px 0px rgba(0, 0, 0, 0.3)',
+		  dark: '0px 3px 6px 0px rgba(0, 0, 0, 0.8)'
+		},
 	},
 	plugins: [],
 }
