@@ -11,20 +11,20 @@ const { data } = Astro.props;
 
 <!-- TODO: background image? -->
 <div class="text-left bg-primary px-6 py-4 shadow-light">
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-3 tiny:grid-cols-1">
         <div class="col-span-2">
-            <h2 class="text-white font-bold leading-none text-2xl">{data.name}</h2>
-            <p class="text-gray-50 italic text-base">{data.technologies.join(", ")}</p>
+            <h2 class="text-white font-bold leading-none text-2xl tiny:text-xl">{data.name}</h2>
+            <p class="text-gray-50 italic text-base tiny:text-sm">{data.technologies.join(", ")}</p>
         </div>
         <div>
-            <div class="flex float-right">
+            <div class="flex float-right tiny:float-left">
                 <ProjectCardAnchor href={data.sourceURL} icon="github" alt="GitHub" name={data.name} />
                 { data.courseURL ? <ProjectCardAnchor href={data.courseURL} icon="course" alt="Course" name={data.name} /> : null }
                 { data.externalURL ? <ProjectCardAnchor href={data.externalURL} icon="external" alt="Demo" name={data.name} /> : null }
             </div>
         </div>
     </div>
-    <p class="mt-4 text-gray-50 leading-tight text-base">
+    <p class="mt-4 text-gray-50 leading-tight text-base tiny:text-sm">
         {data.description.split("**").map((seg, i) => {
             if (i % 2 == 1) return <b>{seg}</b>
             return <>{seg}</>

@@ -25,6 +25,9 @@ module.exports = {
 		  light: '0px 3px 6px 0px rgba(0, 0, 0, 0.3)',
 		  dark: '0px 3px 6px 0px rgba(0, 0, 0, 0.8)'
 		},
+        screens: {
+          tiny: { max: '430px' }
+        },
 	},
 	plugins: [],
 }
