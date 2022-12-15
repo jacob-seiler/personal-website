@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { data } = Astro.props;
-const { src } = await getImage({ src: import(`../assets/${data.backgroundImage}.webp`), alt: "Background image", width: 700, height: 500, format: "webp" })
+const { src } = await getImage({ src: import(`../assets/${data.backgroundImage}.webp`), alt: "Background image", width: 700, aspectRatio: "7:5", format: "webp" })
 ---
 
 <div style={{backgroundImage: `url("${src}")`}} class="bg-blend-multiply bg-right bg-no-repeat bg-[length:60%] text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">

@@ -10,5 +10,12 @@ export default function TopButton() {
         element.blur();
     }
 
-    return <button onClick={handleClick} class="font-bold underline text-primary">Back to top</button>
+    return (
+        <button
+            onClick={handleClick}
+            class="font-bold underline dark:text-white hover:text-primary dark:hover:text-primary"
+        >
+            Back to top
+        </button>
+    )
 }
