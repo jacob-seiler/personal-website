@@ -1,12 +1,13 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Picture  } from '@astrojs/image/components';
 import headshot from "../assets/headshot.webp"
 ---
 
-<Image
+<Picture 
   src={headshot}
   alt="Headshot"
   class="bg-white p-0 rounded-full mx-auto shadow-light dark:shadow-dark w-44 h-44 tiny:w-36 tiny:h-36"
-  width={500}
+  widths={[200, 500]}
   aspectRatio="1:1"
+  sizes="176px, (max-width: 430px) 144px"
 />
