@@ -8,10 +8,10 @@ interface Props {
 }
 
 const { data } = Astro.props;
-const { src } = await getImage({ src: `src/assets/${data.backgroundImage}.webp`, alt: "Background image", width: 700, height: 500 })
+const { src } = await getImage({ src: `src/assets/${data.backgroundImage}.webp`, alt: "Background image", width: 700, height: 500, format: "webp" })
 ---
 
-<div style={{backgroundImage: `url(${src})`}} class="card text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">
+<div style={{backgroundImage: `url("${src}")`}} class="bg-blend-multiply bg-right bg-no-repeat bg-[length:60%] text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">
 	<div class="grid grid-cols-3 tiny:grid-cols-1">
 		<div class="col-span-2">
 			<h2 class="text-white font-bold leading-none text-2xl tiny:text-xl">{data.name}</h2>
@@ -34,12 +34,3 @@ const { src } = await getImage({ src: `src/assets/${data.backgroundImage}.webp`,
 		}
 	</p>
 </div>
-
-<style>
-	.card {
-		background-blend-mode: multiply;
-		background-position: right;
-		background-repeat: no-repeat;
-		background-size: 60%;
-	}
-</style>
