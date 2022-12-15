@@ -10,7 +10,17 @@ import sitemap from "@astrojs/sitemap";
 import preact from "@astrojs/preact";
 
 // https://astro.build/config
+import image from "@astrojs/image";
+
+// https://astro.build/config
 export default defineConfig({
   site: "https://jacobseiler.com",
-  integrations: [tailwind(), sitemap(), preact()]
+  integrations: [
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    }),
+    tailwind(),
+    sitemap(),
+    preact()
+  ]
 });
