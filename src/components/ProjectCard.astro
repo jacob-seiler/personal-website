@@ -1,4 +1,5 @@
 ---
+import { getImage } from '@astrojs/image';
 import type { Project } from "./ProjectCards.astro";
 import ProjectCardAnchor from "./ProjectCardAnchor.astro";
 
@@ -7,10 +8,10 @@ interface Props {
 }
 
 const { data } = Astro.props;
+const { src } = await getImage({ src: `src/assets/${data.backgroundImage}.webp`, alt: "Background image", width: 700, height: 500 })
 ---
 
-<!-- TODO: background image? -->
-<div id={data.backgroundImage} class="card text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">
+<div style={{backgroundImage: `url(${src})`}} class="card text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">
 	<div class="grid grid-cols-3 tiny:grid-cols-1">
 		<div class="col-span-2">
 			<h2 class="text-white font-bold leading-none text-2xl tiny:text-xl">{data.name}</h2>
@@ -35,34 +36,6 @@ const { data } = Astro.props;
 </div>
 
 <style>
-	#card-csstoolkit {
-		background-image: url("../assets/csstoolkit.webp");
-	}
-
-	#card-seetgeek {
-		background-image: url("../assets/seetgeek.webp");
-	}
-
-	#card-personal {
-		background-image: url("../assets/personalwebsite.webp");
-	}
-
-	#card-fashion {
-		background-image: url("../assets/fashionclassifier.webp");
-	}
-
-	#card-lyric {
-		background-image: url("../assets/lyricgen.webp");
-	}
-
-	#card-stock {
-		background-image: url("../assets/stockpred.webp");
-	}
-
-	#card-engine {
-		background-image: url("../assets/engine.webp");
-	}
-
 	.card {
 		background-blend-mode: multiply;
 		background-position: right;
