@@ -1,0 +1,30 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Headshot from "../components/Headshot.astro";
+import SocialAnchors from "../components/SocialAnchors.astro";
+import ProjectCards from "../components/ProjectCards.astro";
+import TopButton from "../components/TopButton";
+import HiddenAnchor from "../components/HiddenAnchor";
+---
+
+<DefaultLayout>
+	<HiddenAnchor to="projects" client:visible />
+	<Headshot />
+	<h1 class="text-primary font-bold mt-4 text-6xl tiny:text-5xl mb-4">Jacob Seiler</h1>
+	<SocialAnchors />
+	<p class="mt-10 text-lg tiny:text-base tiny:px-6 dark:text-white">
+		<b>I like to work hard and have fun doing it.</b> As a
+		<b>software engineer</b> working for <b>Amazon</b>, and software design graduate from <b>Queen's University</b>, I continually look for ways to
+		<b>learn and apply</b> new <b>skills and technologies</b>.
+	</p>
+	<div id="projects" tabindex="-1"></div>
+	<HiddenAnchor to="footer" client:visible />
+	<div class="mt-16">
+		<ProjectCards />
+	</div>
+	<div class="pt-[100vh] pb-24 text-lg tiny:text-base">
+		<div id="footer" tabindex="-1"></div>
+		<p class="mb-2 dark:text-white">Oh, I also like scuba diving and playing guitar.</p>
+		<TopButton client:visible />
+	</div>
+</DefaultLayout>

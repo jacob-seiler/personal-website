@@ -1,0 +1,21 @@
+---
+import type { Social } from "./SocialAnchors.astro";
+import { Icon } from "astro-icon";
+
+interface Props {
+	data: Social;
+}
+
+const { data } = Astro.props;
+---
+
+<div>
+	<a
+		href={data.url}
+		target="_blank"
+		class={`flex mx-2 rounded-full bg-zinc-500 w-11 h-11 tiny:w-16 tiny:h-9 hover:scale-125 transition-transform motion-reduce:transition-none hover:shadow-light dark:hover:shadow-dark ${data.colour}`}
+	>
+		<Icon name={data.icon} class="text-white m-auto w-6" />
+		<span class="sr-only">{data.ariaLabel}</span>
+	</a>
+</div>
