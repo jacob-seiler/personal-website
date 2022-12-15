@@ -27,7 +27,7 @@ module.exports = {
 		  dark: '0px 3px 6px 0px rgba(0, 0, 0, 0.8)'
 		},
         screens: {
-          tiny: { max: '430px' }
+          tiny: { max: '482px' }
         },
 	},
 }
