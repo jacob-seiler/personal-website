@@ -11,30 +11,39 @@ import { useEffect, useState } from "preact/hooks"
 export default function ThemeButton() {
     const [isDark, setIsDark] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
+    const addTransition = () => {
+        const el = document.body;
+
+        if (!el.classList.contains("transition-colors"))
+            el.classList.add("transition-colors");
+    }
+
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+        addTransition();
+        setIsDark(e.matches)
+    }
+
     // Update color theme when state is updated
     useEffect(() => {
         const el = document.body.parentElement;
 
         if (isDark) el.classList.add("dark");
-        else el.classList.remove("dark")
+        else el.classList.remove("dark");
+
+        setTimeout(() => addTransition(), 0);
     }, [isDark]);
 
     // Change color theme when system color scheme changes
     useEffect(() => {
         window.matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (e) => {
-            setIsDark(e.matches);
-        });
+            .addEventListener("change", handleSystemChange);
+
+        return () => {
+            window.matchMedia("(prefers-color-scheme: dark)")
+                .removeEventListener("change", handleSystemChange)
+        }
     }, [window]);
 
-    // Add transition (this way it isn't present for the initial render)
-    useEffect(() => {
-        setTimeout(() => {
-            const el = document.body;
-            el.classList.add("transition-colors");
-        }, 0)
-    }, []);
-    
     return (
         <button
             onClick={() => setIsDark(prevIsDark => !prevIsDark)}
