@@ -15,7 +15,7 @@ export default function ThemeButton() {
         const el = document.body;
 
         if (!el.classList.contains("transition-colors"))
-            el.classList.add("transition-colors");
+            setTimeout(() => el.classList.add("transition-colors"), 100);
     }
 
     const handleSystemChange = (e: MediaQueryListEvent) => {
@@ -30,7 +30,7 @@ export default function ThemeButton() {
         if (isDark) el.classList.add("dark");
         else el.classList.remove("dark");
 
-        setTimeout(() => addTransition(), 0);
+        addTransition()
     }, [isDark]);
 
     // Change color theme when system color scheme changes
