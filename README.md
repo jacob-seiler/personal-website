@@ -7,6 +7,7 @@ My personal website. Built using [Astro](https://astro.build/), [Preact](https:/
 ## Develop
 
 1. Clone repo
+
 1. Install dependencies
 
     ```bash
