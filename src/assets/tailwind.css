@@ -1,5 +1,5 @@
-@import '@fontsource/figtree/700.css';
-@import '@fontsource/figtree/400.css';
+@import "@fontsource/figtree/700.css";
+@import "@fontsource/figtree/400.css";
 
 @tailwind base;
 @tailwind components;
