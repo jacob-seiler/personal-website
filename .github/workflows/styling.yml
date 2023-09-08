@@ -1,10 +1,10 @@
-name: "Lint checking"
+name: "Style checking"
 
 on:
   pull_request:
     branches: ["*"]
   push:
-    branches: ["main"]
+    branches: ["*"]
   merge_group:
 
 jobs:
@@ -44,5 +44,5 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Run lint check 👀
-        run: pnpm lint
+      - name: Run style check 🎨
+        run: pnpm style
