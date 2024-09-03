@@ -20,4 +20,4 @@ My personal website. Built using [Astro](https://astro.build/), [Preact](https:/
     pnpm run dev
     ```
 
-1. Visit <http://localhost:3000>
+1. Visit <http://localhost:4321>
