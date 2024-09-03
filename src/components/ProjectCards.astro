@@ -1,149 +1,153 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 
-type Technology = {label: string, url: string}
+type Technology = { label: string; url: string };
 
 export type Project = {
-  name: string;
-  technologies: Technology[];
-  description: string;
-  backgroundImage: string;
-  sourceURL: string;
-  externalURL?: string;
-  courseURL?: string;
+    name: string;
+    technologies: Technology[];
+    description: string;
+    backgroundImage: string;
+    sourceURL: string;
+    externalURL?: string;
+    courseURL?: string;
 };
 
-const TECHNOLOGIES: {[id: string]: Technology} = {
-  react: {
-    label: "React",
-    url: "https://reactjs.org/"
-  },
-  typescript: {
-    label: "TypeScript",
-    url: "https://www.typescriptlang.org/"
-  },
-  bootstrap: {
-    label: "Bootstrap",
-    url: "https://getbootstrap.com/"
-  },
-  sass: {
-    label: "Sass",
-    url: "https://sass-lang.com/"
-  },
-  flask: {
-    label: "Flask",
-    url: "https://flask.palletsprojects.com/en/latest/"
-  },
-  pytest: {
-    label: "pytest",
-    url: "https://docs.pytest.org/en/latest/"
-  },
-  selenium: {
-    label: "Selenium",
-    url: "https://www.selenium.dev/"
-  },
-  astro: {
-    label: "Astro",
-    url: "https://astro.build/"
-  },
-  preact: {
-    label: "Preact",
-    url: "https://preactjs.com/"
-  },
-  tailwind: {
-    label: "Tailwind CSS",
-    url: "https://tailwindcss.com/"
-  },
-  keras: {
-    label: "Keras",
-    url: "https://keras.io/"
-  },
-  numpy: {
-    label: "NumPy",
-    url: "https://numpy.org/"
-  },
-  pandas: {
-    label: "pandas",
-    url: "https://pandas.pydata.org/"
-  },
-  java: {
-    label: "Java",
-    url: "https://www.java.com/en/"
-  },
+const TECHNOLOGIES: { [id: string]: Technology } = {
+    react: {
+        label: "React",
+        url: "https://reactjs.org/",
+    },
+    typescript: {
+        label: "TypeScript",
+        url: "https://www.typescriptlang.org/",
+    },
+    bootstrap: {
+        label: "Bootstrap",
+        url: "https://getbootstrap.com/",
+    },
+    sass: {
+        label: "Sass",
+        url: "https://sass-lang.com/",
+    },
+    flask: {
+        label: "Flask",
+        url: "https://flask.palletsprojects.com/en/latest/",
+    },
+    pytest: {
+        label: "pytest",
+        url: "https://docs.pytest.org/en/latest/",
+    },
+    selenium: {
+        label: "Selenium",
+        url: "https://www.selenium.dev/",
+    },
+    astro: {
+        label: "Astro",
+        url: "https://astro.build/",
+    },
+    preact: {
+        label: "Preact",
+        url: "https://preactjs.com/",
+    },
+    tailwind: {
+        label: "Tailwind CSS",
+        url: "https://tailwindcss.com/",
+    },
+    keras: {
+        label: "Keras",
+        url: "https://keras.io/",
+    },
+    numpy: {
+        label: "NumPy",
+        url: "https://numpy.org/",
+    },
+    pandas: {
+        label: "pandas",
+        url: "https://pandas.pydata.org/",
+    },
+    java: {
+        label: "Java",
+        url: "https://www.java.com/en/",
+    },
 };
 
 // TODO: Load cards from JSON?
 const projects: Project[] = [
-  {
-    name: "CSS Designer",
-    technologies: [TECHNOLOGIES.react, TECHNOLOGIES.typescript, TECHNOLOGIES.bootstrap, TECHNOLOGIES.sass],
-    description:
-      "**Web application** for designing and styling **CSS components** using interactive tools. Developed with **React JS** and **Bootstrap** frameworks using **TypeScript** and **Sass**.",
-    backgroundImage: "csstoolkit",
-    sourceURL: "https://github.com/jacob-seiler/css-toolkit",
-    externalURL:
-      "https://jacob-seiler.github.io/CSS-Toolkit/build/components/boxshadow.html",
-  },
-  {
-    name: "Ticket Website",
-    technologies: [TECHNOLOGIES.flask, TECHNOLOGIES.pytest, TECHNOLOGIES.selenium],
-    description:
-      "Course project for **Software Quality Assurance** (CISC 327). Developed ticket buying and selling **web application** using **Flask**. Performed **white and black box testing** using **Selenium** and **PyTest**.",
-    backgroundImage: "seetgeek",
-    sourceURL: "https://github.com/jacob-seiler/seetgeek",
-    courseURL: "https://www.cs.queensu.ca/undergraduate/courses/CISC-327",
-  },
-  {
-    name: "Personal Website",
-    technologies: [TECHNOLOGIES.astro, TECHNOLOGIES.preact, TECHNOLOGIES.tailwind],
-    description:
-      "The same website you are on right now! A space for me to showcase my **projects** and ways to **connect** with me. This website was built using **Astro** with **Preact**, and **Tailwind CSS**.",
-    backgroundImage: "personalwebsite",
-    sourceURL: "https://github.com/jacob-seiler/personal-website",
-    externalURL: "https://jacobseiler.com",
-  },
-  {
-    name: "Fashion Classifier",
-    technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy],
-    description:
-      "**Winner** of the **2020 Camp QMIND hackathon**. **Over 200 participants** each tasked with creating an **Artificial Intelligence** to classify fashion items. Used **NumPy** and **Keras** to preprocess images and build a **CNN model**. Final model had an accuracy of **91.95%**.",
-    backgroundImage: "fashionclassifier",
-    sourceURL: "https://github.com/jacob-seiler/CampQMINDTeamB20",
-    externalURL: "https://fashion-classifier.streamlit.app/"
-  },
-  {
-    name: "Lyric Generation A.I.",
-    technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy, TECHNOLOGIES.pandas],
-    description:
-      "**Artificial Intelligence** that generates lyrics based on genres using lyric data from the **Genius API**. Song's genre can be predicted with **62.99%** accuracy and lyrics can be generated with **73.93%** accuracy.",
-    backgroundImage: "lyricgen",
-    sourceURL: "https://github.com/QMIND-Team/Lyric-Gen",
-  },
-  {
-    name: "Stock Prediction A.I.",
-    technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy, TECHNOLOGIES.pandas],
-    description:
-      "**Artificial Intelligence** that predicts stock market closing prices with an accuracy of **60.53%**. Model is an ensemble **LSTM** built using **Keras**. Stock data obtained from **Yahoo! Finance**.",
-    backgroundImage: "stockpred",
-    sourceURL: "https://github.com/BetaLab-Queens/quant",
-  },
-  {
-    name: "2D Game Engine",
-    technologies: [TECHNOLOGIES.java],
-    description:
-      "**Game engine** designed to make creating 2D Java games simple. Engine manages **resolution scaling**, **delta timing**, **double buffer rendering**, and provides an intuitive **API** to get started.",
-    backgroundImage: "engine",
-    sourceURL: "https://github.com/jacob-seiler/Java-2D-Game-Engine",
-  },
+    {
+        name: "CSS Designer",
+        technologies: [
+            TECHNOLOGIES.react,
+            TECHNOLOGIES.typescript,
+            TECHNOLOGIES.bootstrap,
+            TECHNOLOGIES.sass,
+        ],
+        description:
+            "**Web application** for designing and styling **CSS components** using interactive tools. Developed with **React JS** and **Bootstrap** frameworks using **TypeScript** and **Sass**.",
+        backgroundImage: "csstoolkit",
+        sourceURL: "https://github.com/jacob-seiler/css-toolkit",
+        externalURL: "https://jacob-seiler.github.io/CSS-Toolkit/build/components/boxshadow.html",
+    },
+    {
+        name: "Ticket Website",
+        technologies: [TECHNOLOGIES.flask, TECHNOLOGIES.pytest, TECHNOLOGIES.selenium],
+        description:
+            "Course project for **Software Quality Assurance** (CISC 327). Developed ticket buying and selling **web application** using **Flask**. Performed **white and black box testing** using **Selenium** and **PyTest**.",
+        backgroundImage: "seetgeek",
+        sourceURL: "https://github.com/jacob-seiler/seetgeek",
+        courseURL: "https://www.cs.queensu.ca/undergraduate/courses/CISC-327",
+    },
+    {
+        name: "Personal Website",
+        technologies: [TECHNOLOGIES.astro, TECHNOLOGIES.preact, TECHNOLOGIES.tailwind],
+        description:
+            "The same website you are on right now! A space for me to showcase my **projects** and ways to **connect** with me. This website was built using **Astro** with **Preact**, and **Tailwind CSS**.",
+        backgroundImage: "personalwebsite",
+        sourceURL: "https://github.com/jacob-seiler/personal-website",
+        externalURL: "https://jacobseiler.com",
+    },
+    {
+        name: "Fashion Classifier",
+        technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy],
+        description:
+            "**Winner** of the **2020 Camp QMIND hackathon**. **Over 200 participants** each tasked with creating an **Artificial Intelligence** to classify fashion items. Used **NumPy** and **Keras** to preprocess images and build a **CNN model**. Final model had an accuracy of **91.95%**.",
+        backgroundImage: "fashionclassifier",
+        sourceURL: "https://github.com/jacob-seiler/CampQMINDTeamB20",
+        externalURL: "https://fashion-classifier.streamlit.app/",
+    },
+    {
+        name: "Lyric Generation A.I.",
+        technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy, TECHNOLOGIES.pandas],
+        description:
+            "**Artificial Intelligence** that generates lyrics based on genres using lyric data from the **Genius API**. Song's genre can be predicted with **62.99%** accuracy and lyrics can be generated with **73.93%** accuracy.",
+        backgroundImage: "lyricgen",
+        sourceURL: "https://github.com/QMIND-Team/Lyric-Gen",
+    },
+    {
+        name: "Stock Prediction A.I.",
+        technologies: [TECHNOLOGIES.keras, TECHNOLOGIES.numpy, TECHNOLOGIES.pandas],
+        description:
+            "**Artificial Intelligence** that predicts stock market closing prices with an accuracy of **60.53%**. Model is an ensemble **LSTM** built using **Keras**. Stock data obtained from **Yahoo! Finance**.",
+        backgroundImage: "stockpred",
+        sourceURL: "https://github.com/BetaLab-Queens/quant",
+    },
+    {
+        name: "2D Game Engine",
+        technologies: [TECHNOLOGIES.java],
+        description:
+            "**Game engine** designed to make creating 2D Java games simple. Engine manages **resolution scaling**, **delta timing**, **double buffer rendering**, and provides an intuitive **API** to get started.",
+        backgroundImage: "engine",
+        sourceURL: "https://github.com/jacob-seiler/Java-2D-Game-Engine",
+    },
 ];
 ---
 
 <div>
-  {
-    projects.map((project) => (
-      <div class="mb-6">
-        <ProjectCard data={project} />
-      </div>
-    ))
-  }
+    {
+        projects.map(project => (
+            <div class="mb-6">
+                <ProjectCard data={project} />
+            </div>
+        ))
+    }
 </div>
