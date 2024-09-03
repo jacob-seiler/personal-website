@@ -9,8 +9,10 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 import preact from "@astrojs/preact";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://jacobseiler.com",
-  integrations: [tailwind(), sitemap(), preact()],
+    site: "https://jacobseiler.com",
+    integrations: [tailwind(), sitemap(), preact(), icon()],
 });

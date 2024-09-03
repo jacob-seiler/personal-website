@@ -1,47 +1,87 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage } from "astro:assets";
 import type { Project } from "./ProjectCards.astro";
 import ProjectCardAnchor from "./ProjectCardAnchor.astro";
 
 interface Props {
-	data: Project;
+    data: Project;
 }
 
 const { data } = Astro.props;
-const { src } = await getImage({ src: import(`../assets/${data.backgroundImage}.webp`), alt: "Background image", width: 700, aspectRatio: "7:5", format: "webp" })
+const { src } = await getImage({
+    src: import(`../assets/${data.backgroundImage}.webp`),
+    alt: "Background image",
+    width: 700,
+    aspectRatio: "7:5",
+    format: "webp",
+});
 ---
 
-<div style={{backgroundImage: `url("${src}")`}} class="bg-blend-multiply rounded-lg tiny:rounded-none bg-right bg-no-repeat bg-[length:60%] text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark">
-	<div class="grid grid-cols-3 tiny:grid-cols-1">
-		<div class="col-span-2">
-			<h2 class="text-white font-bold leading-none text-2xl tiny:text-xl">{data.name}</h2>
-			<p class="text-gray-50 italic text-base tiny:text-sm">
-				{
-					data.technologies.map((technology, i) => {
-						return (
-								<>
-									<a class="hover:opacity-70" href={technology.url} target="_blank">{technology.label}</a>
-									{i != data.technologies.length - 1 ? <>, </> : null}
-								</>
-							)
-					})
-				}
-			</p>
-		</div>
-		<div>
-			<div class="flex float-right tiny:float-left">
-				<ProjectCardAnchor href={data.sourceURL} icon="github" alt="GitHub" name={data.name} />
-				{data.courseURL ? <ProjectCardAnchor href={data.courseURL} icon="course" alt="Course" name={data.name} /> : null}
-				{data.externalURL ? <ProjectCardAnchor href={data.externalURL} icon="external" alt="Demo" name={data.name} /> : null}
-			</div>
-		</div>
-	</div>
-	<p class="mt-4 text-gray-50 leading-tight text-base tiny:text-sm">
-		{
-			data.description.split("**").map((seg, i) => {
-				if (i % 2 == 1) return <b>{seg}</b>;
-				return <>{seg}</>;
-			})
-		}
-	</p>
+<div
+    style={{ backgroundImage: `url("${src}")` }}
+    class="bg-blend-multiply rounded-lg tiny:rounded-none bg-right bg-no-repeat bg-[length:60%] text-left bg-primary px-6 py-4 shadow-light dark:shadow-dark"
+>
+    <div class="grid grid-cols-3 tiny:grid-cols-1">
+        <div class="col-span-2">
+            <h2 class="text-white font-bold leading-none text-2xl tiny:text-xl">{data.name}</h2>
+            <p class="text-gray-50 italic text-base tiny:text-sm">
+                {
+                    data.technologies.map((technology, i) => {
+                        return (
+                            <>
+                                <span class="inline-flex">
+                                    <a
+                                        class="hover:opacity-70"
+                                        href={technology.url}
+                                        target="_blank"
+                                    >
+                                        {technology.label}
+                                    </a>
+                                    {i != data.technologies.length - 1 ? <>{", "}</> : null}
+                                </span>
+                            </>
+                        );
+                    })
+                }
+            </p>
+        </div>
+        <div>
+            <div class="flex float-right tiny:float-left">
+                <ProjectCardAnchor
+                    href={data.sourceURL}
+                    icon="github"
+                    alt="GitHub"
+                    name={data.name}
+                />
+                {
+                    data.courseURL ? (
+                        <ProjectCardAnchor
+                            href={data.courseURL}
+                            icon="course"
+                            alt="Course"
+                            name={data.name}
+                        />
+                    ) : null
+                }
+                {
+                    data.externalURL ? (
+                        <ProjectCardAnchor
+                            href={data.externalURL}
+                            icon="external"
+                            alt="Demo"
+                            name={data.name}
+                        />
+                    ) : null
+                }
+            </div>
+        </div>
+    </div>
+    <p class="mt-4 text-gray-50 leading-tight text-base tiny:text-sm">
+        {
+            data.description.split("**").map((seg, i) => {
+                if (i % 2 == 1) return <b>{seg}</b>;
+                return <>{seg}</>;
+            })
+        }
+    </p>
 </div>

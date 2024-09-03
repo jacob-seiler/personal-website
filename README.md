@@ -10,14 +10,14 @@ My personal website. Built using [Astro](https://astro.build/), [Preact](https:/
 
 1. Install dependencies
 
-   ```bash
-   pnpm install
-   ```
+    ```bash
+    pnpm install
+    ```
 
 1. Run development script
 
-   ```bash
-   pnpm run dev
-   ```
+    ```bash
+    pnpm run dev
+    ```
 
 1. Visit <http://localhost:3000>

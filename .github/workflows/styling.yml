@@ -1,48 +1,48 @@
 name: "Style checking"
 
 on:
-  pull_request:
-    branches: ["*"]
-  push:
-    branches: ["*"]
-  merge_group:
+    pull_request:
+        branches: ["*"]
+    push:
+        branches: ["*"]
+    merge_group:
 
 jobs:
-  Checks:
-    runs-on: ubuntu-latest
+    Checks:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout 🔔
-        uses: actions/checkout@v3
+        steps:
+            - name: Checkout 🔔
+              uses: actions/checkout@v3
 
-      - name: Install Node.js 🏗️
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+            - name: Install Node.js 🏗️
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
 
-      - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
-        with:
-          version: 8
-          run_install: false
+            - name: Install pnpm 🏗️
+              uses: pnpm/action-setup@v2
+              id: pnpm-install
+              with:
+                  version: 9
+                  run_install: false
 
-      - name: Get pnpm store directory 📦
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+            - name: Get pnpm store directory 📦
+              id: pnpm-cache
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - name: Setup pnpm cache 📦
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            - name: Setup pnpm cache 📦
+              uses: actions/cache@v3
+              with:
+                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies 👨🏻‍💻
-        run: pnpm install --frozen-lockfile --prefer-offline
+            - name: Install dependencies 👨🏻‍💻
+              run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Run style check 🎨
-        run: pnpm style
+            - name: Run style check 🎨
+              run: pnpm style
