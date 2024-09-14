@@ -13,8 +13,9 @@ const moon = (
 import { useEffect, useState } from "preact/hooks";
 
 export default function ThemeButton() {
-    const [isDark, setIsDark] = useState(
-        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches,
+    const [isDark, setIsDark] = useState<boolean>(
+        (JSON.parse(localStorage.getItem("darkMode")) as boolean | null) ??
+            (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches),
     );
 
     const addTransition = () => {
@@ -35,6 +36,8 @@ export default function ThemeButton() {
 
         if (isDark) el.classList.add("dark");
         else el.classList.remove("dark");
+
+        localStorage.setItem("darkMode", JSON.stringify(isDark));
 
         addTransition();
     }, [isDark]);
