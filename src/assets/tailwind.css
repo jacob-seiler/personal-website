@@ -18,9 +18,9 @@
     --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
 
     /* Custom colors (replaces theme.extend.colors) */
-    --color-primary: #2BA878;
-    --color-github: #24292E;
-    --color-linkedin: #0B65C2;
+    --color-primary: #2ba878;
+    --color-github: #24292e;
+    --color-linkedin: #0b65c2;
 
     /* Custom shadows — reset defaults, add only the two custom ones */
     --shadow-*: initial;

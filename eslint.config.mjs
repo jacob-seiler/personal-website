@@ -38,12 +38,10 @@ export default [
             "prettier/prettier": "warn",
         },
     },
-    ...compat
-        .extends("plugin:@typescript-eslint/recommended-type-checked")
-        .map(config => ({
-            ...config,
-            files: ["**/*.ts", "**/*.tsx"],
-        })),
+    ...compat.extends("plugin:@typescript-eslint/recommended-type-checked").map(config => ({
+        ...config,
+        files: ["**/*.ts", "**/*.tsx"],
+    })),
     {
         files: ["**/*.ts", "**/*.tsx"],
 

@@ -60,7 +60,7 @@ export default function ThemeButton() {
             onClick={() => setIsDark(prevIsDark => !prevIsDark)}
             class={`${
                 isDark ? "fill-white" : "fill-black"
-            } absolute right-8 top-6 h-6 w-6 transition-transform hover:scale-125 motion-reduce:transition-none tiny:right-6 tiny:top-5`}
+            } tiny:right-6 tiny:top-5 absolute top-6 right-8 h-6 w-6 transition-transform hover:scale-125 motion-reduce:transition-none`}
             aria-label="Toggle color theme"
         >
             {isDark ? sun : moon}

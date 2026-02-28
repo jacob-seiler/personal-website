@@ -12,7 +12,7 @@ export default function TopButton() {
     return (
         <button
             onClick={handleClick}
-            class="font-bold underline hover:text-primary dark:text-white dark:hover:text-primary"
+            class="hover:text-primary dark:hover:text-primary font-bold underline dark:text-white"
         >
             Back to top
         </button>

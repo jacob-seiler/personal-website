@@ -25,7 +25,10 @@
     },
     "homepage": "https://github.com/jacob-seiler/personal-website#readme",
     "pnpm": {
-        "onlyBuiltDependencies": ["esbuild", "sharp"]
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "sharp"
+        ]
     },
     "dependencies": {
         "@astrojs/preact": "^4.1.3",

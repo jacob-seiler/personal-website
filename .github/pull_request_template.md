@@ -10,7 +10,7 @@ Please describe what you have done to test this PR. Include steps on how a colle
 
 ## Checklist
 
--   [ ] I have performed a self-review of my code.
--   [ ] My changes do not generate any new errors.
--   [ ] My code is clean and well commented.
--   [ ] My code considers all platforms it affects.
+- [ ] I have performed a self-review of my code.
+- [ ] My changes do not generate any new errors.
+- [ ] My code is clean and well commented.
+- [ ] My code considers all platforms it affects.
