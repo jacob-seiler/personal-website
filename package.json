@@ -27,6 +27,7 @@
     "pnpm": {
         "onlyBuiltDependencies": [
             "esbuild",
+            "puppeteer",
             "sharp"
         ]
     },
@@ -44,6 +45,7 @@
     "devDependencies": {
         "@eslint/eslintrc": "^3.3.4",
         "@eslint/js": "^10.0.1",
+        "@netlify/plugin-lighthouse": "^6.0.4",
         "@typescript-eslint/eslint-plugin": "^8.56.1",
         "@typescript-eslint/parser": "^8.56.1",
         "eslint": "^10.0.2",
