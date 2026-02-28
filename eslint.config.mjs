@@ -39,7 +39,7 @@ export default [
         },
     },
     ...compat
-        .extends("plugin:@typescript-eslint/recommended-requiring-type-checking")
+        .extends("plugin:@typescript-eslint/recommended-type-checked")
         .map(config => ({
             ...config,
             files: ["**/*.ts", "**/*.tsx"],

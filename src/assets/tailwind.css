@@ -1,6 +1,35 @@
+@import "tailwindcss";
+
 @import "@fontsource/figtree/700.css";
 @import "@fontsource/figtree/400.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Class-based dark mode (replaces darkMode: "class" from JS config) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Max-width breakpoint (replaces screens: { tiny: { max: "482px" } }) */
+@custom-variant tiny {
+    @media (max-width: 482px) {
+        @slot;
+    }
+}
+
+@theme {
+    /* Font (replaces fontFamily.sans) */
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+    /* Custom colors (replaces theme.extend.colors) */
+    --color-primary: #2BA878;
+    --color-github: #24292E;
+    --color-linkedin: #0B65C2;
+
+    /* Custom shadows — reset defaults, add only the two custom ones */
+    --shadow-*: initial;
+    --shadow-light: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+    --shadow-dark: 0px 3px 6px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Container: center + max-width matching v3 container.screens md: 768px */
+@utility container {
+    margin-inline: auto;
+    max-width: 768px;
+}
